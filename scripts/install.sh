@@ -1,17 +1,14 @@
 #!/usr/bin/env bash
 # Put these skills where an agent will read them: <target>/<skill>/SKILL.md
 #
-#   install.sh                          link every category into ~/.claude/skills
-#   install.sh frontend backend         link only those categories
-#   install.sh -a codex                 into ~/.codex/skills
-#   install.sh -a opencode              into ~/.config/opencode/skills
-#   install.sh -t ../my-project         into that project's .claude/skills
-#   install.sh -a codex -t ../project   into that project's .codex/skills
-#   install.sh -T /any/path             into a directory you name yourself
-#   install.sh -c -t ../my-project      COPY instead of link — editable, yours to change
-#   install.sh -u                       remove the links this script created
+#   install.sh -a codex                     every category into ~/.codex/skills
+#   install.sh -a opencode frontend         only these categories
+#   install.sh -a claude -t ../my-project   into that project's .claude/skills
+#   install.sh -T /any/path                 into a directory you name yourself
+#   install.sh -a codex -c -t ../project    COPY instead of link — editable, yours to change
+#   install.sh -a codex -u                  remove the links this script created
 #
-# -a picks the agent's skills directory:
+# -a names the host whose skills directory to use; there is no default host.
 #   claude    ~/.claude/skills                    <project>/.claude/skills
 #   codex     ~/.codex/skills                     <project>/.codex/skills
 #   opencode  ~/.config/opencode/skills           <project>/.opencode/skills
@@ -23,7 +20,7 @@
 set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-AGENT=claude
+AGENT=""
 PROJECT=""
 TARGET=""
 MODE=link
@@ -37,13 +34,14 @@ while getopts ":a:t:T:cuf" opt; do
     c) MODE=copy ;;
     u) MODE=uninstall ;;
     f) FORCE=true ;;
-    *) echo "usage: $0 [-a claude|codex|opencode|agents] [-t project-dir] [-T path] [-c] [-f] [-u] [category...]" >&2; exit 2 ;;
+    *) echo "usage: $0 -a claude|codex|opencode|agents [-t project-dir] [-T path] [-c] [-f] [-u] [category...]" >&2; exit 2 ;;
   esac
 done
 shift $((OPTIND - 1))
 
 if [ -z "$TARGET" ]; then
   case "$AGENT" in
+    "") echo "which host? pass -a claude|codex|opencode|agents, or -T <path>" >&2; exit 2 ;;
     claude)   TARGET="${PROJECT:+$PROJECT/.claude}";   TARGET="${TARGET:-$HOME/.claude}/skills" ;;
     codex)    TARGET="${PROJECT:+$PROJECT/.codex}";    TARGET="${TARGET:-$HOME/.codex}/skills" ;;
     opencode) TARGET="${PROJECT:+$PROJECT/.opencode}"; TARGET="${TARGET:-${XDG_CONFIG_HOME:-$HOME/.config}/opencode}/skills" ;;

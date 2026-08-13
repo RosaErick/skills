@@ -3,28 +3,22 @@
 My curated agent skills — 79 of them, all in one place, organized by category.
 
 Each skill is a folder with a `SKILL.md` (frontmatter `name` + `description`) and supporting files
-alongside it when needed. It's the standard format Claude Code, Codex, opencode and the like read.
+alongside it when needed. It's the standard format agent hosts read — Codex, OpenCode, Claude Code, Copilot CLI and others.
 
 ## Install
 
-```
-/plugin marketplace add RosaErick/skills
-/plugin install erickrosa-skills@rosaerick
-```
-
-Two separate prompts — the install doesn't take in one. They arrive namespaced as
-`erickrosa-skills:<name>`, read-only, and update when I ship:
-
-```
-/plugin marketplace update rosaerick
-/plugin update erickrosa-skills
-```
+Three routes. **Pick one per machine or project** — two of them leaves every skill twice, and the
+model then sees two candidates for every trigger.
 
 <details>
-<summary><b>Other hosts</b> — Codex, Copilot CLI</summary>
+<summary><b>As a plugin</b> — read-only, namespaced, updates when I ship</summary>
 
-Both plugin manifests (`.claude-plugin/`, `.codex-plugin/`) point at the same flat `skills/` folder,
-so every host installs the identical set.
+The host keeps its own checkout and reads the skills from there. Nothing lands in your project and
+nothing is yours to edit — an update overwrites it. Skills arrive namespaced as
+`erickrosa-skills:<name>`, so it's obvious where they came from.
+
+Both manifests (`.claude-plugin/`, `.codex-plugin/`) point at the same flat `skills/` folder, so
+every host installs the identical set.
 
 **Codex** — add the marketplace from the shell, then install from inside the TUI:
 
@@ -37,8 +31,26 @@ Then `/plugins`, select the `rosaerick` marketplace, install. Skills are invoked
 desktop app picks the same install up after a restart. Remove with
 `codex plugin remove erickrosa-skills`.
 
-**GitHub Copilot CLI** uses the same marketplace mechanism
-(`copilot plugin marketplace add RosaErick/skills`), and namespaces the skills under the plugin name.
+**GitHub Copilot CLI** — same mechanism, from the shell or as slash commands:
+
+```bash
+copilot plugin marketplace add RosaErick/skills
+copilot plugin install erickrosa-skills@rosaerick
+```
+
+**Claude Code** — two separate prompts; the install doesn't take in one:
+
+```
+/plugin marketplace add RosaErick/skills
+/plugin install erickrosa-skills@rosaerick
+```
+
+Updating, on any of them, is the marketplace refresh followed by the plugin update — in Claude Code:
+
+```
+/plugin marketplace update rosaerick
+/plugin update erickrosa-skills
+```
 
 </details>
 
@@ -49,23 +61,23 @@ For the machine where you maintain them: one copy on disk, and editing a linked 
 repo. The script links skill by skill, because hosts look for `<target>/<skill>/SKILL.md` and linking
 a whole category would hide everything inside it.
 
+`-a` names the host, and there is no default — pass it, or name a directory with `-T`.
+
 ```bash
-scripts/install.sh                       # ~/.claude/skills
-scripts/install.sh -a codex              # ~/.codex/skills
-scripts/install.sh -a opencode           # ~/.config/opencode/skills
-scripts/install.sh frontend backend      # only these categories
-scripts/install.sh -t ../my-project      # that project's .claude/skills
-scripts/install.sh -a codex -t ../proj   # that project's .codex/skills
-scripts/install.sh -a agents -t ../proj  # that project's .agents/skills
-scripts/install.sh -T ~/.qwen/skills     # any directory you name
-scripts/install.sh -u                    # remove the links again
+scripts/install.sh -a codex                     # ~/.codex/skills
+scripts/install.sh -a opencode                  # ~/.config/opencode/skills
+scripts/install.sh -a claude frontend backend   # only these categories
+scripts/install.sh -a codex -t ../my-project    # that project's .codex/skills
+scripts/install.sh -a agents -t ../my-project   # that project's .agents/skills
+scripts/install.sh -T ~/.qwen/skills            # any directory you name
+scripts/install.sh -a codex -u                  # remove the links again
 ```
 
 | `-a` | Personal | Project (`-t`) |
 |---|---|---|
-| `claude` (default) | `~/.claude/skills` | `<project>/.claude/skills` |
 | `codex` | `~/.codex/skills` | `<project>/.codex/skills` |
 | `opencode` | `~/.config/opencode/skills` | `<project>/.opencode/skills` |
+| `claude` | `~/.claude/skills` | `<project>/.claude/skills` |
 | `agents` | — | `<project>/.agents/skills` — the shared folder several hosts read |
 
 Anything not in that table — Qwen Code, Antigravity, a host I haven't tried — takes `-T` with its
@@ -81,18 +93,15 @@ any other personal skill.
 <summary><b>Vendored</b> — copies you own, frozen at copy time</summary>
 
 ```bash
-npx github:RosaErick/skills -c -t .                    # copy into ./.claude/skills
-npx github:RosaErick/skills -c -a codex -t .           # copy into ./.codex/skills
-npx github:RosaErick/skills -c -t . frontend           # or just one category
+npx github:RosaErick/skills -c -a codex -t .            # copy into ./.codex/skills
+npx github:RosaErick/skills -c -a claude -t .           # copy into ./.claude/skills
+npx github:RosaErick/skills -c -a codex -t . frontend   # or just one category
 ```
 
 Real files, copied in, yours to hack on. They never see an update from here again; re-running with
 `-f` overwrites your edits. Use it when a skill needs to become project-specific.
 
 </details>
-
-> **Pick one route per machine or project.** Two of them leaves every skill twice, and the model
-> then sees two candidates for every trigger.
 
 ## Categories
 
