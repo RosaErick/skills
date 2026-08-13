@@ -125,7 +125,7 @@ picked one by one, filed by category, trimmed of what I don't run.
 | Skill | What it does |
 |---|---|
 | [engineering/domain-design](./engineering/domain-design/SKILL.md) | Invariants, aggregates, value objects, domain events, bounded contexts and context mapping |
-| [engineering/spec-driven](./engineering/spec-driven/SKILL.md) | Falsifiable acceptance criteria in the repo, bound to tests, with a drift check |
+| [engineering/spec-driven](./engineering/spec-driven/SKILL.md) | Falsifiable acceptance criteria in the repo, bound to tests by id, verified against a test run |
 | [frontend/nextjs-best-practices](./frontend/nextjs-best-practices/SKILL.md) | App Router defaults: Server Components, data fetching, routing |
 | [frontend/react-patterns](./frontend/react-patterns/SKILL.md) | React 18/19: state placement, effects, composition, React Compiler, TypeScript props |
 | [frontend/react-ui-patterns](./frontend/react-ui-patterns/SKILL.md) | Loading states, error handling and async data in components |

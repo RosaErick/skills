@@ -1,7 +1,7 @@
 ---
 source: original
 name: spec-driven
-description: "Turn a spec into numbered acceptance criteria that live in the repo, bind each criterion to the test that proves it, and verify the binding — reporting criteria with no test, tests citing criteria that no longer exist, and criteria the code now contradicts. Use when a spec needs criteria before implementation starts, when asked whether the code still does what the spec says, when writing or reviewing acceptance criteria, when a feature's behavior is disputed, or when checking that a change kept its promises. Trigger terms: acceptance criteria, spec-driven development, SDD, given when then, does the code match the spec, spec drift, traceability, definition of done, is this covered by a test."
+description: "Turn a spec into numbered acceptance criteria that live in the repo, bind each criterion to the test that proves it, and verify the binding against a test run — finding criteria no passing test claims, tests citing criteria that no longer exist, tests that carry an id without asserting the behavior, and criteria the code now contradicts. Use when a spec needs criteria before implementation starts, when asked whether the code still does what the spec says, when writing or reviewing acceptance criteria, when a feature's behavior is disputed, or when checking that a change kept its promises. Trigger terms: acceptance criteria, spec-driven development, SDD, given when then, does the code match the spec, spec drift, traceability, definition of done, is this covered by a test."
 ---
 
 # Spec-Driven
@@ -106,44 +106,57 @@ Rules:
 
 ## 4. The verify pass
 
-Run [scripts/verify-criteria.py](scripts/verify-criteria.py) — it parses `docs/specs/*.md` for
-criterion ids and greps the test tree for them:
+**Run the test suite first.** Everything below is read against what actually ran — not against what
+the source files appear to contain. This is not pedantry: a grep-based verifier was tried here and
+dropped, because it reported a commented-out test and a test inside `describe.skip` as proven. A
+string in a file is not evidence.
 
-```bash
-python3 scripts/verify-criteria.py            # defaults: docs/specs, whole repo for tests
-python3 scripts/verify-criteria.py --specs docs/specs --tests test src
-```
+With the suite's output in hand, four questions, in order:
 
-It reports the three mechanical failures:
+**Uncovered** — which criteria does no passing test claim? Collect the ids from the runner's report
+(the names of tests that ran and passed), and compare against the ids in `docs/specs/`. An id that
+appears only in the source but not in the report means the test is skipped, commented out, filtered
+out by a pattern, or failing. All four are "unproven".
 
-- **Uncovered** — a criterion no test cites
-- **Orphaned** — a test citing an id that no longer exists in any spec
-- **Skipped** — a criterion whose only test is skipped or pending
+**Orphaned** — which tests cite an id that no longer exists in any spec? That test is guarding a
+promise nobody made. Either the criterion was deleted without its test, or the id was mistyped.
 
-Then read for the fourth, which no script can find: **contradiction**. Open each criterion, read the
-code that implements it, and decide whether the code still does what the criterion says. When they
-disagree, one of them is wrong — and the resolution is a decision, never a silent edit:
+**Hollow** — open each test that claims a criterion and check that it *asserts* the behavior the
+criterion describes. A test named `AC-3` that asserts nothing, or asserts something adjacent, is a
+label, not a proof. This is the one only a reader catches, and it's the most common failure in a
+suite that was retrofitted with ids.
 
-- The code is wrong → it's a bug; the criterion stays, the test should already be failing.
-- The criterion is outdated → mark the old one superseded, write the new one, note why in the spec.
+**Contradiction** — read the code behind each criterion and decide whether it still does what the
+criterion says. When they disagree, one of them is wrong, and the resolution is a decision, never a
+silent edit:
+
+- The code is wrong → it's a bug; the criterion stays, and a test should already be failing.
+- The criterion is outdated → mark it superseded, write the new one, note why in the spec.
 
 Never "update the doc to match the code" without saying which of the two you decided was right. That
 move is how a spec becomes a changelog of whatever happened.
+
+If the suite emits JUnit XML (`vitest --reporter=junit`, `jest --reporters=jest-junit`,
+`pytest --junit-xml`, Maven surefire, `phpunit --log-junit`), the first two questions can be answered
+mechanically from that report, since it lists each test's name and whether it passed, was skipped or
+failed. Write that check for the project at hand if it's worth it there — it is not worth shipping as
+a generic script, because the useful half of this pass is the reading.
 
 ## 5. Reporting
 
 Report as a table, most alarming first:
 
 ```
-AC-1  covered    checkout.test.ts:14
-AC-2  covered    checkout.test.ts:31, cart.test.ts:8
-AC-3  UNCOVERED  —
-AC-4  skipped    checkout.test.ts:52 (test.skip)
-AC-7  CONTRADICTED  code rejects with `InvalidCart`, criterion says `EmptyCart`
+AC-1  proven         checkout.test.ts:14 (passed)
+AC-2  proven         checkout.test.ts:31, cart.test.ts:8 (passed)
+AC-3  UNCOVERED      no passing test claims it
+AC-4  UNPROVEN       checkout.test.ts:52 — inside describe.skip, never ran
+AC-5  HOLLOW         cart.test.ts:20 claims it but only asserts the call didn't throw
+AC-7  CONTRADICTED   code rejects with `InvalidCart`, criterion says `EmptyCart`
 ```
 
 Then one line of judgement: is this feature actually guaranteed, or does it just have tests? Those
-are different claims, and only the criteria coverage tells them apart.
+are different claims, and only reading the criteria against the suite tells them apart.
 
 ## In the flow
 
@@ -168,8 +181,9 @@ are different claims, and only the criteria coverage tells them apart.
 | Renumbering when one is removed | Ids are permanent; supersede instead |
 | Criteria in a tracker comment | A file in `docs/specs/`, versioned with the code |
 | Verifying once, at merge | Verifying whenever the behavior is questioned |
+| Trusting a grep over the test suite's own report | Reading the report, then the tests it names |
 | Editing a criterion to match new code, silently | Deciding which was wrong, and recording it |
-| A skipped test counted as coverage | Skipped is unproven |
+| A test name counted as proof | Proof is a test that ran, passed and asserts the behavior |
 
 ---
 

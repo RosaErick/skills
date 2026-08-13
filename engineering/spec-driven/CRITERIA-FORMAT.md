@@ -91,9 +91,9 @@ def test_ac_1_rejects_a_cart_with_no_lines(): ...
 func TestAC1_RejectsACartWithNoLines(t *testing.T) { … }
 ```
 
-The verifier matches `AC-<n>` case-insensitively and tolerates `_`, `-` or a space between `AC` and
-the number, so all three styles above bind correctly. Anything else — an annotation, a comment, a
-separate mapping file — is a second source of truth that will rot.
+Any of those spellings is fine as long as the project picks one and keeps it — the id has to survive
+the runner's own name mangling and stay greppable in its report. Anything beyond the test name — an
+annotation, a comment, a separate mapping file — is a second source of truth that will rot.
 
 ## Repos with several contexts
 
