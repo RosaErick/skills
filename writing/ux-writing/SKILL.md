@@ -1,4 +1,5 @@
 ---
+source: original
 name: UX & Interface Design Master Guide
 description: Diretrizes de User Experience, Interação Guiada e UX Writing baseadas em princípios fundamentais da usabilidade web moderna.
 risk_assessment: "Low. Diretrizes teóricas e táticas para uso em design e código de interfaces."

@@ -1,4 +1,5 @@
 ---
+source: original
 name: documentation-master
 description: "Skill mestre de documentação: gera documentação técnica completa (API, arquitetura, código, usuário), explica código complexo com diagramas visuais, cria READMEs, OpenAPI specs, guias de contribuição, e automatiza pipelines de documentação com CI/CD."
 ---

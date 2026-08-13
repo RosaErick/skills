@@ -1,4 +1,5 @@
 ---
+source: original
 name: api-documentation-master
 description: "Gera documentações de APIs incríveis e profissionais. Combina design de APIs, OpenAPI 3.1, geração de docs interativas, templates multi-linguagem, segurança, testes e automação CI/CD. Use PROATIVAMENTE ao documentar, criar ou revisar qualquer API."
 ---
