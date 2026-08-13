@@ -10,9 +10,7 @@ React, Next.js, CSS and interface work.
 - **[react-modernization](./react-modernization/SKILL.md)** — Version upgrades, class-to-hooks migration, concurrent features, codemods.
 - **[nextjs-best-practices](./nextjs-best-practices/SKILL.md)** — App Router: Server Components, data fetching, routing.
 - **[nextjs-app-router-patterns](./nextjs-app-router-patterns/SKILL.md)** — Next.js 14+: streaming, parallel routes, advanced data fetching.
-- **[nextjs-react-expert](./nextjs-react-expert/SKILL.md)** — Performance work: kill waterfalls, cut bundle size, server/client split.
 - **[nextjs-supabase-auth](./nextjs-supabase-auth/SKILL.md)** — Supabase Auth with the App Router: login, middleware, protected routes.
-- **[frontend-developer](./frontend-developer/SKILL.md)** — Building React 19 / Next.js 15 components, client-side state, accessibility.
 - **[frontend-dev-guidelines](./frontend-dev-guidelines/SKILL.md)** — Opinionated React + TypeScript standards: Suspense-first, lazy loading, feature-based architecture, MUI v7, TanStack Router.
 - **[frontend-mobile-development-component-scaffold](./frontend-mobile-development-component-scaffold/SKILL.md)** — Scaffolds React/React Native components with types, tests, styles and docs.
 
@@ -20,9 +18,7 @@ React, Next.js, CSS and interface work.
 
 - **[frontend-design](./frontend-design/SKILL.md)** — Design decisions for web UI: components, layout, color, typography.
 - **[tailwind-patterns](./tailwind-patterns/SKILL.md)** — Tailwind v4: CSS-first configuration, container queries, design tokens.
-- **[ui-ux-designer](./ui-ux-designer/SKILL.md)** — Wireframes, design systems, design tokens, component libraries, inclusive design.
 - **[ui-ux-pro-max](./ui-ux-pro-max/SKILL.md)** — Searchable database of styles, palettes, font pairings, UX guidelines and chart types.
-- **[ui-skills](./ui-skills/SKILL.md)** — Opinionated constraints for agents building interfaces.
 - **[web-design-guidelines](./web-design-guidelines/SKILL.md)** — Reviews UI code against the Web Interface Guidelines (accessibility, UX).
 - **[mobile-design](./mobile-design/SKILL.md)** — Mobile-first design for iOS and Android: touch, performance, platform conventions.
 - **[frontend-slides](./frontend-slides/SKILL.md)** — Animated HTML presentations from scratch or converted from PPTX.
