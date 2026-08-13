@@ -1,0 +1,1897 @@
+=========================================
+--- BOOK: 1671446040-lBPa.pdf ---
+=========================================
+
+--- TABLE OF CONTENTS ---
+[ Contents ] (Page 7)
+[ Preface ] (Page 11)
+1: Why: Meet the Goals of People and the Organization (Page 17)
+  Align the Goals of the People and the Organization (Page 18)
+  Choose Content to Meet the Goals (Page 20)
+  Identify Purposes, Opportunities, and Constraints (Page 27)
+  Imagine and Test Solutions (Page 28)
+  Summary: Words Make Experiences Work (Page 30)
+2: Voice: They Recognize You (Page 31)
+  Three Example Experiences (Page 32)
+  Creating a Voice Chart (Page 34)
+  Using the Voice Chart as a Decision-Making and Iteration Tool (Page 47)
+  Summary: Lift Every Voice (Page 51)
+3: Conversation for Content-First Design (Page 53)
+  Face-to-Face, Full-Body Design (Page 54)
+  Transforming the Conversation into an Experience (Page 58)
+  Summary: Now You’re Having the Right Conversation (Page 61)
+4: Apply UX Text Patterns (Page 63)
+  Titles (Page 64)
+  Buttons, Links, and Other Commands (Page 69)
+  Descriptions (Page 74)
+  Empty States (Page 78)
+  Labels (Page 81)
+  Controls (Page 85)
+  Text Input Fields (Page 89)
+  Transitional Text (Page 92)
+  Confirmation Messages (Page 96)
+  Notifications (Page 99)
+  Errors (Page 103)
+  Summary: Use Patterns as a Place to Start (Page 107)
+5: Edit, Because They Didn’t Go There to Read (Page 109)
+  Editing in Four Phases (Page 110)
+  Purposeful (Page 111)
+  Concise (Page 113)
+  Conversational (Page 115)
+  Clear (Page 117)
+  Summary: Use UX Text to Help People Move Forward (Page 118)
+6: Measuring UX Content Effectiveness (Page 119)
+  Direct Measurement of UX Content (Page 120)
+  Researching UX Content (Page 126)
+  UX Content Heuristics (Page 129)
+  Summary: If You Like It, Put a Value on It (Page 150)
+7: Tools of the UX Writing Trade (Page 153)
+  Write for the Context (Page 153)
+  Managing Content Review (Page 158)
+  Publishing the Text (Page 161)
+  Tracking the Content Work to Be Done (Page 162)
+  Summary: The Tools Are a Means to an End (Page 164)
+8: A 30/60/90-Day Plan (Page 165)
+  The First 30 Days, AKA Phase 1: What and Who (Page 165)
+  30–60 Days, AKA Phase 2: Fires and Foundations (Page 172)
+  60–90 Days, AKA Phase 3: Rapid Growth (Page 176)
+  Summary: To Fix the Words, Build Strong Foundations (Page 178)
+9: What to Do First (Page 179)
+  Decide What Is Urgent and What Is Important (Page 179)
+  Ground the Content in Empathy (Page 181)
+  Introducing UX Content to the Team (Page 182)
+  Summary: Use UX Content to Meet Your Goals (Page 183)
+[ Index ] (Page 185)
+About the Author (Page 193)
+
+--- HEADINGS AND BOLD TEXT (Pages 5 to 70) ---
+[
+contents
+]
+Preface
+ix
+Chapter 1
+Why: Meet the Goals of People and the Organization
+1
+Chapter 2
+Voice: They Recognize You
+15
+Chapter 3
+Conversation for Content-First Design
+37
+Chapter 4
+Apply UX Text Patterns
+47
+Chapter 5
+Edit, Because They Didn’t Go There to Read
+93
+Chapter 6
+Measuring UX Content Effectiveness
+103
+Chapter 7
+Tools of the UX Writing Trade
+137
+Chapter 8
+A 30/60/90-Day Plan
+149
+Chapter 9
+What to Do First
+163
+Index
+169
+[
+Preface
+]
+[
+1
+]
+Why: Meet the Goals of People
+and the Organization
+—RALF SPETH, CEO OF JAGUAR LAND ROVER
+FIGURE 1-1
+FIGURE 1-2
+FIGURE 1-3
+FIGURE 1-4
+FIGURE 1-5
+FIGURE 1-6
+FIGURE 1-7
+FIGURE 1-8
+FIGURE 1-9
+FIGURE 1-10
+[
+2
+]
+Voice: They Recognize You
+—UNKNOWN, ATTRIBUTED TO MANY
+FIGURE 2-1
+TABLE 2-1.
+PRODUCT PRINCIPLES
+Sturgeon Club
+TABLE 2-2.
+’appee
+TABLE 2-3.
+TAPP
+TABLE 2-4.
+CONCEPTS
+The Sturgeon Club
+TABLE 2-5.
+’appee
+TABLE 2-6.
+TAPP
+TABLE 2-7.
+VOCABULARY
+The Sturgeon Club
+TABLE 2-8.
+’appee
+TABLE 2-9.
+TAPP
+TABLE 2-10.
+VERBOSITY
+The Sturgeon Club
+TABLE 2-11.
+’appee
+TABLE 2-12.
+TAPP
+TABLE 2-13.
+GRAMMAR
+The Sturgeon Club
+TABLE 2-14.
+’appee
+TABLE 2-15.
+TAPP
+TABLE 2-16.
+PUNCTUATION AND CAPITALIZATION
+The Sturgeon Club
+TABLE 2-17.
+’appee
+TABLE 2-18.
+TAPP
+TABLE 2-19.
+COMPLETING THE VOICE CHART
+TABLE 2-20.
+TABLE 2-21.
+TABLE 2-22.
+FIGURE 2-2
+TRAINING NEW CONTENT CREATORS
+IMAGINING
+FIGURE 2-3
+DECISION MAKING AND TIE BREAKING
+[
+3
+]
+Conversation for Content-First Design
+—CHARLES EAMES, AMERICAN DESIGNER
+FIGURE 3-1
+FIGURE 3-2
+FIGURE 3-3
+FIGURE 3-4
+FIGURE 3-5
+FIGURE 3-6
+[
+4
+]
+Apply UX Text Patterns
+—DOUG DILLON, WRITER
+BRAND-NAME TITLE
+FIGURE 4-1
+CONTENT-NAME TITLE
+FIGURE 4-2
+AMBIGUOUS-TASKS TITLE
+FIGURE 4-3
+SINGLE-TASK TITLE
+FIGURE 4-4
+
+
+=========================================
+--- BOOK: 20220201181424-2022-02-01ebook181200.pdf ---
+=========================================
+
+--- TABLE OF CONTENTS ---
+No TOC found.
+
+--- HEADINGS AND BOLD TEXT (Pages 5 to 70) ---
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+1. A Brief Introduction to User Experience (UX) Design
+What is User Experience (UX)?
+What is a UX Designer?
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+1. A Brief Introduction to User Experience (UX) Design
+Where Can UX Design be Found?
+What's the Main Methodology for UX?
+Complex projects
+Startups
+Projects with decent budgets
+Long projects
+Why Does UX Matter?
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+1. A Brief Introduction to User Experience (UX) Design
+Become a UX Designer from Scratch
+Become a UX Designer from Scratch
+Beginner course
+Mary Ann Sprague
+Testimonials from Course Takers
+∠
+Become a UX Designer from
+Scratch
+The Take Away
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+1. A Brief Introduction to User Experience (UX) Design
+Robin Davis
+∠
+INTERACTION-DESIGN.ORG
+What is Design Thinking and
+Why Is It So Popular?
+Empathise
+Define
+Ideate
+Prototype
+Test
+What is Design Thinking?
+CHAPTER 2
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+2. What is Design Thinking and Why Is It So Popular?
+Design Thinking’s Phases
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+2. What is Design Thinking and Why Is It So Popular?
+The Problem with Ingrained Patterns of Thinking
+An Example of Problem solving: The Encumbered
+Vs. The Fresh Mind
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+2. What is Design Thinking and Why Is It So Popular?
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+2. What is Design Thinking and Why Is It So Popular?
+Design Thinking or 'Outside the Box' Thinking
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+2. What is Design Thinking and Why Is It So Popular?
+Design Thinking is an Essential Tool—and A Third
+Way
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+2. What is Design Thinking and Why Is It So Popular?
+Science and Rationality in Design Thinking
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+2. What is Design Thinking and Why Is It So Popular?
+Generating Creative Ideas and Solutions by Holistically
+Understanding Humans
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+2. What is Design Thinking and Why Is It So Popular?
+Design Thinking is an Iterative and Non-linear
+Process
+Empathise
+Define
+Ideate
+Prototype
+Test
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+2. What is Design Thinking and Why Is It So Popular?
+Design Thinking is for Everybody
+Design Thinking: The Beginner’s
+Guide
+The Take Away
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+2. What is Design Thinking and Why Is It So Popular?
+Design Thinking: The Beginner’s Guide
+Design Thinking: The Beginner’s Guide
+Beginner course
+Testimonials from Course Takers
+Raisa Maijala
+Raghu Krupa kanth Reddy.J
+∠
+∠
+INTERACTION-DESIGN.ORG
+The 7 Factors that Influence
+User Experience
+USEFUL
+USABLE
+FINDABLE
+DESIRABLE
+ACCESSIBLE
+VALUABLE
+CREDIBLE
+CHAPTER 3
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+3. The 7 Factors that Influence User Experience
+1. Useful
+2. Usable
+Useful
+Usable
+Findable
+Credible
+Desirable
+Accessible
+Valuable
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+3. The 7 Factors that Influence User Experience
+4. Credible
+3. Findable
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+3. The 7 Factors that Influence User Experience
+5. Desirable
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+3. The 7 Factors that Influence User Experience
+7. Valuable
+6. Accessible
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+3. The 7 Factors that Influence User Experience
+User Experience: The Beginner’s Guide
+The Take Away
+Evgeni Manov
+Testimonials from Course Takers
+Veena Sankaranarayanan
+User Experience: The Beginner’s Guide
+User Experience: The Beginner’s Guide
+Beginner course
+∠
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+3. The 7 Factors that Influence User Experience
+Donato Colatorti
+∠
+INTERACTION-DESIGN.ORG
+An Introduction to Usability
+ISO 9421-11 standard on usability
+2015 joint research by Huff Industrial Marketing, KoMarketing and BuyerZone
+Why Does Usability Matter?
+CHAPTER 4
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+4. An Introduction to Usability
+The 5 Characteristics of Usable Products
+1. Effectiveness
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+4. An Introduction to Usability
+Hemingway App
+2. Efficiency
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+4. An Introduction to Usability
+3. Engagement
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+4. An Introduction to Usability
+4. Error Tolerance
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+4. An Introduction to Usability
+5. Ease of learning
+Utility + Usability = Usefulness
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+4. An Introduction to Usability
+The Practical
+Guide to Usability
+The Take Away
+The Practical Guide to Usability
+The Practical Guide to Usability
+Beginner course
+∠
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+4. An Introduction to Usability
+Testimonials from Course Takers
+Matthew Worner
+Sarang Sudhir Pitale
+∠
+INTERACTION-DESIGN.ORG
+How to Conduct User
+Interviews
+CHAPTER 5
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+5. How to Conduct User Interviews
+What is a User Interview?
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+5. How to Conduct User Interviews
+Preparing for User Interviews
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+5. How to Conduct User Interviews
+Make your interviewees comfortable
+How to Conduct a User Interview
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+5. How to Conduct User Interviews
+Reporting on User Interviews
+The Take Away
+Try to keep the interview on time and heading in the right direction
+Try to focus on the interviewee and not on making notes
+Thank the interviewees at the end of the process
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+5. How to Conduct User Interviews
+Human-Computer Interaction
+Human-Computer Interaction
+Human-Computer
+Interaction
+Beginner course
+∠
+Testimonials from Course Takers
+Briane Paul Samson
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+5. How to Conduct User Interviews
+Walter Darcie Neto
+Francesco Manciocchi
+∠
+INTERACTION-DESIGN.ORG
+7 Great, Tried and Tested UX
+Research Techniques
+1. Card Sorting
+CHAPTER 6
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+6. 7 Great, Tried and Tested UX Research Techniques
+Why is Card Sorting a Good Technique?
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+6. 7 Great, Tried and Tested UX Research Techniques
+Why is an Expert Review a Good Technique?
+Why is Eye Movement Tracking a Good Technique?
+3. Eye Movement Tracking
+2. Expert Review
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+6. 7 Great, Tried and Tested UX Research Techniques
+Why are Field Studies a Good Technique?
+5. Usability Testing
+4. Field Studies
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+6. 7 Great, Tried and Tested UX Research Techniques
+Why is Usability Testing a Good Technique?
+6. Remote Usability Testing
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+6. 7 Great, Tried and Tested UX Research Techniques
+Why are User Personas a Good Technique?
+The Take Away
+Why is Remote Usability Testing a Good Technique?
+7. User Personas
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+6. 7 Great, Tried and Tested UX Research Techniques
+User Research - Methods and Best Practices
+User
+Research - Methods and Best Practices
+Intermediate course
+∠
+User Research - Methods and Best Practices
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+6. 7 Great, Tried and Tested UX Research Techniques
+Testimonials from Industry Experts
+Forbes.com
+SAP Community Network
+Core77
+∠
+INTERACTION-DESIGN.ORG
+What is Interaction Design?
+A Simple and Useful Understanding of
+Interaction Design
+CHAPTER 7
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+7. What is Interaction Design?
+The 5 Dimensions of Interaction Design
+1D: Words
+2D: Visual Representations
+3D: Physical Objects or Space
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+7. What is Interaction Design?
+5D: Behavior
+Important Questions Interaction Designers Ask
+What can users do with their mice, ﬁngers, or styluses to interact with the interface directly?
+What about the appearance (color, shape, size, etc.) gives the user a clue about how it may
+function?
+Do error messages provide a way for the user to correct the problem or explain why the error
+occurred?
+4D: Time
+So, What do Interaction Designers do?
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+7. What is Interaction Design?
+Design Strategy
+Wireframes and Prototypes
+What feedback does a user get once an action is performed?
+Are the interface elements a reasonable size to interact with?
+Are familiar or standard formats used?
+So, What do Interaction Designers do?
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+7. What is Interaction Design?
+Psychology of Interaction Design: The Ultimate Guide
+The Take Away
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+6. What is Interaction Design?
+Testimonials from Course Takers
+Vasanth Kumar Talla
+Theo Braden
+Psychology of Interaction Design: The Ultimate
+Guide
+Psychology of
+Interaction Design: The Ultimate Guide
+Advanced course
+∠
+∠
+INTERACTION-DESIGN.ORG
+Mobile Web UX Design:
+Some Simple Guidelines
+CHAPTER 8
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+8. Mobile Web UX Design: Some Simple Guidelines
+Basic Design Considerations for the Mobile Web
+Small Screens
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+8. Mobile Web UX Design: Some Simple Guidelines
+Keep Navigation Simple
+Keep Content to a Minimum
+Reduce the Inputs Required from Users
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+8. Mobile Web UX Design: Some Simple Guidelines
+Remember Mobile Connections Are Not Stable
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+8. Mobile Web UX Design: Some Simple Guidelines
+Continuous Integrated Experiences
+Mobile User Experience (UX) Design
+The Take Away
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+8. Mobile Web UX Design: Some Simple Guidelines
+Testimonials from Course Takers
+Jennifer Steiner-Kotch
+Ajayraj
+Mobile User Experience (UX) Design
+Mobile User Experience Design
+Intermediate course
+∠
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+8. Mobile Web UX Design: Some Simple Guidelines
+Tony Evreniadis
+∠
+INTERACTION-DESIGN.ORG
+Information Visualization –
+A Brief Introduction
+CHAPTER 9
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+9. Information Visualization – A Brief Introduction
+An Example of Everyday Information Visualization
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+9. Information Visualization – A Brief Introduction
+Common Uses for Information Visualization
+Presentation (for Understanding or Persuasion)
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+9. Information Visualization – A Brief Introduction
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+9. Information Visualization – A Brief Introduction
+Confirmation Analysis
+Explorative Analysis
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+9. Information Visualization – A Brief Introduction
+The Take Away
+INTERACTION-DESIGN.ORG
+The Basics of User Experience (UX) Design by Interaction Design Foundation
+9. Information Visualization – A Brief Introduction
+Information Visualization
+Information Visualization
+Beginner course
+∠
+Information Visualization
+
+
+=========================================
+--- BOOK: Don't Make Me Think, Revisited, 3rd Edition.pdf ---
+=========================================
+
+--- TABLE OF CONTENTS ---
+Title Page (Page 2)
+Copyright Page (Page 3)
+Dedication Page (Page 4)
+Contents (Page 5)
+Preface: About this edition (Page 7)
+  #1. Let’s face it: It’s old (Page 8)
+  #2. The world has changed (Page 11)
+  Don’t get me wrong... (Page 15)
+Introduction: Read me first (Page 16)
+  The bad news: You probably don’t have a usability professional (Page 19)
+  The good news: It’s not rocket surgery™ (Page 19)
+  It’s a thin book (Page 20)
+  Not present at time of photo (Page 21)
+  Now with Mobile! (Page 21)
+  One last thing, before we begin (Page 21)
+Guiding Principles (Page 23)
+  Chapter 1. Don’t make me think! (Page 24)
+    “Don’t make me think!” (Page 24)
+    Things that make us think (Page 26)
+    You can’t make everything self-evident (Page 28)
+    Why is all of this so important? (Page 29)
+    So why, then? (Page 29)
+  Chapter 2. How we really use the Web (Page 30)
+    FACT OF LIFE #1: We don’t read pages. We scan them. (Page 31)
+    FACT OF LIFE #2: We don’t make optimal choices. We satisfice. (Page 32)
+    FACT OF LIFE #3: We don’t figure out how things work. We muddle through. (Page 33)
+    If life gives you lemons... (Page 35)
+  Chapter 3. Billboard Design 101 (Page 36)
+    Conventions are your friends (Page 36)
+    Create effective visual hierarchies (Page 44)
+    Break up pages into clearly defined areas (Page 46)
+    Make it obvious what’s clickable (Page 46)
+    Keep the noise down to a dull roar (Page 48)
+    Format text to support scanning (Page 49)
+  Chapter 4. Animal, Vegetable, or Mineral? (Page 54)
+    Some assistance may be required (Page 57)
+  Chapter 5. Omit needless words (Page 59)
+    Happy talk must die (Page 59)
+    Instructions must die (Page 60)
+    And now for something completely different (Page 61)
+Things You Need to Get Right (Page 62)
+  Chapter 6. Street signs and Breadcrumbs (Page 63)
+    Scene from a mall (Page 63)
+    Web Navigation 101 (Page 65)
+    The unbearable lightness of browsing (Page 67)
+    The overlooked purposes of navigation (Page 69)
+    Web navigation conventions (Page 69)
+    Don’t look now, but I think it’s following us (Page 71)
+    Did I say every page? (Page 72)
+    Now I know we’re not in Kansas (Page 72)
+    The Sections (Page 74)
+    The Utilities (Page 74)
+    Just click your heels three times and say, “There’s no place like home” (Page 76)
+    A way to search (Page 76)
+    Secondary, tertiary, and whatever comes after tertiary (Page 77)
+    Page names, or Why I love to drive in L.A. (Page 78)
+    “You are here” (Page 80)
+    Breadcrumbs (Page 82)
+    Three reasons why I still love tabs (Page 83)
+    Try the trunk test (Page 83)
+  Chapter 7. The Big Bang Theory of Web Design (Page 85)
+    And you have to do it...blindfolded (Page 88)
+    The First Casualty of War (Page 89)
+    But...the Home page? Really? (Page 91)
+    How to get the message across (Page 92)
+    Nothing beats a good tagline!™ (Page 94)
+    Tagline? We don’t need no stinking tagline (Page 96)
+    The fifth question (Page 96)
+    Why Golden Geese make such tempting targets (Page 97)
+Making Sure You Got them Right (Page 99)
+  Chapter 8. “The Farmer and the Cowman Should Be Friends” (Page 100)
+    “Everybody likes ________.” (Page 102)
+    Farmers vs. cowmen (Page 102)
+    The myth of the Average User (Page 103)
+    The antidote for religious debates (Page 104)
+  Chapter 9. Usability testing on 10 cents a day (Page 105)
+    Repeat after me: Focus groups are not usability tests. (Page 106)
+    Several true things about usability testing (Page 107)
+    Do-it-yourself usability testing (Page 108)
+    How often should you test? (Page 110)
+    How many users do you need? (Page 111)
+    How do you choose the participants? (Page 112)
+    How do you find participants? (Page 113)
+    Where do you test? (Page 113)
+    Who should do the testing? (Page 114)
+    Who should observe? (Page 114)
+    What do you test, and when do you test it? (Page 116)
+    How do you choose the tasks to test? (Page 117)
+    What happens during the test? (Page 117)
+    A sample test session (Page 118)
+    Typical problems (Page 125)
+    The debriefing: Deciding what to fix (Page 126)
+    Alternative lifestyles (Page 127)
+    Try it, you’ll like it (Page 127)
+Larger Concerns and Outside Influences (Page 129)
+  Chapter 10. Mobile: It’s not just a city in Alabama anymore (Page 130)
+    What’s the difference? (Page 131)
+    It’s all about tradeoffs (Page 132)
+    The tyranny of the itty-bitty living space (Page 137)
+    Breeding chameleons (Page 138)
+    Don’t hide your affordances under a bushel (Page 139)
+    No cursor = no hover = no clue (Page 139)
+    Flat design: Friend or foe? (Page 140)
+    You actually can be too rich or too thin (Page 140)
+    Mobile apps, usability attributes of (Page 141)
+    Delightful is the new black (Page 142)
+    Apps need to be learnable (Page 143)
+    Apps need to be memorable, too (Page 145)
+    Usability testing on mobile devices (Page 146)
+    The logistics of mobile testing (Page 146)
+    My recommendations (Page 147)
+    Proof of concept: My Brundleyfly camera (Page 147)
+    Finally... (Page 148)
+  Chapter 11. Usability as common courtesy (Page 150)
+    The reservoir of goodwill (Page 151)
+    Things that diminish goodwill (Page 152)
+    Things that increase goodwill (Page 154)
+  Chapter 12. Accessibility and you (Page 156)
+    What developers and designers hear (Page 157)
+    What designers and developers fear (Page 158)
+    The truth is, it can be complicated (Page 159)
+    The four things you can do right now (Page 160)
+    #1. Fix the usability problems that confuse everyone (Page 160)
+    #2. Read an article (Page 160)
+    #3. Read a book (Page 161)
+    #4. Go for the low-hanging fruit (Page 162)
+  Chapter 13. Guide for the perplexed (Page 164)
+    Ya gotta know the territory (Page 164)
+    The usual advice (Page 165)
+    If I were you... (Page 165)
+    Resist the dark forces (Page 168)
+    A few definitive answers (Page 171)
+Acknowledgments (Page 174)
+Index (Page 177)
+Also Available (Page 182)
+
+--- HEADINGS AND BOLD TEXT (Pages 5 to 70) ---
+CHAPTER 12
+Accessibility and you
+Just when you think you’re done, a cat floats by with buttered toast strapped to its back
+CHAPTER 13
+Guide for the perplexed
+Making usability happen where you live
+Acknowledgments
+Index
+Preface: About this edition
+People come and go so quickly here!
+I wrote the first edition of
+Don’t Make Me Think
+back in 2000.
+By 2002, I began to get a few emails a year from readers asking (very politely) if I’d thought about
+updating it. Not complaining; just trying to be helpful. “A lot of the examples are out of date” was the
+usual comment.
+My standard response was to point out that since I wrote it right around the time the Internet bubble
+burst, many of the sites I used as examples had already disappeared by the time it was published. But I
+didn’t think that made the examples any less clear.
+Finally, in 2006 I had a strong personal incentive to update it.
+But as I reread it to see what I should
+change, I just kept thinking “This is all still true.” I really couldn’t find much of anything that I thought
+should be changed.
+If it was a new edition, though,
+something
+had to be different. So I added three chapters that I didn’t
+have time to finish back in 2000, hit the snooze button, and happily pulled the covers back over my
+head for another seven years.
+2000
+2006
+(Writing is really hard for me, and I’m always happy to have a reason not to do it. Give me a good old
+root canal over writing any day.)
+So why now, finally, a new edition? Two reasons.
+#1. Let’s face it: It’s old
+There’s no doubt about it at this point: It feels dated. After all, it’s thirteen years old, which is like a
+hundred years in Internet time. (See? Nobody even says things like “in Internet time” anymore.)
+Most of the Web pages I used for examples, like Senator Orrin Hatch’s campaign site for the 2000
+election, look really old-fashioned now.
+Sites these days tend to look a lot more sophisticated, as you might expect.
+www.orrinhatch.com
+1999
+www.orrinhatch.com
+2012
+Recently I’ve been starting to worry that the book would finally reach a point where it felt
+so
+dated that
+it would stop being effective. I know it hasn’t happened yet because
+It’s still selling steadily (thank heavens), without any sign of slowing down. It’s even become
+required reading in a lot of courses, something I never expected.
+New readers from all over the world continue to tweet about things they’ve learned from it.
+I still keep hearing this story: “I gave it to my boss, hoping he’d finally understand what I’m
+talking about. He actually read it, and then he bought it for our whole team/department/company!”
+(I love that story.)
+People keep telling me that they got their job thanks in part to reading it or that it influenced their
+choice of a career.
+But I know that eventually the aging effect is going to keep people from reading it, for the same reason
+that it was so hard to get my son to watch black and white movies when he was young, no matter how
+good they were.
+Clearly, it’s time for new examples.
+#2. The world has changed
+To say that computers and the Internet and the way we use them have changed a lot lately is putting it
+mildly. Very mildly.
+The landscape has changed in three ways:
+Technology got its hands on some steroids.
+In 2000, we were using the Web on relatively large
+screens, with a mouse or touchpad and a keyboard. And we were sitting down, often at a desk,
+when we did.
+Now we use tiny computers that we carry around with us all the time, with still and video
+cameras, magical maps that know exactly where we are, and our entire libraries of books and
+music built in. And are always connected to the Internet. Oh, and they’re phones, too.
+Heck, I can use my “phone” to
+...book a restaurant reservation in seconds
+...adjust the heat in my house from anywhere
+...or deposit a check without going to an ATM
+It’s no flying car (which, come to think of it, we were promised we’d have by now), but it’s pretty
+impressive.
+The Web itself kept improving.
+Even when I’m using my desktop computer to do all the things
+I’ve always done on the Web (buying stuff, making travel plans, connecting with friends, reading
+the news, and settling bar bets), the sites I use tend to be much more powerful and useful than
+their predecessors.
+We’ve come to expect things like autosuggest and autocorrect, and we’re annoyed when we
+can’t
+pay a parking ticket or renew a driver’s license online.
+Usability went mainstream.
+In 2000, not that many people understood the importance of
+usability.
+Now, thanks in large part to Steve Jobs (and Jonathan Ive), almost everyone understands that it’s
+important, even if they’re still not entirely sure what it is. Except now they usually call it User
+Experience Design (UXD or just UX), an umbrella term for any activity or profession that
+contributes to a better experience for the user.
+It’s great that there’s now so much more emphasis on designing for the user, but all the new job
+descriptions, subspecialties, and tools that have come along with this evolution have left a lot of
+people confused about what they should actually
+do
+about it.
+I’ll be talking about all three of these changes throughout the book.
+Don’t get me wrong...
+This edition has new examples, some new principles, and a few things I’ve learned along the way, but
+it’s still the same book, with the same purpose: It’s still a book about designing great, usable Web sites.
+And it’s also still a book about designing anything that people need to interact with, whether it’s a
+microwave oven, a mobile app, or an ATM.
+The basic principles are the same even if the landscape has changed, because usability is about people
+and how they understand and use things, not about technology. And while technology often changes
+quickly, people change very slowly.
+Or as Jakob Nielsen so aptly put it:
+The human brain’s capacity doesn’t change from one year to the next, so the insights from
+studying human behavior have a very long shelf life. What was difficult for users twenty years
+ago continues to be difficult today.
+I hope you enjoy the new edition. And don’t forget to wave in a few years when you pass me in your
+flying car.
+STEVE KRUG
+NOVEMBER 2013
+Introduction: Read me first
+THROAT CLEARING AND DISCLAIMERS
+I can’t tell you anything you don’t already know. But I’d like to clarify a few things.
+I have a great job. I’m a usability consultant. Here’s what I do:
+People (“clients”) send me something they’re working on.
+It could be designs for a new Web site they’re building, or the URL of a site that they’re
+redesigning, or a prototype of an app.
+I try using what they send me, doing the things that their users would need or want to do with it. I
+note the places where people are likely to get stuck and the things that I think will confuse them
+(an “expert usability review”).
+Sometimes I get other people to try using it while I watch to see where
+they
+get stuck and
+confused (“usability testing”).
+I have a meeting with the client’s team to describe the problems I found that are likely to cause
+users grief (“usability issues”) and help them decide which ones are most important to fix and
+how best to fix them.
+Sometimes we work by the phone...
+...and sometimes in person
+I used to write what I called the “big honking report” detailing my findings, but I finally realized
+that it wasn’t worth the time and effort. A live presentation allows people to ask me questions and
+voice their concerns—something a written report doesn’t do. And for teams doing Agile or Lean
+development, there’s no time for written reports anyway.
+They pay me.
+Being a consultant, I get to work on interesting projects with a lot of nice, smart people. I get to work at
+home most of the time and I don’t have to sit in mind-numbing meetings every day or deal with office
+politics. I get to say what I think, and people usually appreciate it. And I get paid well.
+On top of all that, I get a lot of job satisfaction, because when we’re finished, the things they’re building
+are almost always much better than when we started.
+The bad news: You probably don’t have a usability professional
+Almost every development team could use somebody like me to help them build usability into their
+products. Unfortunately, the vast majority of them can’t afford to hire a usability professional.
+And even if they could, there aren’t enough to go around. At last count there were umpteen billion Web
+sites (and umpteen billion apps for the iPhone alone
+) and only about 10,000 usability consultants
+worldwide. You do the math.
+And even if you do have a professional on your team, that person can’t possibly look at everything the
+team produces.
+In the last few years, making things more usable has become almost everybody’s responsibility. Visual
+designers and developers now often find themselves doing things like interaction design (deciding what
+happens next when the user clicks, taps, or swipes) and information architecture (figuring out how
+everything should be organized).
+I wrote this book mainly for people who can’t afford to hire (or rent) someone like me.
+Knowing some usability principles will help you see the problems yourself—and help keep you from
+creating them in the first place.
+No question: If you can afford to, hire someone like me. But if you can’t, I hope this book will enable
+you to do it yourself (in your copious spare time).
+The good news: It’s not rocket surgery™
+Fortunately, much of what I do is just common sense, and anyone with some interest can learn to do it.
+Like a lot of common sense, though, it’s not necessarily obvious until
+after
+someone’s pointed it out to
+you.
+I spend a lot of my time telling people things they already know, so don’t be surprised if you find
+yourself thinking “I knew
+that
+” a lot in the pages ahead.
+It’s a thin book
+More good news: I’ve worked hard to keep this book short—hopefully short enough so you can read it
+on a long plane ride. I did this for two reasons:
+If it’s short, it’s more likely to actually be used.
+I’m writing for the people who are in the
+trenches—the designers, the developers, the site producers, the project managers, the marketing
+people, and the people who sign the checks—and for the one-man-bands who are doing it all
+themselves.
+Usability isn’t your life’s work, and you don’t have time for a long book.
+You don’t need to know everything.
+As with any field, there’s a lot you
+could
+learn about
+usability. But unless you’re a usability professional, there’s a limit to how much is
+useful
+for you
+to learn.
+I find that the most valuable contributions I make to each project always come from keeping just a few
+key usability principles in mind. I think there’s a lot more leverage for most people in understanding
+these principles than in another laundry list of specific do’s and don’ts. I’ve tried to boil down the few
+things I think everybody involved in design should know about usability.
+Not present at time of photo
+Just so you don’t waste your time looking for them, here are a few things you won’t find in this book:
+Hard and fast usability rules.
+I’ve been at this for a long time, long enough to know that there is
+no one “right” answer to most usability questions. Design is a complicated process and the real
+answer to most of the questions people ask me is “It depends.” But I do think that there are a few
+useful guiding principles it always helps to have in mind, and those are what I’m trying to convey.
+Predictions about the future of technology and the Web.
+Honestly, your guess is as good as
+mine. The only thing I’m sure of is that (a) most of the predictions I hear are almost certainly
+wrong, and (b) the things that will turn out to be important will come as a surprise, even though in
+hindsight they’ll seem perfectly obvious.
+Bad-mouthing of poorly designed sites and apps.
+If you enjoy people poking fun at things with
+obvious flaws, you’re reading the wrong book. Designing, building, and maintaining a great Web
+site or app isn’t easy. It’s like golf: a handful of ways to get the ball in the hole, a million ways not
+to. Anyone who gets it even half right has my admiration.
+As a result, you’ll find that the examples I use tend to be from excellent products with minor
+flaws. I think you can learn more from looking at good designs than bad ones.
+Now with Mobile!
+One of the dilemmas I faced when updating this book was that it’s always been a book about designing
+usable Web sites. Even though the principles apply to the design of anything people have to interact
+with (including things like election ballots and voting booths, and even PowerPoint presentations), its
+focus was clearly on Web design, and all the examples were from Web sites. Until recently, that’s what
+most people were working on.
+But now there are a lot of people designing mobile apps, and even the people working on Web sites
+have to create versions of them that work well on mobile devices. I know they’re very interested in how
+all of this applies to them.
+So I did three things:
+Included mobile examples wherever it made sense
+Added a new chapter about some mobile-specific usability issues
+And the most important one: Added “and Mobile” to the subtitle on the cover
+And as you’ll see, in some places where it made things clearer, instead of “Web site” I’ve written “Web
+site or mobile app.” In most cases, though, I used the Web-centric wording to keep things from getting
+cumbersome and distracting.
+One last thing, before we begin
+One crucial thing, really: My definition of usability.
+You’ll find a lot of different definitions of usability, often breaking it down into attributes like
+Useful:
+Does it do something people need done?
+Learnable:
+Can people figure out how to use it?
+Memorable:
+Do they have to relearn it each time they use it?
+Effective:
+Does it get the job done?
+Efficient:
+Does it do it with a reasonable amount of time and effort?
+Desirable:
+Do people want it?
+and recently even
+Delightful:
+Is using it enjoyable, or even fun?
+I’ll talk about these later. But to me, the important part of the definition is pretty simple. If something is
+usable—whether it’s a Web site, a remote control, or a revolving door—it means that
+A person of average (or even below average) ability and experience can figure out how to use
+the thing to accomplish something without it being more trouble than it’s worth.
+Take my word for it: It’s really that simple.
+I hope this book will help you build better products and—if it lets you skip a few of the endless
+arguments about design—maybe even get home in time for dinner once in a while.
+Guiding Principles
+Chapter 1. Don’t make me think!
+KRUG’S FIRST LAW OF USABILITY
+Michael, why are the drapes open?
+People often ask me:
+“What’s the most important thing I should do if I want to make sure my site or app is easy to
+use?”
+The answer is simple. It’s not “Nothing important should ever be more than two clicks away” or “Speak
+the user’s language” or “Be consistent.”
+It’s...
+“Don’t make me think!”
+For as long I can remember, I’ve been telling people that this is my first law of usability.
+It’s the overriding principle—the ultimate tie breaker when deciding whether a design works or it
+doesn’t. If you have room in your head for only one usability rule, make this the one.
+For instance, it means that as far as is humanly possible, when I look at a Web page it should be self-
+evident. Obvious. Self-explanatory.
+I should be able to “get it”—what it is and how to use it—without expending any effort thinking about
+it.
+Just how self-evident are we talking about?
+Well, self-evident enough, for instance, that your next door neighbor, who has no interest in the subject
+of your site and who barely knows how to use the Back button, could look at your Home page and say,
+“Oh, it’s a _____.” (With any luck, she’ll say, “Oh, it’s a _____. Great!” But that’s another subject.)
+Think of it this way:
+When I’m looking at a page that doesn’t make me think, all the thought balloons over my head say
+things like “OK, there’s the_____. And that’s a _____. And there’s the thing that I want.”
+Not Thinking
+But when I’m looking at a page that makes me think, all the thought balloons over my head have
+question marks in them.
+Thinking
+When you’re creating a site, your job is to get rid of the question marks.
+Things that make us think
+All kinds of things on a Web page can make us stop and think unnecessarily. Take names, for example.
+Typical culprits are cute or clever names, marketing-induced names, company-specific names, and
+unfamiliar technical names.
+For instance, suppose a friend tells me that XYZ Corp is looking to hire someone with my exact
+qualifications, so I head off to their Web site. As I scan the page for something to click, the name
+they’ve chosen for their job listings section makes a difference.
+Note that these things are always on a continuum somewhere between “Obvious to everybody” and
+“Truly obscure,” and there are always tradeoffs involved.
+For instance, “Jobs” may sound too undignified for XYZ Corp, or they may be locked into “Job-o-
+Rama” because of some complicated internal politics or because that’s what it’s always been called in
+their company newsletter.
+My main point is that the tradeoffs should usually be skewed further in the
+direction of “Obvious” than we think.
+Another needless source of question marks over people’s heads is links and buttons that aren’t
+obviously clickable. As a user, I should never have to devote a millisecond of thought to whether things
+are clickable—or not.
+You may be thinking, “Well, it really doesn’t matter that much. If you click or tap it and nothing
+happens, what’s the big deal?”
+The point is that every question mark adds to our cognitive workload, distracting our attention from the
+task at hand. The distractions may be slight but they add up, especially if it’s something we do all the
+time like deciding what to click on.
+And as a rule, people don’t
+like
+to puzzle over how to do things. They enjoy puzzles in their place—
+when they want to be entertained or diverted or challenged—but not when they’re trying to find out
+what time their dry cleaner closes. The fact that the people who built the site didn’t care enough to make
+things obvious—and easy—can erode our confidence in the site and the organization behind it.
+Another example from a common task: booking a flight.
+Granted, most of this “mental chatter” takes place in a fraction of a second, but you can see that it’s a
+pretty noisy process, with a lot of question marks. And then there’s a puzzling error at the end.
+Another site just takes what I type and gives me choices that make sense, so it’s hard to go wrong.
+No question marks. No mental chatter. And no errors.
+I could list dozens of things that users shouldn’t spend their time thinking about, like
+Where am I?
+Where should I begin?
+Where did they put _____?
+What are the most important things on this page?
+Why did they call it that?
+Is that an ad or part of the site?
+But the last thing you need is another checklist to add to your stack of design checklists. The most
+important thing you can do is to understand the basic principle of eliminating question marks. When
+you do, you’ll begin to notice all the things that make
+you
+think in the sites and apps
+you
+use. And
+eventually you’ll learn to recognize and avoid them in the things you’re building.
+You can’t make everything self-evident
+Your goal should be for each page or screen to be self-evident, so that just by looking at it the average
+user
+will know what it is and how to use it. In other words, they’ll “get it” without having to think
+about it.
+Sometimes, though, particularly if you’re doing something original or groundbreaking or something
+that’s inherently complicated, you have to settle for
+self-explanatory
+. On a self-explanatory page, it
+takes a
+little
+thought to “get it”—but only a little. The appearance of things (like size, color, and layout),
+their well-chosen names, and the
+small
+amounts of carefully crafted text should all work together to
+create a sense of nearly effortless understanding.
+Here’s the rule: If you can’t make something self-evident, you at least need to make it self-explanatory.
+Why is all of this so important?
+Oddly enough, not for the reason people usually cite:
+It’s true that there’s a lot of competition out there. Especially in things like mobile apps, where there are
+often many readily available (and equally attractive) alternatives, and the cost of changing horses is
+usually negligible (99 cents or even “Free”).
+But it’s not
+always
+true that people are fickle. For instance:
+They may have no choice but to stick with it, if it’s their only option (e.g., a company intranet, or
+their bank’s mobile app, or the only site that sells the rattan they’re looking for).
+You’d be surprised at how long some people will tough it out on sites that frustrate them, often
+blaming themselves and not the site. There’s also the “I’ve waited ten minutes for this bus already,
+so I may as well hang in a little longer” phenomenon.
+Besides, who’s to say that the competition will be any less frustrating?
+So why, then?
+Making every page or screen self-evident is like having good lighting in a store: it just makes
+everything seem better. Using a site that doesn’t make us think about unimportant things feels effortless,
+whereas puzzling over things that don’t matter to us tends to sap our energy and enthusiasm—and time.
+But as you’ll see in the next chapter when we examine how we really use the Web, the main reason why
+it’s important not to make me think is that most people are going to spend far less time looking at the
+pages we design than we’d like to imagine.
+As a result, if Web pages are going to be effective, they have to work most of their magic at a glance.
+And the best way to do this is to create pages that are self-evident, or at least self-explanatory.
+Chapter 2. How we
+really
+use the Web
+SCANNING, SATISFICING, AND MUDDLING THROUGH
+Why are things always in the last place you look for them? Because you stop looking when you find
+them!
+In all the time I’ve spent watching people use the Web, the thing that has struck me most is the
+difference between how we think people use Web sites and how they actually use them.
+When we’re creating sites, we act as though people are going to pore over each page, reading all of our
+carefully crafted text, figuring out how we’ve organized things, and weighing their options before
+deciding which link to click.
+What they actually do most of the time (if we’re lucky) is
+glance
+at each new page, scan
+some
+of the
+text, and click on the first link that catches their interest or vaguely resembles the thing they’re looking
+for. There are almost always large parts of the page that they don’t even look at.
+We’re thinking “great literature” (or at least “product brochure”), while the user’s reality is much closer
+to “billboard going by at 60 miles an hour.”
+As you might imagine, it’s a little more complicated than this, and it depends on the kind of page, what
+the user is trying to do, how much of a hurry she’s in, and so on. But this simplistic view is much closer
+to reality than most of us imagine.
+It makes sense that we picture a more rational, attentive user when we’re designing pages. It’s only
+natural to assume that everyone uses the Web the same way we do, and—like everyone else—we tend
+to think that our own behavior is much more orderly and sensible than it really is.
+If you want to design effective Web pages, though, you have to learn to live with three facts about real-
+world Web use.
+FACT OF LIFE #1:
+We don’t read pages. We scan them.
+One of the very few well-documented facts about Web use is that people tend to spend very little time
+reading
+most Web pages. Instead, we scan (or skim) them, looking for words or phrases that catch our
+eye.
+The exception, of course, is pages that contain documents like news stories, reports, or product
+descriptions, where people will revert to reading—but even then, they’re often alternating between
+reading and scanning.
+Why do we scan?
+We’re usually on a mission.
+Most Web use involves trying to get something done, and usually
+done quickly. As a result, Web users tend to act like sharks: They have to keep moving, or they’ll
+die. We just don’t have the time to read any more than necessary.
+We know we don’t
+need
+to read everything.
+On most pages, we’re really only interested in a
+fraction of what’s on the page. We’re just looking for the bits that match our interests or the task at
+hand, and the rest of it is irrelevant. Scanning is how we find the relevant bits.
+We’re good at it.
+It’s a basic skill: When you learn to read, you also learn to scan. We’ve been
+scanning newspapers, magazines, and books—or if you’re under 25, probably reddit, Tumblr, or
+Facebook—all our lives to find the parts we’re interested in, and we know that it works.
+The net effect is a lot like Gary Larson’s classic Far Side cartoon about the difference between what we
+say to dogs and what they hear. In the cartoon, the dog (named Ginger) appears to be listening intently
+as her owner gives her a serious talking-to about staying out of the garbage. But from the dog’s point of
+view, all he’s saying is “blah blah GINGER blah blah blah blah GINGER blah blah blah.”
+What we see when we look at a page depends on what we have in mind, and it’s usually just a fraction
+of what’s there.
+Like Ginger, we tend to focus on words and phrases that seem to match (a) the task at hand or (b) our
+current or ongoing personal interests. And of course, (c) the trigger words that are hardwired into our
+nervous systems, like “Free,” “Sale,” and “Sex,” and our own name.
+FACT OF LIFE #2:
+We don’t make optimal choices. We satisfice.
+When we’re designing pages, we tend to assume that users will scan the page, consider all of the
+available options, and choose the best one.
+In reality, though, most of the time we
+don’t
+choose the best option—we choose the
+first reasonable
+option
+, a strategy known as satisficing.
+As soon as we find a link that seems like it might lead to what
+we’re looking for, there’s a very good chance that we’ll click it.
+I’d observed this behavior for years, but its significance wasn’t really clear to me until I read Gary
+Klein’s book
+Sources of Power: How People Make Decisions
+.
+Klein spent many years studying naturalistic decision making: how people like firefighters, pilots,
+chessmasters, and nuclear power plant operators make high-stakes decisions in real situations with time
+pressure, vague goals, limited information, and changing conditions.
+Klein’s team of observers went into their first study (of field commanders at fire scenes) with the
+generally accepted model of rational decision making: Faced with a problem, a person gathers
+information, identifies the possible solutions, and chooses the best one. They started with the hypothesis
+that because of the high stakes and extreme time pressure, fire captains would be able to compare only
+two options, an assumption they thought was conservative.
+As it turned out, the fire commanders didn’t compare
+any
+options. They took the first reasonable plan
+that came to mind and did a quick mental test for possible problems. If they didn’t find any, they had
+their plan of action.
+So why don’t Web users look for the best choice?
+We’re usually in a hurry.
+And as Klein points out, “Optimizing is hard, and it takes a long time.
+Satisficing is more efficient.”
+There’s not much of a penalty for guessing wrong.
+Unlike firefighting, the penalty for guessing
+wrong on a Web site is usually only a click or two of the Back button, making satisficing an
+effective strategy. (Back is the most-used button in Web browsers.)
+Weighing options may not improve our chances.
+On poorly designed sites, putting effort into
+making the best choice doesn’t really help. You’re usually just as well off going with your first
+guess and using the Back button if it doesn’t work out.
+Guessing is more fun.
+It’s less work than weighing options, and if you guess right, it’s faster.
+And it introduces an element of chance—the pleasant possibility of running into something
+surprising and good.
+Of course, this is not to say that users never weigh options before they click. It depends on things like
+their frame of mind, how pressed they are for time, and how much confidence they have in the site.
+FACT OF LIFE #3:
+We don’t figure out how things work. We muddle through.
+One of the things that becomes obvious as soon as you do any usability testing—whether you’re testing
+Web sites, software, or household appliances—is the extent to which people use things all the time
+without understanding how they work, or with completely wrong-headed ideas about how they work.
+Faced with any sort of technology, very few people take the time to read instructions. Instead, we forge
+ahead and muddle through, making up our own vaguely plausible stories about what we’re doing and
+why it works.
+It often reminds me of the scene at the end of
+The Prince and the Pauper
+where the real prince
+discovers that the look-alike pauper has been using the Great Seal of England as a nutcracker in his
+absence. (It makes perfect sense—to him, the seal is just this great big, heavy chunk of metal.)
+And the fact is, we get things done that way. I’ve seen lots of people use software, Web sites, and
+consumer products effectively in ways that are nothing like what the designers intended.
+Take the Web browser, for instance—a crucial part of Internet use. To people who build Web sites, it’s
+an application that you use to view Web pages. But if you ask users what a browser is, a surprisingly
+large percentage will say something like “It’s what I use to search...to find things” or “It’s the search
+engine.” Try it yourself: ask some family members what a Web browser is. You may be surprised.
+Many people use the Web extensively without knowing that they’re using a browser. What they know is
+you type something in a box and stuff appears.
+But it doesn’t matter to them: They’re muddling
+through and using the thing successfully.
+And muddling through is not limited to beginners. Even technically savvy users often have surprising
+gaps in their understanding of how things work. (I wouldn’t be surprised if even Mark Zuckerberg and
+Sergey Brin have some bits of technology in their lives that they use by muddling through.)
+Why does this happen?
+It’s not important to us.
+For most of us, it doesn’t matter to us whether we understand how
+things work, as long as we can use them. It’s not for lack of intelligence, but for lack of caring. It’s
+just not important to us.
+If we find something that works, we stick to it.
+Once we find something that works—no matter
+how badly—we tend not to look for a better way. We’ll use a better way if we stumble across one,
+but we seldom look for one.
+It’s always interesting to watch designers and developers observe their first usability test. The first time
+they see a user click on something completely inappropriate, they’re surprised. (For instance, when the
+user ignores a nice big fat “Software” button in the navigation bar, saying something like, “Well, I’m
+looking for software, so I guess I’d click here on ‘Cheap Stuff’ because cheap is always good.”) The
+user may even find what he’s looking for eventually, but by then the people watching don’t know
+whether to be happy or not.
+The second time it happens, they’re yelling “Just click on ‘Software’!” The third time, you can see them
+thinking: “Why are we even bothering?”
+And it’s a good question: If people manage to muddle through so much, does it really matter whether
+they “get it”? The answer is that it matters a great deal because while muddling through may work
+sometimes, it tends to be inefficient and error-prone.
+On the other hand, if users “get it”:
+There’s a much better chance that they’ll find what they’re looking for, which is good for them
+and for you.
+There’s a better chance that they’ll understand the full range of what your site has to offer—not
+just the parts that they stumble across.
+You have a better chance of steering them to the parts of your site that you want them to see.
+They’ll feel smarter and more in control when they’re using your site, which will bring them
+back. You can get away with a site that people muddle through only until someone builds one
+down the street that makes them feel smart.
+If life gives you lemons...
+By now you may be thinking (given this less than rosy picture of your audience and how they use the
+Web), “Why don’t I just get a job at the local 7-Eleven? At least there my efforts
+might
+be appreciated.”
+So, what’s a girl to do?
+I think the answer is simple: If your audience is going to act like you’re designing billboards, then
+design great billboards.
+Chapter 3. Billboard Design 101
+DESIGNING FOR SCANNING, NOT READING
+If you / Don’t know / Whose signs / These are You can’t have / Driven very far / Burma-Shave!
+Faced with the fact that your users are whizzing by, there are some important things you can do to make
+sure they see and understand as much of what they need to know—and of what you
+want
+them to know
+—as possible:
+Take advantage of conventions
+Create effective visual hierarchies
+Break pages up into clearly defined areas
+Make it obvious what’s clickable
+Eliminate distractions
+Format content to support scanning
+Conventions are your friends
+One of the best ways to make almost anything easier to grasp in a hurry is to follow the existing
+conventions—the widely used or standardized design patterns. For example:
+Stop signs.
+Given how crucial it is that drivers see and recognize them at a glance, at a distance,
+in all kinds of weather and lighting conditions, it’s a really good thing that all stop signs look the
+same. (Some of the specifics may vary from country to country, but overall they’re remarkably
+consistent around the world.)
+The convention includes a distinctive shape, the word for “Stop,” a highly visible color that
+contrasts with most natural surroundings, and standardized size, height, and location.
+Controls in cars.
+Imagine trying to drive a rental car if the gas pedal wasn’t always to the right of
+the brake pedal, or the horn wasn’t always on the steering wheel.
+In the past twenty years, many conventions for Web pages have evolved. As users, we’ve come to have
+a lot of expectations about
+Where things will be located on a page.
+For example, users expect the logo identifying the site
+to be in the top-left corner (at least in countries where reading is left-to-right) and the primary
+navigation to be across the top or down the left side.
+How things work.
+For example, almost all sites that sell products use the metaphor of a shopping
+cart and a very similar series of forms for specifying things like your method of payment, your
+shipping address, and so on.
+How things look.
+Many elements have a standardized appearance, like the icon that tells you it’s
+a link to a video, the search icon, and the social networking sharing options.
+Conventions have also evolved for different
+kinds
+of sites—commerce, colleges, blogs, restaurants,
+movies, and many more—since all the sites in each category have to solve the same set of problems.
+SomeSlightlyIrregular.com
+cityislandmovie.com
+These conventions didn’t just come out of thin air: They all started life as somebody’s bright idea. If an
+idea works well enough, other sites imitate it and eventually enough people have seen it in enough
+places that it needs no explanation.
+When applied well, Web conventions make life easier for users because they don’t have to constantly
+figure out what things are and how they’re supposed to work as they go from site to site.
+Want proof that conventions help? See how much you know about this page—even if you can’t
+understand a word of it—just because it follows some conventions.
+One problem with conventions, though: Designers are often reluctant to take advantage of them.
+Faced with the prospect of following a convention, there’s a great temptation for designers to try
+reinventing the wheel instead, largely because they feel (not incorrectly) that they’ve been hired to do
+something new and different, not the same old thing. Not to mention the fact that praise from peers,
+awards, and high-profile job offers are rarely based on criteria like “best use of conventions.”
+Occasionally, time spent reinventing the wheel results in a revolutionary new rolling device. But usually
+it just amounts to time spent reinventing the wheel.
+If you’re going to innovate, you have to understand the value of what you’re replacing (or as Dylan put
+it, “To live outside the law, you must be honest”), and it’s easy to underestimate just how much value
+conventions provide. The classic example is custom scrollbars. Whenever a designer decides to create
+scrollbars from scratch—usually to make them prettier—the results almost always make it obvious that
+the designer never thought about how many hundreds or thousands of hours of fine tuning went into the
+evolution of the standard operating system scrollbars.
+If you’re not going to use an existing Web convention, you need to be sure that what you’re replacing it
+with either (a) is so clear and self-explanatory that there’s no learning curve—so it’s as good as the
+convention, or (b) adds so much value that it’s worth a small learning curve.
+My recommendation: Innovate when you
+know
+you have a better idea, but take advantage of
+conventions when you don’t.
+Don’t get me wrong: I’m not in any way trying to discourage creativity. I love innovative and original
+Web design.
+One of my favorite examples is Harlem.org. The whole site is built around Art Kane’s famous photo of
+57 jazz musicians, taken on the steps of a brownstone in Harlem in August 1957. Instead of text links or
+menus, you use the photo to navigate the site.
+Not only is it innovative and fun, but it’s easy to understand and use. And the creators were smart
+enough to understand that the fun might wear off after a while so they also included a more
+conventional category-based navigation.
+You can also browse the musicians by name, instrument, or jazz style.
+The rule of thumb is that you can—and
+should
+—be as creative and innovative as you want, and add as
+much aesthetic appeal as you can,
+as long as you make sure it’s still usable
+.
+And finally, a word about consistency.
+You often hear consistency cited as an absolute good. People win a lot of design arguments just by
+saying “We can’t do that. It wouldn’t be consistent.”
+Consistency
+is
+always a good thing to strive for within your site or app. If your navigation is always in
+the same place, for instance, I don’t have to think about it or waste time looking for it. But there will be
+cases where things will be clearer if you make them
+slightly
+inconsistent.
+Here’s the rule to keep in mind:
+CLARITY TRUMPS CONSISTENCY
+If you can make something
+significantl
+y clearer by making it
+slightly
+inconsistent, choose in favor of
+clarity.
+Create effective visual hierarchies
+Another important way to make pages easy to grasp in a hurry is to make sure that the appearance of the
+things on the page—all of the visual cues—accurately portray the relationships between the things on
+the page: which things are most important, which things are similar, and which things are part of other
+things. In other words, each page should have a clear visual hierarchy.
+Pages with a clear visual hierarchy have three traits:
+The more important something is, the more prominent it is.
+The most important elements are
+either larger, bolder, in a distinctive color, set off by more white space, or nearer the top of the
+page—or some combination of the above.
+Things that are related logically are related visually.
+For instance, you can show that things are
+similar by grouping them together under a heading, displaying them in the same visual style, or
+putting them all in a clearly defined area.
+Things are “nested” visually to show what’s part of what.
+For instance, a site section name
+(“Computer Books”) would appear above the titles of the individual books, reflecting the fact that
+the books are part of the section. And each book title in turn would span all the elements that
+make up the description of that book.
+There’s nothing new about visual hierarchies. Every newspaper page, for instance, uses prominence,
+grouping, and nesting to give us useful information about the contents of the page before we read a
+word.
+This
+picture goes with
+this
+story because they’re both spanned by this headline.
+This
+story is the
+most important because it has the biggest headline and a prominent position on the page.
+We all parse visual hierarchies every day, but it happens so quickly that the only time we’re even
+vaguely aware that we’re doing it is when we
+can’t
+do it—when the visual cues (or absence of them)
+force us to think.
+A good visual hierarchy saves us work by preprocessing the page for us, organizing and prioritizing its
+contents in a way that we can grasp almost instantly.
+But when a page doesn’t have a clear visual hierarchy—if everything looks equally important, for
+instance—we’re reduced to the much slower process of scanning the page for revealing words and
+phrases and then trying to form our own sense of what’s important and how things are organized. It’s a
+lot more work.
+Parsing a page with a visual hierarchy that’s even slightly flawed—where a heading spans things that
+aren’t part of it, for instance—is like reading a carelessly constructed sentence (“Bill put the cat on the
+table for a minute because it was a little wobbly”).
+This flawed visual hierarchy suggests that all the major sections of the site are part of the Computer
+Books subsection.
+Putting the heading where it belongs makes the relationship clearer.
+Even though we can usually figure out what the sentence is supposed to mean, it still throws us
+momentarily and forces us to think when we shouldn’t have to.
+Break up pages into clearly defined areas
+Ideally, on any well-designed Web page users can play a variation of the old TV game show
+$25,000
+Pyramid
+.
+Glancing around, they should be able to point at the different areas of the page and say,
+“Things I can do on this site!” “Links to today’s top stories!” “Products this company sells!” “Things
+they’re eager to sell me!” “Navigation to get to the rest of the site!”
+Dividing the page into clearly defined areas is important because it allows users to decide quickly which
+areas of the page to focus on and which areas they can safely ignore. Eye-tracking studies of Web page
+scanning suggest that users decide very quickly in their initial glances which parts of the page are likely
+to have useful information and then rarely look at the other parts—almost as though they weren’t there.
+(Banner blindness—the ability of users to completely ignore areas they think will contain ads—is just
+the extreme case.)
+Make it obvious what’s clickable
+Since a large part of what people are doing on the Web is looking for the next thing to click, it’s
+important to make it easy to tell what’s clickable.
+As we scan a page, we’re looking for a variety of visual cues that identify things as clickable (or
+“tappable” on touch screens)—things like shape (buttons, tabs, etc.), location (in a menu bar, for
+instance), and formatting (color and underlining).
+This process of looking for clues in the appearance of things that tell us how to use them isn’t limited to
+Web pages. As Don Norman explains so enjoyably in his recently updated usability classic
+The Design
+of Everyday Things
+, we’re constantly parsing our environment (like the handles on doors) for these
+clues (to decide whether to pull or push). Read it. You’ll never look at doors the same way again.
+Easily identifying what’s clickable on a page has waxed and waned as a problem since the beginning of
+the Web.
+It’s currently resurfacing as an issue in mobile design, though, as you’ll see in
+Chapter 10
+.
+In general, you’ll be fine if you just stick to one color for all text links or make sure that their shape and
+location identify them as clickable. Just don’t make silly mistakes like using the same color for links
+and nonclickable headings.
+Keep the noise down to a dull roar
+One of the great enemies of easy-to-grasp pages is visual noise.
+Users have varying tolerances for complexity and distractions; some people have no problem with noisy
+pages, but many find them downright annoying. Users have even been known to put Post-its on their
+screen to cover up animation that’s distracting them while they’re trying to read.
+There are really three different kinds of noise:
+Shouting.
+When everything on the page is clamoring for your attention, the effect can be
+overwhelming: Lots of invitations to buy! Lots of exclamation points, different typefaces, and
+bright colors! Automated slideshows, animation, pop-ups, and the never-ending array of new
+attention-grabbing ad formats!
+The truth is,
+everything
+can’t be important. Shouting is usually the result of a failure to make
+tough decisions about which elements are really the most important and then create a visual
+hierarchy that guides users to them first.
+Disorganization.
+Some pages look like a room that’s been ransacked, with things strewn
+everywhere. This is a sure sign that the designer doesn’t understand the importance of using grids
+to align the elements on a page.
+Clutter.
+We’ve all seen pages—especially Home pages—that just have too much
+stuff.
+The net
+effect is the same as when your email inbox is flooded with things like newsletters from sites that
+have decided that your one contact with them has made you lifelong friends: It’s hard to find and
+focus on the messages you actually care about. You end up with what engineers call a low signal-
+to-noise ratio: Lots of noise, not much information, and the noise obscures the useful stuff.
+When you’re editing your Web pages, it’s probably a good idea to start with the assumption that
+everything
+is visual noise (the “presumed guilty until proven innocent” approach) and get rid of
+anything that’s not making a real contribution. In the face of limited time and attention, everything
+that’s not part of the solution must go.
+Format text to support scanning
+Much of the time—perhaps most of the time—that users spend on your Web pages is spent scanning the
+text in search of something.
+The way your text is formatted can do a lot to make it easier for them.
+Which one would you rather scan?
+Here are the most important things you can do to make your pages scan-friendly:
+Use plenty of headings.
+Well-written, thoughtful headings interspersed in the text act as an
+informal outline or table of contents for a page. They tell you what each section is about or, if
+they’re less literal, they intrigue you. Either way they help you decide which parts to read, scan, or
+skip.
+In general, you’ll want to use more headings than you’d think and put more time into writing
+them.
+Also, be sure to format headings correctly. Two very important things about the styling of headings that
+people often overlook:
+If you’re using more than one level of heading, make sure there’s an obvious, impossible-to-miss visual
+distinction between them. You can do this by making each higher level larger or by leaving more space
+above it.
+Bad
+Better
+Even more important: Don’t let your headings float. Make sure they’re closer to the section they
+introduce than to the section they follow. This makes a huge difference.
+Bad
+Better
+Keep paragraphs short.
+Long paragraphs confront the reader with what Caroline Jarrett and
+Ginny Redish call a “wall of words.” They’re daunting, they make it harder for readers to keep
+their place, and they’re harder to scan than a series of shorter paragraphs.
+You may have been taught that each paragraph has to have a topic sentence, detail sentences, and
+a conclusion, but reading online is different. Even single-sentence paragraphs are fine.
+If you examine a long paragraph, you’ll almost always find that there’s a reasonable place to break
+it in two. Get in the habit of doing it.
+Use bulleted lists.
+Think of it this way: Almost anything that
+can
+be a bulleted list probably
+should
+be. Just look at your paragraphs for any series of items separated by commas or semicolons
+and you’ll find likely candidates.
+And for optimal readability, there should be a small amount of additional space between the items
+in the list.
+Bad
+Better
+Highlight key terms.
+Much page scanning consists of looking for key words and phrases.
+Formatting the most important ones in bold where they first appear in the text makes them easier
+to find. (If they’re already text links, you obviously don’t have to.) Don’t highlight too many
+things, though, or the technique will lose its effectiveness.
+If you really want to learn about making content scannable (or about anything related to writing for
+screens in general), run, do not walk, to an Internet-connected device and order Ginny Redish’s book
+Letting Go of the Words
+.
+And while you’re at it, order a copy for anyone you know who writes, edits, or has anything to do with
+creating digital content. They’ll end up eternally indebted to you.
+Chapter 4. Animal, Vegetable, or Mineral?
+WHY USERS LIKE MINDLESS CHOICES
+It doesn’t matter how many times I have to click, as long as each click is a mindless, unambiguous
+choice.
+Web designers and usability professionals have spent a lot of time over the years debating how many
+times you can expect users to click (or tap) to get what they want without getting too frustrated. Some
+sites even have design rules stating that it should never take more than a specified number of clicks
+(usually three, four, or five) to get to any page in the site.
+On the face of it, “number of clicks to get anywhere” seems like a useful metric. But over time I’ve
+come to think that what really counts is not the number of clicks it takes me to get to what I want
+(although there are limits), but rather how
+hard
+each click is—the amount of thought required and the
+amount of uncertainty about whether I’m making the right choice.
+In general, I think it’s safe to say that users don’t mind a lot of clicks
+as long as each click is painless
+and they have continued confidence that they’re on the right track
+—following what’s often called the
+“scent of information.”
+Links that clearly and unambiguously identify their target give off a strong
+scent that assures users that clicking them will bring them nearer to their “prey.” Ambiguous or poorly
+worded links do not.
+I think the rule of thumb might be something like “three mindless, unambiguous clicks equal one click
+that requires thought.”
+The classic first question in the word game Twenty Questions—“
+Animal, vegetable, or mineral
+?”—is a
+wonderful example of a mindless choice. As long as you accept the premise that anything that’s not a
+plant or an animal—including things as diverse as pianos, limericks, and cheesecake, for instance—falls
+under “mineral,” it requires almost no thought to answer the question correctly.
+Unfortunately, many choices on the Web aren’t as clear.
+For example, as recently as a few years ago when I was trying to buy a product or service to use in my
+home office (like a printer, for instance), most of the manufacturers’ sites asked me to make a top-level
+choice like this:
+Which one was me? I had to think about it, and even when I made my choice I wasn’t very confident it
+was the right one. In fact, what I had to look forward to when the target page finally loaded was even
+more
+thinking to figure out whether I was in the right place.
+It was the feeling I get when I’m standing in front of two mailboxes labeled Stamped Mail and Metered
+Mail with a business reply card in my hand. What do
+they
+think it is—stamped or metered? And what
+happens if I drop it in the wrong box?
+Here’s another example:
+I’m trying to read an article online. The page I arrive at gives me all these options:
+Now I’ve got to scan all this text and work out whether I’m a subscriber but not a member, or a
+member, or neither one. And then I’ll have to dig up the account number or the password that I used or
+decide whether it’s worth joining.
+At this point, the question I’m asking myself is probably changing from “How do I answer this
+question?” to “Just how interested am I in this article?”
+The New York Times
+makes the same kind of choice seem much easier by not confronting you with all
+the details at once. Making an initial selection (to log in or to see your options for subscribing) takes
+you to another screen where you see only the relevant questions or information for that selection.
+This problem of giving the user difficult choices and questions that are hard to answer happens all the
+time in forms. Caroline Jarrett has an entire chapter about it (“Making Questions Easy to Answer”) in
+her book
+Forms that Work: Designing Web Forms for Usability.
+As with Ginny Redish’s book about writing for the Web, anyone who works on forms should have a
+well-worn copy sitting on their desk.
+Some assistance may be required
+Life is complicated, though, and some choices really aren’t simple.
+When you can’t avoid giving me a difficult choice, you need to go out of your way to give me as much
+guidance as I need—but no more.
+This guidance works best when it’s
+Brief:
+The smallest amount of information that will help me
+Timely:
+Placed so I encounter it exactly when I need it
+Unavoidable:
+Formatted in a way that ensures that I’ll notice it
+Examples are tips adjacent to form fields, “What’s this?” links, and even tool tips.
+My favorite example of this kind of just-in-time guidance is found on street corners throughout London.
+It’s brief (“LOOK RIGHT” and an arrow pointing right), timely (you see it at the instant you need to be
+reminded), and unavoidable (you almost always glance down when you’re stepping off a curb).
+I have to think it’s saved the lives of a lot of tourists who expect traffic to be coming from the other
+direction. (I know it saved mine once.)
+Whether you need to offer some help or not, the point is that we face choices all the time on the Web
+and making those choices mindless is one of the most important things you can do to make a site easy to
+use.
+Chapter 5. Omit
+words
+THE ART OF NOT WRITING FOR THE WEB
+Get rid of half the words on each page, then get rid of half of what’s left.
+Of the five or six things that I learned in college, the one that has stuck with me the longest—and
+benefited me the most—is E. B. White’s seventeenth rule in
+The Elements of Style:
+17. Omit needless words
+.
+Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no
+unnecessary sentences, for the same reason that a drawing should have no unnecessary lines
+and a machine no unnecessary parts.
+When I look at most Web pages, I’m struck by the fact that most of the words I see are just taking up
+space, because no one is ever going to read them. And just by being there, all the extra words suggest
+that you may actually
+need
+to read them to understand what’s going on, which often makes pages seem
+more daunting than they actually are.
+My Third Law probably sounds excessive, because it’s meant to. Removing half of the words is actually
+a realistic goal; I find I have no trouble getting rid of half the words on most Web pages without losing
+anything of value. But the idea of removing half of what’s left is just my way of trying to encourage
+people to be ruthless about it.
+Getting rid of all those words that no one is going to read has several beneficial effects:
+It reduces the noise level of the page.
+It makes the useful content more prominent.
+It makes the pages shorter, allowing users to see more of each page at a glance without scrolling.
+I’m not suggesting that the articles at WebMD.com or the stories on NYTimes.com should be shorter
+than they are. But certain kinds of writing tend to be particularly prone to excess.
+Happy talk must die
+We all know happy talk when we see it: It’s the introductory text that’s supposed to welcome us to the
+site and tell us how great it is or to tell us what we’re about to see in the section we’ve just entered.
+If you’re not sure whether something is happy talk, there’s one sure-fire test: If you listen very closely
+while you’re reading it, you can actually hear a tiny voice in the back of your head saying, “Blah blah
+blah blah blah....”
+A lot of happy talk is the kind of self-congratulatory promotional writing that you find in badly written
+brochures. Unlike good promotional copy, it conveys no useful information, and it focuses on saying
+how great we are, as opposed to explaining what makes us great.
+Although happy talk is sometimes found on Home pages—usually in paragraphs that start with the
+words “Welcome to...”—its favored habitat is the front pages of the sections of a site (“section fronts”).
+Since these pages are often just a list of links to the pages in the section with no real content of their
+own, there’s a temptation to fill them with happy talk. Unfortunately, the effect is as if a book publisher
+felt obligated to add a paragraph to the table of contents page saying, “This book contains many
+interesting chapters about _____, _____, and _____. We hope you enjoy them.”
+Happy talk is like small talk—content-free, basically just a way to be sociable. But most Web users
+don’t have time for small talk; they want to get right to the point. You can—and should—eliminate as
+much happy talk as possible.
+Instructions must die
+Another major source of needless words is instructions. The main thing you need to know about
+instructions is that no one is going to read them—at least not until after repeated attempts at “muddling
+through” have failed. And even then, if the instructions are wordy, the odds of users finding the
+information they need are pretty low.
+Your objective should always be to eliminate instructions entirely by making everything self-
+explanatory, or as close to it as possible. When instructions are absolutely necessary, cut them back to
+the bare minimum.
+For example, here are the instructions I found at the beginning of a site survey:
+I think some aggressive pruning makes them much more useful:
+Before: 103 Words
+After: 34 Words
+Please help us improve the site by taking 2-3 minutes to complete this survey.
+NOTE: If you have comments or concerns that require a response, don’t use this form.
+Instead, please contact
+Customer Service
+.
+And now for something completely different
+In these first few chapters, I’ve been trying to convey some guiding principles that I think are good to
+have in mind when you’re building a Web site.
+Now we’re heading into two chapters that look at how these principles apply to two of the biggest and
+most important challenges in Web design: navigation and the Home page.
+You might want to pack a lunch. They’re very long chapters.
+Things You Need to Get Right
+Chapter 6. Street signs and Breadcrumbs
+DESIGNING NAVIGATION
+And you may find yourself | in a beautiful house | with a beautiful wife And you may ask yourself |
+Well... | How did I get here?!
+It’s a fact:
+People won’t use your Web site if they can’t find their way around it.
+You know this from your own experience as a Web user. If you go to a site and can’t find what you’re
+looking for or figure out how the site is organized, you’re not likely to stay long—or come back. So
+how do you create the proverbial “clear, simple, and consistent” navigation?
+Scene from a mall
+Picture this: It’s Saturday afternoon and you’re headed for the mall to buy a chainsaw.
+As you walk through the door at Sears, you’re thinking, “Hmmm. Where do they keep chainsaws?” As
+soon as you’re inside, you start looking at the department names, high up on the walls. (They’re big
+enough that you can read them from all the way across the store.)
+“Hmmm,” you think, “Tools? Or Lawn and Garden?” It could be either one, but you’ve got to start
+somewhere so you head in the direction of Tools.
+When you reach the Tools department, you start looking at the signs at the end of each aisle.
+When you think you’ve got the right aisle, you start looking at the individual products.
+If it turns out you’ve guessed wrong, you try another aisle, or you may back up and start over again in
+the Lawn and Garden department. By the time you’re done, the process looks something like this:
+Basically, you use the store’s navigation systems (the signs and the organizing hierarchy that the signs
+embody) and your ability to scan shelves full of products to find what you’re looking for.
+Of course, the actual process is a little more complex. For one thing, as you walk in the door you
+usually devote a few microseconds to a crucial decision: Are you going to start by looking for
+chainsaws on your own or are you going to ask someone where they are?
+It’s a decision based on a number of variables—how familiar you are with the store, how much you trust
+their ability to organize things sensibly, how much of a hurry you’re in, and even how sociable you are.
+When we factor this decision in, the process looks something like this:
+Note that even if you start looking on your own, if things don’t pan out there’s a good chance that
+eventually you’ll end up asking someone for directions anyway.
+Web Navigation 101
+In many ways, you go through the same process when you enter a Web site.
+You’re usually trying to find something.
+In the “real” world it might be the emergency room or
+a family-size bottle of ketchup. On the Web, it might be a pair of headphones or the name of the
+actor in Casablanca who played the headwaiter at Rick’s.
+You decide whether to ask first or browse first.
+The difference is that on a Web site there’s no
+one standing around who can tell you where things are. The Web equivalent of asking directions is
+searching—typing a description of what you’re looking for in a search box and getting back a list
+of links to places where it
+might
+be.
+Some people (Jakob Nielsen calls them “search-dominant” users) will almost always look for a search
+box as soon as they enter a site. (These may be the same people who look for the nearest clerk as soon
+as they enter a store.)
+Other people (Nielsen’s “link-dominant” users) will almost always browse first, searching only when
+they’ve run out of likely links to click or when they have gotten sufficiently frustrated by the site.
+For everyone else, the decision whether to start by browsing or searching depends on their current frame
+of mind, how much of a hurry they’re in, and whether the site appears to have decent browsable
+navigation.
+If you choose to browse, you make your way through a hierarchy, using signs to guide you.
+Typically, you’ll look around on the Home page for a list of the site’s main sections (like the
+store’s department signs) and click on the one that seems right.
+Then you’ll choose from the list of subsections.
+With any luck, after another click or two you’ll end up with a list of the kind of thing you’re
+looking for.
+Then you can click on the individual links to examine them in detail, the same way you’d take
+products off the shelf and read the labels.
+Eventually, if you can’t find what you’re looking for, you’ll leave.
+This is as true on a Web site
+as it is at Sears. You’ll leave when you’re convinced they haven’t got it or when you’re just too
+frustrated to keep looking.
+Here’s what the process looks like:
+The unbearable lightness of browsing
+Looking for things on a Web site and looking for them in the “real” world have a lot of similarities.
+When we’re exploring the Web, in some ways it even
+feels
+like we’re moving around in a physical
+space. Think of the words we use to describe the experience—like “cruising,” “browsing,” and
+“surfing.” And clicking a link doesn’t “load” or “display” another page—it “takes you to” a page.
+But the Web experience is missing many of the cues we’ve relied on all our lives to negotiate spaces.
+Consider these oddities of Web space:
+No sense of scale.
+Even after we’ve used a Web site extensively, unless it’s a very small site we
+tend to have very little sense of how big it is (50 pages? 1,000? 17,000?).
+For all we know, there
+could be huge corners we’ve never explored. Compare this to a magazine, a museum, or a
+department store, where you always have at least a rough sense of the seen/unseen ratio.
+The practical result is that it’s very hard to know whether you’ve seen everything of interest to
+you in a site, which means it’s hard to know when to stop looking.
+No sense of direction.
+In a Web site, there’s no left and right, no up and down. We may talk about
+moving up and down, but we mean up and down in the hierarchy—to a more general or more
+specific level.
+No sense of location.
+In physical spaces, as we move around we accumulate knowledge about the
+space. We develop a sense of where things are and can take shortcuts to get to them.
+We may get to the chainsaws the first time by following the signs, but the next time we’re just as
+likely to think,
+“Chainsaws? Oh, yeah, I remember where they were: right rear corner, near the refrigerators.”
+And then head straight to them.
+But on the Web, your feet never touch the ground; instead, you make your way around by clicking on
+links. Click on “Power Tools” and you’re suddenly teleported to the Power Tools aisle with no traversal
+of space, no glancing at things along the way.
+When we want to return to something on a Web site, instead of relying on a
+physical
+sense of where it is
+we have to remember where it is in the conceptual hierarchy and retrace our steps.
+This is one reason why bookmarks—stored personal shortcuts—are so important, and why the Back
+button is the most used button in Web browsers.
+It also explains why the concept of Home pages is so important. Home pages are—comparatively—
+fixed places. When you’re in a site, the Home page is like the North Star. Being able to click Home
+gives you a fresh start.
+This lack of physicality is both good and bad. On the plus side, the sense of weightlessness can be
+exhilarating and partly explains why it’s so easy to lose track of time on the Web—the same as when
+we’re “lost” in a good book.
+On the negative side, I think it explains why we use the term “Web navigation” even though we never
+talk about “department store navigation” or “library navigation.” If you look up navigation in a
+dictionary, it’s about doing two things: getting from one place to another, and figuring out where you
+are.
+I think we talk about Web navigation because “figuring out where you are” is a much more pervasive
+problem on the Web than in physical spaces. We’re inherently lost when we’re on the Web, and we can’t
+peek over the aisles to see where we are. Web navigation compensates for this missing sense of place by
+embodying the site’s hierarchy, creating a sense of “there.”
+Navigation isn’t just a
+feature
+of a Web site; it is the Web site, in the same way that the building, the
+shelves, and the cash registers are Sears. Without it, there’s no there there.
+The moral? Web navigation had better be good.
+The overlooked purposes of navigation
+Two of the purposes of navigation are fairly obvious: to help us find whatever it is we’re looking for
+and to tell us where we are.
+But navigation has some other equally important—and easily overlooked—functions:
+It tells us what’s here.
+By making the hierarchy visible, navigation tells us what the site contains.
+Navigation reveals content! And revealing the site may be even more important than guiding or
+situating us.
+It tells us how to use the site.
+If the navigation is doing its job, it tells you
+implicitly
+where to
+begin and what your options are. Done correctly, it should be all the instructions you need. (Which
+is good, since most users will ignore any other instructions anyway.)
+It gives us confidence in the people who built it.
+Every moment we’re in a Web site, we’re
+keeping a mental running tally: “Do these guys know what they’re doing?” It’s one of the main
+factors we use in deciding whether to bail out and deciding whether to ever come back. Clear,
+well-thought-out navigation is one of the best opportunities a site has to create a good impression.
+Web navigation conventions
+Physical spaces like cities and buildings (and even information spaces like books and magazines) have
+their own navigation systems, with conventions that have evolved over time like street signs, page
+numbers, and chapter titles. The conventions specify (loosely) the appearance and location of the
+navigation elements so we know what to look for and where to look when we need them.
+Putting them in a standard place lets us locate them quickly, with a minimum of effort; standardizing
+their appearance makes it easy to distinguish them from everything else.
+For instance, we expect to find street signs at street corners, we expect to find them by looking up (not
+down), and we expect them to look like street signs (horizontal, not vertical).
+We also take it for granted that the name of a building will be above or next to its front door. In a
+grocery store, we expect to find signs near the ends of each aisle. In a magazine, we know there will be
+a table of contents somewhere in the first few pages and page numbers somewhere in the margin of each
+page—and that they’ll look like a table of contents and page numbers.
+Think of how frustrating it is when one of these conventions is broken (when magazines don’t put page
+numbers on advertising pages, for instance).
+Although their appearance can vary significantly, these are the basic navigation conventions for the
+Web:
+
+
