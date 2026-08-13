@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
-# Put these skills where an agent will read them: <target>/.claude/skills/<skill>/SKILL.md
+# Put these skills where an agent will read them: <target>/<skill>/SKILL.md
 #
-#   install.sh                       link every category into ~/.claude/skills
-#   install.sh frontend backend      link only those categories
-#   install.sh -t ../my-project      link into that project's .claude/skills
-#   install.sh -c -t ../my-project   COPY instead of link — editable, yours to change
-#   install.sh -u                    remove the links this script created
+#   install.sh                          link every category into ~/.claude/skills
+#   install.sh frontend backend         link only those categories
+#   install.sh -a codex                 into ~/.codex/skills
+#   install.sh -a opencode              into ~/.config/opencode/skills
+#   install.sh -t ../my-project         into that project's .claude/skills
+#   install.sh -a codex -t ../project   into that project's .codex/skills
+#   install.sh -T /any/path             into a directory you name yourself
+#   install.sh -c -t ../my-project      COPY instead of link — editable, yours to change
+#   install.sh -u                       remove the links this script created
+#
+# -a picks the agent's skills directory:
+#   claude    ~/.claude/skills                    <project>/.claude/skills
+#   codex     ~/.codex/skills                     <project>/.codex/skills
+#   opencode  ~/.config/opencode/skills           <project>/.opencode/skills
+#   agents    (project only)                      <project>/.agents/skills
 #
 # link (default): one copy on disk, in this repo. Editing a linked skill edits the repo.
 # copy (-c):      independent files. Hackable, and they never see an update from here.
@@ -13,20 +23,36 @@
 set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-TARGET="$HOME/.claude/skills"
+AGENT=claude
+PROJECT=""
+TARGET=""
 MODE=link
 FORCE=false
 
-while getopts ":t:cuf" opt; do
+while getopts ":a:t:T:cuf" opt; do
   case $opt in
-    t) TARGET="$(cd "$OPTARG" && pwd)/.claude/skills" ;;
+    a) AGENT="$OPTARG" ;;
+    t) PROJECT="$(cd "$OPTARG" && pwd)" ;;
+    T) TARGET="$OPTARG" ;;
     c) MODE=copy ;;
     u) MODE=uninstall ;;
     f) FORCE=true ;;
-    *) echo "usage: $0 [-t project-dir] [-c] [-f] [-u] [category...]" >&2; exit 2 ;;
+    *) echo "usage: $0 [-a claude|codex|opencode|agents] [-t project-dir] [-T path] [-c] [-f] [-u] [category...]" >&2; exit 2 ;;
   esac
 done
 shift $((OPTIND - 1))
+
+if [ -z "$TARGET" ]; then
+  case "$AGENT" in
+    claude)   TARGET="${PROJECT:+$PROJECT/.claude}";   TARGET="${TARGET:-$HOME/.claude}/skills" ;;
+    codex)    TARGET="${PROJECT:+$PROJECT/.codex}";    TARGET="${TARGET:-$HOME/.codex}/skills" ;;
+    opencode) TARGET="${PROJECT:+$PROJECT/.opencode}"; TARGET="${TARGET:-${XDG_CONFIG_HOME:-$HOME/.config}/opencode}/skills" ;;
+    agents)
+      [ -n "$PROJECT" ] || { echo "-a agents is project-scoped: pass -t <project-dir>" >&2; exit 2; }
+      TARGET="$PROJECT/.agents/skills" ;;
+    *) echo "unknown agent: $AGENT (claude, codex, opencode, agents — or name a path with -T)" >&2; exit 2 ;;
+  esac
+fi
 
 if [ $# -gt 0 ]; then
   CATEGORIES=("$@")

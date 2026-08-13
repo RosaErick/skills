@@ -12,40 +12,73 @@ the model then sees two candidates for every trigger.
 
 ### Managed — read-only, updates when I ship
 
+Both plugin manifests (`.claude-plugin/`, `.codex-plugin/`) point at the same flat `skills/` folder,
+so every host installs the identical set.
+
+**Claude Code** — two separate prompts; the install doesn't take in one:
+
 ```
 /plugin marketplace add RosaErick/skills
 /plugin install skills@erick-skills
 /plugin update skills          # pick up whatever I pushed since
 ```
 
-Claude Code keeps its own checkout and reads the skills from there. Nothing lands in your project
-and nothing is yours to edit — an update overwrites it. This is the option to want unless you
+**Codex** — add the marketplace from the shell, then install from inside the TUI:
+
+```bash
+codex plugin marketplace add RosaErick/skills
+codex
+```
+
+Then `/plugins`, select the `erick-skills` marketplace, install. Skills are invoked with `@name`.
+The desktop app picks the same install up after a restart. Remove with `codex plugin remove skills`.
+
+**GitHub Copilot CLI** uses the same marketplace mechanism
+(`copilot plugin marketplace add RosaErick/skills`), and namespaces the skills under the plugin name.
+
+The host keeps its own checkout and reads the skills from there. Nothing lands in your project and
+nothing is yours to edit — an update overwrites it. This is the option to want unless you
 specifically need to change a skill.
+
+### Linked from a clone — one copy on disk, edits go back to the repo
+
+The script links skill by skill, because hosts look for `<target>/<skill>/SKILL.md` and linking a
+whole category would hide everything inside it.
+
+```bash
+scripts/install.sh                       # ~/.claude/skills
+scripts/install.sh -a codex              # ~/.codex/skills
+scripts/install.sh -a opencode           # ~/.config/opencode/skills
+scripts/install.sh frontend backend      # only these categories
+scripts/install.sh -t ../my-project      # that project's .claude/skills
+scripts/install.sh -a codex -t ../proj   # that project's .codex/skills
+scripts/install.sh -a agents -t ../proj  # that project's .agents/skills
+scripts/install.sh -T ~/.qwen/skills     # any directory you name
+scripts/install.sh -u                    # remove the links again
+```
+
+| `-a` | Personal | Project (`-t`) |
+|---|---|---|
+| `claude` (default) | `~/.claude/skills` | `<project>/.claude/skills` |
+| `codex` | `~/.codex/skills` | `<project>/.codex/skills` |
+| `opencode` | `~/.config/opencode/skills` | `<project>/.opencode/skills` |
+| `agents` | — | `<project>/.agents/skills` — the shared folder several hosts read |
+
+Anything not in that table — Qwen Code, Antigravity, a host I haven't tried — takes `-T` with its
+skills directory. Editing a linked skill edits this repo, which is what you want on the machine where
+you maintain them. It never overwrites a real folder already in the target, and `-u` only removes
+links pointing back here.
 
 ### Vendored — editable, frozen
 
 ```bash
-npx github:RosaErick/skills -c -t .              # every skill, copied into ./.claude/skills
-npx github:RosaErick/skills -c -t . frontend     # or just one category
+npx github:RosaErick/skills -c -t .                    # copy into ./.claude/skills
+npx github:RosaErick/skills -c -a codex -t .           # copy into ./.codex/skills
+npx github:RosaErick/skills -c -t . frontend           # or just one category
 ```
 
 Real files, copied in, yours to hack on. They never see an update from here again; re-running with
 `-f` overwrites your edits. Use it when a skill needs to become project-specific.
-
-### From a clone
-
-```bash
-scripts/install.sh                     # symlink every category into ~/.claude/skills
-scripts/install.sh frontend backend    # or just these
-scripts/install.sh -t ../my-project    # into that project's .claude/skills
-scripts/install.sh -c -t ../my-project # copy instead of link (same as the npx route)
-scripts/install.sh -u                  # remove the links again
-```
-
-Symlinks, so there's one copy on disk and editing a linked skill edits this repo — that's the mode
-for the machine where you maintain them. Links go in one skill at a time, because agents look for
-`<target>/<skill>/SKILL.md` and linking a whole category would hide everything inside it. It never
-overwrites a real folder already in the target, and `-u` only removes links pointing back here.
 
 ## Maintaining
 
@@ -119,12 +152,3 @@ Kept on purpose, since they're different depths of the same subject:
 - `backend/api-patterns` (the contract) × `backend/fastify` (implementing it) × `backend/api-documentation-master` (publishing it) × `backend/mcp-builder` (exposing it to agents)
 - `quality/lint-and-validate` (lint as a habit, any stack) × `quality/linting-neostandard-eslint9` (ESLint v9 setup and migration)
 
-## Descriptions
-
-Nothing queued. Every model-invoked skill now says **when** to reach for it, not just what it is —
-that was the gap, and it's closed.
-
-New skills follow the fuller shape the reworked ones use: topic, then `Use when …` in the words a
-real request uses, then `Trigger terms:`, and — where a neighbour would otherwise match the same
-request — an explicit pointer to it. Imported skills keep their own phrasing as long as the trigger
-is there.
