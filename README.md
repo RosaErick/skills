@@ -1,6 +1,6 @@
 # skills
 
-My agent skills — 77 of them, all in one place, organized by category.
+My curated agent skills — 77 of them, all in one place, organized by category.
 
 Each skill is a folder with a `SKILL.md` (frontmatter `name` + `description`) and supporting files
 alongside it when needed. It's the standard format Claude Code, Codex, opencode and the like read.
@@ -67,14 +67,14 @@ add the row to the table below, and run `check.py`.
 |---|---|---|
 | [engineering](./engineering/README.md) | Code workflow: spec → tickets → implement → review, TDD, bug diagnosis, domain modeling | 18 |
 | [frontend](./frontend/README.md) | React, Next.js, Tailwind, interface design, mobile, web performance, i18n | 17 |
-| [backend](./backend/README.md) | APIs, Node, Python, Rust, databases, MCP | 7 |
+| [backend](./backend/README.md) | APIs, Node, Python, Rust, databases, MCP | 11 |
 | [infra](./infra/README.md) | Shell, server management, deployment | 4 |
-| [quality](./quality/README.md) | Testing, review, debugging, linting, profiling | 8 |
+| [quality](./quality/README.md) | Testing, review, debugging, linting, profiling | 10 |
 | [security](./security/README.md) | Vulnerabilities and red teaming | 2 |
 | [workflow](./workflow/README.md) | How the agent works: brainstorming, planning, architecture, multi-agent orchestration | 7 |
-| [writing](./writing/README.md) | Copy, UX writing, documentation, SEO/GEO | 6 |
+| [writing](./writing/README.md) | Copy, UX writing, documentation, SEO/GEO | 7 |
 | [productivity](./productivity/README.md) | Non-code work: grilling, handoff, teaching, job search | 8 |
-| **Total** | | **77** |
+| **Total** | | **84** |
 
 The READMEs under `engineering/` and `productivity/` split their skills into **user-invoked** (only
 run when you type them) and **model-invoked** (the model reaches for them from the description). The
@@ -106,6 +106,9 @@ Kept on purpose, since they're different depths of the same subject:
 - `engineering/diagnosing-bugs` (diagnosis loop) × `quality/systematic-debugging` (4 phases)
 - `frontend/nextjs-best-practices` (principles) × `frontend/nextjs-app-router-patterns` (implementation playbook)
 - `frontend/react-patterns` (general patterns) × `frontend/react-ui-patterns` (loading, error and empty states)
+- `backend/node` (Node 22+ and native TypeScript) × `backend/nodejs-best-practices` (framework and architecture choices) × `backend/nodejs-core` (contributing to Node itself)
+- `writing/documentation` (Diátaxis structure) × `writing/documentation-master` (generating the docs) × `writing/documentation-templates` (the templates)
+- `quality/lint-and-validate` (lint as a habit, any stack) × `quality/linting-neostandard-eslint9` (ESLint v9 setup and migration)
 
 ## Pending
 

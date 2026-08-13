@@ -8,9 +8,13 @@ explicitly. Rewriting them is the pending item; this file is the queue, not the 
 
 Names the topic, then the trigger — the words that show up in a real request, verbatim.
 
-- `tdd` — "Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests."
-- `web-design-guidelines` — "Review UI code for Web Interface Guidelines compliance. Use when asked to "review my UI", "check accessibility", "audit design"..."
-- `systematic-debugging` — "4-phase systematic debugging methodology with root cause analysis and evidence-based verification. Use when debugging complex issues."
+- `tdd` — "Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions 'red-green-refactor', or wants integration tests."
+- `web-design-guidelines` — "Review UI code for Web Interface Guidelines compliance. Use when asked to 'review my UI', 'check accessibility', 'audit design'..."
+- `fastify` — "...Use when building, configuring, or debugging a Fastify application — including defining routes... Trigger terms: Fastify, Node.js server, REST API, API routes, backend framework, fastify.config, server.ts, app.ts."
+
+The recent additions (`fastify`, `node`, `nodejs-core`, `oauth`, `documentation`,
+`linting-neostandard-eslint9`, `skill-optimizer`) already follow that shape — use them as the
+in-repo reference while rewriting the rest.
 
 Two rules worth settling before rewriting: overlapping skills need *disjoint* triggers, or the
 model picks between them at random; and a skill you only ever invoke by name is better off
@@ -18,11 +22,10 @@ user-invoked (`disable-model-invocation: true`) than carrying a weak description
 
 ## Excluded
 
-The 14 user-invoked skills in `engineering/` and `productivity/` — they're reached by typing their
-name, so trigger phrasing buys them nothing.
+The 14 user-invoked skills in `engineering/` and `productivity/` — they're reached by
+typing their name, so trigger phrasing buys them nothing.
 
 ## Queue
-
 
 ### backend
 

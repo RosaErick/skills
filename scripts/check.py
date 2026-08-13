@@ -63,6 +63,8 @@ def validate():
             name = fm.get("name")
             if not name:
                 problems.append(f"{rel}: frontmatter has no name")
+            elif name != skill.name:
+                problems.append(f"{rel}: frontmatter name is '{name}', folder is '{skill.name}'")
             description = fm.get("description")
             if not description:
                 problems.append(f"{rel}: frontmatter has no description")

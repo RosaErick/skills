@@ -1,6 +1,6 @@
 ---
 source: original
-name: UX & Interface Design Master Guide
+name: ux-writing
 description: User Experience, guided interaction and UX Writing guidelines, grounded in the fundamentals of modern web usability.
 risk_assessment: "Low. Theoretical and tactical guidelines for use in interface design and code."
 ---
