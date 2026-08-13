@@ -1,4 +1,5 @@
 ---
+disable-model-invocation: true
 name: career-ops
 description: AI job search command center -- evaluate offers, generate CVs, scan portals, track applications
 arguments: mode

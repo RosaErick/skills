@@ -1,269 +1,195 @@
 ---
 name: tailwind-patterns
-description: Tailwind CSS v4 principles. CSS-first configuration, container queries, modern patterns, design token architecture.
+description: "Tailwind CSS v4 in practice — CSS-first configuration with @theme, design tokens as CSS variables, @utility and @custom-variant, container queries, dark mode strategies, component variants with cva and tailwind-merge, and migrating from v3 (config file, renamed utilities, opacity syntax). Use when setting up Tailwind, defining or reorganizing design tokens, writing responsive or dark-mode styles, taming repeated class strings, building component variants, or upgrading a v3 codebase to v4. Trigger terms: Tailwind, tailwind.config, @theme, @apply, utility classes, container query, dark mode, cva, tailwind-merge, Tailwind v4, class soup."
 allowed-tools: Read, Write, Edit, Glob, Grep
+metadata:
+  tags: tailwind, css, design-tokens, responsive, dark-mode, v4
 ---
 
-# Tailwind CSS Patterns (v4 - 2025)
+# Tailwind Patterns (v4)
 
-> Modern utility-first CSS with CSS-native configuration.
+Tailwind v4 moved configuration out of JavaScript and into CSS. Tokens are real CSS variables, the
+content scan is automatic, and `tailwind.config.js` is optional legacy. Everything here assumes v4.
 
----
+## 1. Setup
 
-## 1. Tailwind v4 Architecture
+```css
+/* app.css — the whole configuration lives here */
+@import "tailwindcss";
 
-### What Changed from v3
-
-| v3 (Legacy) | v4 (Current) |
-|-------------|--------------|
-| `tailwind.config.js` | CSS-based `@theme` directive |
-| PostCSS plugin | Oxide engine (10x faster) |
-| JIT mode | Native, always-on |
-| Plugin system | CSS-native features |
-| `@apply` directive | Still works, discouraged |
-
-### v4 Core Concepts
-
-| Concept | Description |
-|---------|-------------|
-| **CSS-first** | Configuration in CSS, not JavaScript |
-| **Oxide Engine** | Rust-based compiler, much faster |
-| **Native Nesting** | CSS nesting without PostCSS |
-| **CSS Variables** | All tokens exposed as `--*` vars |
-
----
-
-## 2. CSS-Based Configuration
-
-### Theme Definition
-
-```
 @theme {
-  /* Colors - use semantic names */
-  --color-primary: oklch(0.7 0.15 250);
-  --color-surface: oklch(0.98 0 0);
-  --color-surface-dark: oklch(0.15 0 0);
-  
-  /* Spacing scale */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 2rem;
-  
-  /* Typography */
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --color-brand-50:  oklch(0.97 0.02 264);
+  --color-brand-500: oklch(0.62 0.19 264);
+  --color-brand-900: oklch(0.32 0.11 264);
+
+  --font-display: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --radius-card: 0.75rem;
+  --spacing: 0.25rem;        /* the whole spacing scale derives from this */
 }
 ```
 
-### When to Extend vs Override
+```ts
+// vite.config.ts
+import tailwindcss from "@tailwindcss/vite";
+export default defineConfig({ plugins: [tailwindcss()] });
+```
 
-| Action | Use When |
-|--------|----------|
-| **Extend** | Adding new values alongside defaults |
-| **Override** | Replacing default scale entirely |
-| **Semantic tokens** | Project-specific naming (primary, surface) |
+PostCSS setups use `@tailwindcss/postcss`; there's a standalone CLI too. No `content` array — v4
+detects sources automatically, and `@source` adds anything outside the project (a package's dist,
+for example) or excludes noise with `@source not`.
 
----
+Every theme entry becomes both a utility and a CSS variable: `--color-brand-500` gives you
+`bg-brand-500` *and* `var(--color-brand-500)` for use in plain CSS, inline styles or a chart library.
+That's the main reason to define tokens in `@theme` rather than raw `:root`.
 
-## 3. Container Queries (v4 Native)
+## 2. Tokens: name by role, not by look
 
-### Breakpoint vs Container
+```css
+@theme {
+  /* palette — the raw material */
+  --color-brand-500: oklch(0.62 0.19 264);
+  --color-danger-500: oklch(0.58 0.22 27);
 
-| Type | Responds To |
-|------|-------------|
-| **Breakpoint** (`md:`) | Viewport width |
-| **Container** (`@container`) | Parent element width |
+  /* semantic — what the app actually uses */
+  --color-surface: var(--color-white);
+  --color-surface-muted: var(--color-neutral-50);
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-500);
+  --color-border: var(--color-neutral-200);
+}
+```
 
-### Container Query Usage
+`bg-surface text-text-muted border-border` survives a rebrand; `bg-white text-gray-500` does not.
+Two layers — palette then semantic — is the sweet spot; a third layer of aliases is bureaucracy.
 
-| Pattern | Classes |
-|---------|---------|
-| Define container | `@container` on parent |
-| Container breakpoint | `@sm:`, `@md:`, `@lg:` on children |
-| Named containers | `@container/card` for specificity |
+Use `oklch()` for new palettes: perceptually even lightness steps, and access to colors outside sRGB
+on displays that support them.
 
-### When to Use
+Extend the default theme by adding keys; replace a scale wholesale with `--color-*: initial` before
+redefining it, when you want *only* your colors to exist.
 
-| Scenario | Use |
-|----------|-----|
-| Page-level layouts | Viewport breakpoints |
-| Component-level responsive | Container queries |
-| Reusable components | Container queries (context-independent) |
+## 3. Custom utilities and variants
 
----
+```css
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
 
-## 4. Responsive Design
+@custom-variant dark (&:where(.dark, .dark *));   /* class-based dark mode */
+@custom-variant hocus (&:hover, &:focus-visible);
+```
 
-### Breakpoint System
+`@utility` registers a real utility — it works with variants (`md:scrollbar-none`) and respects
+ordering. A bare CSS class does not. Reach for it when a genuinely reusable primitive is missing, not
+as a shortcut for a component.
 
-| Prefix | Min Width | Target |
-|--------|-----------|--------|
-| (none) | 0px | Mobile-first base |
-| `sm:` | 640px | Large phone / small tablet |
-| `md:` | 768px | Tablet |
-| `lg:` | 1024px | Laptop |
-| `xl:` | 1280px | Desktop |
-| `2xl:` | 1536px | Large desktop |
+## 4. Responsive and container queries
 
-### Mobile-First Principle
+Breakpoints answer "how big is the window". Container queries answer "how big is the space this
+component was given" — which is the question a reusable component actually has.
 
-1. Write mobile styles first (no prefix)
-2. Add larger screen overrides with prefixes
-3. Example: `w-full md:w-1/2 lg:w-1/3`
+```html
+<div class="@container">
+  <article class="flex flex-col gap-4 @md:flex-row @md:items-center">
+    <img class="w-full @md:w-48" src="…" alt="" />
+    <div class="@md:flex-1">…</div>
+  </article>
+</div>
+```
 
----
+Container queries are built in — no plugin. Use them for cards, sidebars, anything that appears in
+more than one layout. Keep media-query breakpoints for page-level structure.
 
-## 5. Dark Mode
+Mobile-first stays the rule: unprefixed classes are the small screen, `md:` and up are progressive
+enhancement. `max-md:` exists for the rare inversion.
 
-### Configuration Strategies
+## 5. Dark mode
 
-| Method | Behavior | Use When |
-|--------|----------|----------|
-| `class` | `.dark` class toggles | Manual theme switcher |
-| `media` | Follows system preference | No user control |
-| `selector` | Custom selector (v4) | Complex theming |
+```css
+@custom-variant dark (&:where(.dark, .dark *));
+```
 
-### Dark Mode Pattern
+```html
+<div class="bg-surface text-text dark:bg-neutral-900 dark:text-neutral-100">
+```
 
-| Element | Light | Dark |
-|---------|-------|------|
-| Background | `bg-white` | `dark:bg-zinc-900` |
-| Text | `text-zinc-900` | `dark:text-zinc-100` |
-| Borders | `border-zinc-200` | `dark:border-zinc-700` |
+Better: put dark values in the tokens and stop writing `dark:` at every call site.
 
----
+```css
+:root { --color-surface: var(--color-white); --color-text: var(--color-neutral-900); }
+.dark { --color-surface: var(--color-neutral-900); --color-text: var(--color-neutral-100); }
+```
 
-## 6. Modern Layout Patterns
+Now `bg-surface text-text` is correct in both themes, and a new component can't forget its dark
+variant. Follow the user's `prefers-color-scheme` by default and let an explicit choice override it;
+set `color-scheme` so form controls and scrollbars match.
 
-### Flexbox Patterns
+## 6. Taming class strings
 
-| Pattern | Classes |
-|---------|---------|
-| Center (both axes) | `flex items-center justify-center` |
-| Vertical stack | `flex flex-col gap-4` |
-| Horizontal row | `flex gap-4` |
-| Space between | `flex justify-between items-center` |
-| Wrap grid | `flex flex-wrap gap-4` |
+Long class lists are fine — they're the trade you accepted. Repeated class lists are the problem, and
+the fix is a component, not `@apply`.
 
-### Grid Patterns
+```tsx
+// button.tsx
+const button = cva(
+  "inline-flex items-center justify-center rounded-card font-medium transition-colors " +
+  "focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none",
+  {
+    variants: {
+      variant: {
+        primary: "bg-brand-500 text-white hover:bg-brand-600",
+        ghost: "bg-transparent text-text hover:bg-surface-muted",
+      },
+      size: { sm: "h-8 px-3 text-sm", md: "h-10 px-4" },
+    },
+    defaultVariants: { variant: "primary", size: "md" },
+  },
+);
 
-| Pattern | Classes |
-|---------|---------|
-| Auto-fit responsive | `grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))]` |
-| Asymmetric (Bento) | `grid grid-cols-3 grid-rows-2` with spans |
-| Sidebar layout | `grid grid-cols-[auto_1fr]` |
+export function Button({ variant, size, className, ...props }: ButtonProps) {
+  return <button className={twMerge(button({ variant, size }), className)} {...props} />;
+}
+```
 
-> **Note:** Prefer asymmetric/Bento layouts over symmetric 3-column grids.
+`cva` (or `tailwind-variants`) holds the variant matrix; `tailwind-merge` resolves conflicts so a
+caller's `className` actually wins instead of losing to specificity roulette.
 
----
+`@apply` is the last resort — for third-party markup you can't touch, or a base layer style. It
+recreates the indirection Tailwind exists to remove: the class name stops telling you what it does.
 
-## 7. Modern Color System
+Arbitrary values (`w-[347px]`, `text-[#3b82f6]`) are an escape hatch. One is a pragmatic exception;
+a file full of them means the token scale is wrong.
 
-### OKLCH vs RGB/HSL
+## 7. Migrating from v3
 
-| Format | Advantage |
-|--------|-----------|
-| **OKLCH** | Perceptually uniform, better for design |
-| **HSL** | Intuitive hue/saturation |
-| **RGB** | Legacy compatibility |
+`npx @tailwindcss/upgrade` does most of it on a clean git tree. What it doesn't catch:
 
-### Color Token Architecture
+| v3 | v4 |
+|---|---|
+| `tailwind.config.js` theme | `@theme` in CSS (`@config` still loads a legacy file) |
+| `@tailwind base/components/utilities` | `@import "tailwindcss"` |
+| `bg-opacity-50`, `text-opacity-*` | `bg-black/50`, `text-white/70` |
+| `flex-shrink-0`, `flex-grow` | `shrink-0`, `grow` |
+| `outline-none` | `outline-hidden` (`outline-none` now really means none) |
+| `shadow-sm`, `rounded-sm` | `shadow-xs`, `rounded-xs` (each scale shifted down one) |
+| Default border color `gray-200` | `currentColor` — set it explicitly where you relied on the old default |
+| `@layer components` | `@utility`, or a real component |
 
-| Layer | Example | Purpose |
-|-------|---------|---------|
-| **Primitive** | `--blue-500` | Raw color values |
-| **Semantic** | `--color-primary` | Purpose-based naming |
-| **Component** | `--button-bg` | Component-specific |
-
----
-
-## 8. Typography System
-
-### Font Stack Pattern
-
-| Type | Recommended |
-|------|-------------|
-| Sans | `'Inter', 'SF Pro', system-ui, sans-serif` |
-| Mono | `'JetBrains Mono', 'Fira Code', monospace` |
-| Display | `'Outfit', 'Poppins', sans-serif` |
-
-### Type Scale
-
-| Class | Size | Use |
-|-------|------|-----|
-| `text-xs` | 0.75rem | Labels, captions |
-| `text-sm` | 0.875rem | Secondary text |
-| `text-base` | 1rem | Body text |
-| `text-lg` | 1.125rem | Lead text |
-| `text-xl`+ | 1.25rem+ | Headings |
-
----
-
-## 9. Animation & Transitions
-
-### Built-in Animations
-
-| Class | Effect |
-|-------|--------|
-| `animate-spin` | Continuous rotation |
-| `animate-ping` | Attention pulse |
-| `animate-pulse` | Subtle opacity pulse |
-| `animate-bounce` | Bouncing effect |
-
-### Transition Patterns
-
-| Pattern | Classes |
-|---------|---------|
-| All properties | `transition-all duration-200` |
-| Specific | `transition-colors duration-150` |
-| With easing | `ease-out` or `ease-in-out` |
-| Hover effect | `hover:scale-105 transition-transform` |
+Also check: PostCSS plugin package renamed, custom plugins that read the JS config, and any tooling
+that parsed `tailwind.config.js`.
 
 ---
 
-## 10. Component Extraction
+## Anti-patterns
 
-### When to Extract
-
-| Signal | Action |
-|--------|--------|
-| Same class combo 3+ times | Extract component |
-| Complex state variants | Extract component |
-| Design system element | Extract + document |
-
-### Extraction Methods
-
-| Method | Use When |
-|--------|----------|
-| **React/Vue component** | Dynamic, JS needed |
-| **@apply in CSS** | Static, no JS needed |
-| **Design tokens** | Reusable values |
-
----
-
-## 11. Anti-Patterns
-
-| Don't | Do |
-|-------|-----|
-| Arbitrary values everywhere | Use design system scale |
-| `!important` | Fix specificity properly |
-| Inline `style=` | Use utilities |
-| Duplicate long class lists | Extract component |
-| Mix v3 config with v4 | Migrate fully to CSS-first |
-| Use `@apply` heavily | Prefer components |
-
----
-
-## 12. Performance Principles
-
-| Principle | Implementation |
-|-----------|----------------|
-| **Purge unused** | Automatic in v4 |
-| **Avoid dynamism** | No template string classes |
-| **Use Oxide** | Default in v4, 10x faster |
-| **Cache builds** | CI/CD caching |
-
----
-
-> **Remember:** Tailwind v4 is CSS-first. Embrace CSS variables, container queries, and native features. The config file is now optional.
+| ❌ | ✅ |
+|---|---|
+| `@apply` used to build components | A component with `cva` + `tailwind-merge` |
+| `bg-white text-gray-500` everywhere | Semantic tokens: `bg-surface text-text-muted` |
+| `dark:` on every element | Dark values in the tokens |
+| `w-[327px]`, `mt-[13px]` scattered | Fix the scale, use the token |
+| Breakpoints inside a reusable card | `@container` queries |
+| Concatenating class strings by hand | `twMerge`/`clsx`, so conflicts resolve predictably |
+| Dynamic class names (`text-${color}-500`) | Full class strings in a lookup map — the scanner only sees literals |
+| Both a v3 config and `@theme` | One source of tokens |
