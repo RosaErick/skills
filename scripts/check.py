@@ -2,24 +2,29 @@
 """Validate the skills in this repo and refresh the counts in README.md.
 
 Usage:
-    python3 check.py           validate, and rewrite the README counts if stale
-    python3 check.py --check   validate only; exit 1 if anything is off (for CI)
+    python3 scripts/check.py           validate, refresh the README counts and the
+                                      flat skills/ bundle the plugin ships
+    python3 scripts/check.py --check   validate only; exit 1 if anything is off (for CI)
 
 A skill is a directory directly under a category directory containing a SKILL.md.
 Nested SKILL.md files (templates, sub-documents) are not skills.
 """
+import os
 import re
+import shutil
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).parent.resolve()
-SKIP = {".git", "__pycache__"}
+ROOT = Path(__file__).resolve().parent.parent
+SKIP = {".git", "__pycache__", "scripts", "skills"}
 
 
 def categories():
+    """A category is a top-level directory holding at least one skill."""
     return sorted(
         d for d in ROOT.iterdir()
         if d.is_dir() and d.name not in SKIP and not d.name.startswith(".")
+        and any(sub.joinpath("SKILL.md").is_file() for sub in d.iterdir() if sub.is_dir())
     )
 
 
@@ -78,6 +83,48 @@ def dead_links():
     return problems
 
 
+def duplicates():
+    """Two skills with the same folder name, or with byte-identical SKILL.md."""
+    problems = []
+    by_name, by_body = {}, {}
+    for category in categories():
+        for skill in skills(category):
+            rel = f"{category.name}/{skill.name}"
+            if skill.name in by_name:
+                problems.append(f"{rel}: same skill name as {by_name[skill.name]}")
+            by_name[skill.name] = rel
+            body = (skill / "SKILL.md").read_bytes()
+            if body in by_body:
+                problems.append(f"{rel}: SKILL.md is identical to {by_body[body]}")
+            by_body[body] = rel
+    return problems
+
+
+def refresh_plugin(check_only):
+    """Mirror every skill as a flat symlink under skills/, the layout a plugin expects."""
+    flat = ROOT / "skills"
+    wanted = {s.name: f"../{c.name}/{s.name}" for c in categories() for s in skills(c)}
+    if not flat.exists():
+        if check_only:
+            return ["skills/: plugin bundle missing (run python3 scripts/check.py)"]
+        flat.mkdir()
+    current = {p.name: os.readlink(p) for p in flat.iterdir() if p.is_symlink()}
+    stale = [p for p in flat.iterdir() if p.name not in wanted]
+    if current == wanted and not stale:
+        return []
+    if check_only:
+        return ["skills/: plugin bundle is out of sync (run python3 scripts/check.py)"]
+    for p in stale:
+        p.unlink() if p.is_symlink() else shutil.rmtree(p)
+    for name, target in wanted.items():
+        link = flat / name
+        if link.is_symlink():
+            link.unlink()
+        link.symlink_to(target)
+    print(f"skills/: plugin bundle refreshed ({len(wanted)} skills)")
+    return []
+
+
 def counts():
     return {c.name: len(skills(c)) for c in categories()}
 
@@ -102,7 +149,7 @@ def refresh_readme(check_only):
     if updated == text:
         return []
     if check_only:
-        return ["README.md: counts are stale (run python3 check.py)"]
+        return ["README.md: counts are stale (run python3 scripts/check.py)"]
     readme.write_text(updated, encoding="utf-8")
     print(f"README.md: counts refreshed ({total} skills)")
     return []
@@ -110,7 +157,8 @@ def refresh_readme(check_only):
 
 def main():
     check_only = "--check" in sys.argv
-    problems = validate() + dead_links() + refresh_readme(check_only)
+    problems = (validate() + duplicates() + dead_links()
+                + refresh_readme(check_only) + refresh_plugin(check_only))
     for p in problems:
         print(p)
     if problems:

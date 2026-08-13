@@ -1,0 +1,14 @@
+{
+  "name": "erick-skills",
+  "version": "1.0.0",
+  "description": "Erick's curated agent skills. Run with npx to copy them into a project.",
+  "bin": {
+    "skills": "./scripts/install.sh"
+  },
+  "homepage": "https://github.com/RosaErick/skills",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RosaErick/skills.git"
+  },
+  "license": "SEE LICENSE IN README.md"
+}
