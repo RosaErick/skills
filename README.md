@@ -1,6 +1,6 @@
 # skills
 
-My agent skills, all in one place, organized by category.
+My agent skills — 81 of them, all in one place, organized by category.
 
 Each skill is a folder with a `SKILL.md` (frontmatter `name` + `description`) and supporting files
 alongside it when needed. It's the standard format Claude Code, Codex, opencode and the like read:
@@ -22,6 +22,7 @@ and add the row to the table below.
 | [workflow](./workflow/README.md) | How the agent works: brainstorming, planning, architecture, multi-agent orchestration | 7 |
 | [writing](./writing/README.md) | Copy, UX writing, documentation, SEO/GEO | 6 |
 | [productivity](./productivity/README.md) | Non-code work: grilling, handoff, teaching, job search | 8 |
+| **Total** | | **81** |
 
 The READMEs under `engineering/` and `productivity/` split their skills into **user-invoked** (only
 run when you type them) and **model-invoked** (the model reaches for them from the description). The
