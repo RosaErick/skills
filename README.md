@@ -1,6 +1,6 @@
 # skills
 
-My curated agent skills — 77 of them, all in one place, organized by category.
+My curated agent skills — 81 of them, all in one place, organized by category.
 
 Each skill is a folder with a `SKILL.md` (frontmatter `name` + `description`) and supporting files
 alongside it when needed. It's the standard format Claude Code, Codex, opencode and the like read.
@@ -54,12 +54,13 @@ python3 scripts/check.py           # validate, refresh the README counts and the
 python3 scripts/check.py --check   # verify only, non-zero exit if something is off
 ```
 
-It checks frontmatter, listing in the category README, dead links and repeated skills, then
-rewrites the counts below and regenerates `skills/` — the flat folder the plugin ships, one symlink
+It checks frontmatter (name present and matching the folder, description present), listing in the
+category README, dead relative links and repeated skills, then rewrites the counts below and
+regenerates `skills/` — the flat folder the plugin ships, one symlink
 per skill, since plugins expect `skills/<name>/SKILL.md` with no categories in between.
 
 A new skill goes into whichever category fits. If none fits, create the folder, write its README,
-add the row to the table below, and run `check.py`.
+add the row to the table below, and run `scripts/check.py`.
 
 ## Categories
 
@@ -120,6 +121,10 @@ Kept on purpose, since they're different depths of the same subject:
 
 ## Descriptions
 
-Nothing queued. Every model-invoked skill now carries a description in the same shape: topic, then
-`Use when …` in the words a real request uses, then `Trigger terms:` and, where a neighbour would
-otherwise match the same request, an explicit pointer to it.
+Nothing queued. Every model-invoked skill now says **when** to reach for it, not just what it is —
+that was the gap, and it's closed.
+
+New skills follow the fuller shape the reworked ones use: topic, then `Use when …` in the words a
+real request uses, then `Trigger terms:`, and — where a neighbour would otherwise match the same
+request — an explicit pointer to it. Imported skills keep their own phrasing as long as the trigger
+is there.

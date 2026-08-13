@@ -145,8 +145,9 @@ def refresh_readme(check_only):
     updated = re.sub(r"\| \[(\w+)\]\(\./\w+/README\.md\) \|(.*?)\| (\d+) \|", row, text)
     updated = re.sub(r"\| \*\*Total\*\* \| \| \*\*\d+\*\* \|",
                      f"| **Total** | | **{total}** |", updated)
-    updated = re.sub(r"^My agent skills — \d+ of them",
-                     f"My agent skills — {total} of them", updated, flags=re.M)
+    # Tolerates any wording around the headline count, so an edited intro still updates.
+    updated = re.sub(r"^(My [^\n]*?skills — )\d+( of them)",
+                     lambda m: f"{m.group(1)}{total}{m.group(2)}", updated, flags=re.M)
 
     if updated == text:
         return []
