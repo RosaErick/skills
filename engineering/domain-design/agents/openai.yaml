@@ -1,0 +1,3 @@
+interface:
+  display_name: "Domain Design"
+  short_description: "Aggregates, invariants and context boundaries"

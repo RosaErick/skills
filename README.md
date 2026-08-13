@@ -65,7 +65,7 @@ add the row to the table below, and run `check.py`.
 
 | Folder | What's in it | Skills |
 |---|---|---|
-| [engineering](./engineering/README.md) | Code workflow: spec → tickets → implement → review, TDD, bug diagnosis, domain modeling | 18 |
+| [engineering](./engineering/README.md) | Code workflow: spec → tickets → implement → review, TDD, bug diagnosis, domain modeling | 20 |
 | [frontend](./frontend/README.md) | React, Next.js, Tailwind, interface design, mobile, web performance, i18n | 16 |
 | [backend](./backend/README.md) | APIs, Node, Python, Rust, databases, MCP | 11 |
 | [infra](./infra/README.md) | Shell, server management, deployment | 3 |
@@ -74,7 +74,7 @@ add the row to the table below, and run `check.py`.
 | [workflow](./workflow/README.md) | How the agent works: brainstorming, planning, architecture, multi-agent orchestration | 7 |
 | [writing](./writing/README.md) | Copy, UX writing, documentation, SEO/GEO | 5 |
 | [productivity](./productivity/README.md) | Non-code work: grilling, handoff, teaching, job search | 8 |
-| **Total** | | **79** |
+| **Total** | | **81** |
 
 The READMEs under `engineering/`, `productivity/` and `workflow/` split their skills into
 **user-invoked** (only run when you type them, `disable-model-invocation: true`) and **model-invoked**
@@ -84,13 +84,14 @@ model-reachable.
 ## Original skills
 
 Mine to maintain. They carry `source: original` in their frontmatter, or `source: adapted` where the
-base came from someone else's skill and I reworked it — `documentation` builds on the Diátaxis skill
-by mcollina, credited at the bottom of the file. Everything else here comes from the community —
+base came from someone else's skill and I reworked it. Everything else here comes from the community —
 public skill packs, vendor guides and open-source repos — kept because I use them, and curated:
 picked one by one, filed by category, trimmed of what I don't run.
 
 | Skill | What it does |
 |---|---|
+| [engineering/domain-design](./engineering/domain-design/SKILL.md) | Invariants, aggregates, value objects, domain events, bounded contexts and context mapping |
+| [engineering/spec-driven](./engineering/spec-driven/SKILL.md) | Falsifiable acceptance criteria in the repo, bound to tests, with a drift check |
 | [frontend/nextjs-best-practices](./frontend/nextjs-best-practices/SKILL.md) | App Router defaults: Server Components, data fetching, routing |
 | [frontend/react-patterns](./frontend/react-patterns/SKILL.md) | React 18/19: state placement, effects, composition, React Compiler, TypeScript props |
 | [frontend/react-ui-patterns](./frontend/react-ui-patterns/SKILL.md) | Loading states, error handling and async data in components |
@@ -106,6 +107,8 @@ picked one by one, filed by category, trimmed of what I don't run.
 
 Kept on purpose, since they're different depths of the same subject:
 
+- `engineering/domain-modeling` (the glossary) × `engineering/domain-design` (the model) × `engineering/codebase-design` (the module shape)
+- `engineering/to-spec` (writes the spec) × `engineering/spec-driven` (makes it falsifiable and keeps it honest)
 - `engineering/tdd` (guided loop, with references) × `quality/tdd-workflow` (short checklist)
 - `engineering/code-review` (two-axis review, sub-agents) × `quality/code-review-checklist`
 - `engineering/diagnosing-bugs` (diagnosis loop) × `quality/systematic-debugging` (4 phases)
