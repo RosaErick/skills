@@ -87,10 +87,10 @@ scripts/check.sh           # validate, and rebuild the plugin bundle if it drift
 scripts/check.sh --check   # verify only, non-zero exit if something is off
 ```
 
-It checks frontmatter (name present and matching the folder, description present), listing in the
-category README, dead relative links in every README and skill file, repeated skills, and the counts
-below — reporting a stale count rather than rewriting it, since fixing it is one number. It also
-regenerates `skills/` — the flat folder the plugin ships, one symlink
+The skills are the source of truth; the script reads them and complains about everything that fell
+out of step. It checks frontmatter (name present and matching the folder, description present),
+whether each skill is listed in its category README, dead relative links in every README and skill
+file, and repeated skills. It also regenerates `skills/` — the flat folder the plugin ships, one symlink
 per skill, since plugins expect `skills/<name>/SKILL.md` with no categories in between.
 
 A new skill goes into whichever category fits. If none fits, create the folder, write its README,

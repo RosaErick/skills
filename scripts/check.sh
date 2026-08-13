@@ -39,16 +39,13 @@ done
 
 # --- frontmatter, and every skill listed in its category README -----------------------
 total=0
-declare -A count_of
 for category in "${categories[@]}"; do
   readme="$category/README.md"
   [ -f "$readme" ] || note "$category/: missing README.md"
-  count_of["$category"]=0
   for skill in "$category"/*/; do
     skill="${skill%/}"
     name="$(basename "$skill")"
     [ -f "$skill/SKILL.md" ] || continue
-    count_of["$category"]=$(( count_of["$category"] + 1 ))
     total=$((total + 1))
 
     declared="$(field "$skill/SKILL.md" name)"
@@ -97,23 +94,6 @@ for doc in README.md */README.md */*/*.md */*/*/*.md; do
     [ -e "$(dirname "$doc")/$target" ] || note "$doc: dead link $target"
   done < <(links_in "$doc")
 done
-
-# --- the counts in the root README ------------------------------------------------------
-# The table cells are pipe-delimited, so awk splits them and the count is the last real column.
-count_cell() { awk -F'|' -v want="$1" 'index($2, want) { gsub(/[^0-9]/, "", $(NF - 1)); print $(NF - 1); exit }' README.md; }
-
-for category in "${categories[@]}"; do
-  stated="$(count_cell "[$category]")"
-  [ -n "$stated" ] || continue
-  [ "$stated" = "${count_of[$category]}" ] ||
-    note "README.md: $category says $stated, actual ${count_of[$category]}"
-done
-stated_total="$(count_cell '**Total**')"
-[ -z "$stated_total" ] || [ "$stated_total" = "$total" ] ||
-  note "README.md: total says $stated_total, actual $total"
-stated_headline="$(sed -n 's/.*skills — \([0-9][0-9]*\) of them.*/\1/p' README.md | head -1)"
-[ -z "$stated_headline" ] || [ "$stated_headline" = "$total" ] ||
-  note "README.md: headline says $stated_headline, actual $total"
 
 # --- the flat skills/ folder the plugin manifests point at -------------------------------
 declare -A want
