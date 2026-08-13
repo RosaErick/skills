@@ -1,38 +1,38 @@
 # skills
 
-Minhas skills de agente, todas em um lugar só, organizadas por categoria.
+My agent skills, all in one place, organized by category.
 
-Cada skill é uma pasta com um `SKILL.md` (frontmatter `name` + `description`) e, quando precisa,
-arquivos de apoio ao lado. É o formato padrão que Claude Code, Codex, opencode e afins leem: para
-usar em um projeto, aponte ou linke a categoria que interessa para dentro do `.claude/skills` dele.
+Each skill is a folder with a `SKILL.md` (frontmatter `name` + `description`) and supporting files
+alongside it when needed. It's the standard format Claude Code, Codex, opencode and the like read:
+to use them in a project, point or link the category you want into that project's `.claude/skills`.
 
-Skill nova entra na categoria que couber. Se não couber em nenhuma, cria a pasta, escreve o README
-dela e adiciona a linha na tabela abaixo.
+A new skill goes into whichever category fits. If none fits, create the folder, write its README,
+and add the row to the table below.
 
-## Categorias
+## Categories
 
-| Pasta | O que tem | Skills |
+| Folder | What's in it | Skills |
 |---|---|---|
-| [engineering](./engineering/README.md) | Fluxo de trabalho de código: spec → tickets → implement → review, TDD, diagnóstico de bug, modelagem de domínio | 18 |
-| [frontend](./frontend/README.md) | React, Next.js, Tailwind, design de interface, mobile, performance web, i18n | 21 |
-| [backend](./backend/README.md) | APIs, Node, Python, Rust, banco de dados, MCP | 7 |
-| [infra](./infra/README.md) | Shell, gerência de servidor, deploy | 4 |
-| [quality](./quality/README.md) | Testes, review, debug, lint, profiling | 8 |
-| [security](./security/README.md) | Vulnerabilidades e red team | 2 |
-| [workflow](./workflow/README.md) | Como o agente conduz: brainstorm, plano, arquitetura, orquestração multi-agente | 7 |
-| [writing](./writing/README.md) | Copy, UX writing, documentação, SEO/GEO | 6 |
-| [productivity](./productivity/README.md) | Trabalho que não é código: grilling, handoff, teach, busca de emprego | 8 |
-| [games](./games/README.md) | Desenvolvimento de jogos (orquestrador + 10 sub-skills por plataforma) | 11 |
+| [engineering](./engineering/README.md) | Code workflow: spec → tickets → implement → review, TDD, bug diagnosis, domain modeling | 18 |
+| [frontend](./frontend/README.md) | React, Next.js, Tailwind, interface design, mobile, web performance, i18n | 21 |
+| [backend](./backend/README.md) | APIs, Node, Python, Rust, databases, MCP | 7 |
+| [infra](./infra/README.md) | Shell, server management, deployment | 4 |
+| [quality](./quality/README.md) | Testing, review, debugging, linting, profiling | 8 |
+| [security](./security/README.md) | Vulnerabilities and red teaming | 2 |
+| [workflow](./workflow/README.md) | How the agent works: brainstorming, planning, architecture, multi-agent orchestration | 7 |
+| [writing](./writing/README.md) | Copy, UX writing, documentation, SEO/GEO | 6 |
+| [productivity](./productivity/README.md) | Non-code work: grilling, handoff, teaching, job search | 8 |
+| [games](./games/README.md) | Game development (orchestrator + 10 platform sub-skills) | 11 |
 
-Os READMEs de `engineering/` e `productivity/` separam as skills em **user-invoked** (só rodam
-quando você digita) e **model-invoked** (o modelo alcança sozinho pela descrição). As outras
-categorias ainda não fazem essa distinção — todas são alcançáveis pelo modelo.
+The READMEs under `engineering/` and `productivity/` split their skills into **user-invoked** (only
+run when you type them) and **model-invoked** (the model reaches for them from the description). The
+other categories don't make that distinction yet — everything in them is model-reachable.
 
-## Sobreposições conhecidas
+## Known overlaps
 
-Mantidas de propósito, porque são profundidades diferentes do mesmo assunto:
+Kept on purpose, since they're different depths of the same subject:
 
-- `engineering/tdd` (loop conduzido, com referências) × `quality/tdd-workflow` (checklist curto)
-- `engineering/code-review` (review em dois eixos, sub-agentes) × `quality/code-review-checklist`
-- `engineering/diagnosing-bugs` (loop de diagnóstico) × `quality/systematic-debugging` (4 fases)
-- `frontend/nextjs-react-expert` × `frontend/react-best-practices` — mesmas regras da Vercel, uma como guia, outra como base de regras
+- `engineering/tdd` (guided loop, with references) × `quality/tdd-workflow` (short checklist)
+- `engineering/code-review` (two-axis review, sub-agents) × `quality/code-review-checklist`
+- `engineering/diagnosing-bugs` (diagnosis loop) × `quality/systematic-debugging` (4 phases)
+- `frontend/nextjs-react-expert` × `frontend/react-best-practices` — same Vercel rules, one as a guide, one as a rule base
