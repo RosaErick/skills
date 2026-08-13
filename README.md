@@ -171,18 +171,8 @@ filed by category, trimmed of what I don't run.
 scripts/check.sh           # validate, and rebuild the plugin bundle if it drifted
 scripts/check.sh --check   # verify only, non-zero exit if something is off
 ```
-
-The skills are the source of truth; the script reads them and complains about everything that fell
-out of step. It checks frontmatter (name present and matching the folder, description present),
-whether each skill is listed in its category README, dead relative links in every README and skill
-file, and repeated skills. It also regenerates `skills/` — the flat folder the plugin ships, one
-symlink per skill, since plugins expect `skills/<name>/SKILL.md` with no categories in between.
-
 A new skill goes into whichever category fits. If none fits, create the folder, write its README, add
 the row to the categories table, and run `scripts/check.sh`.
 
-Descriptions carry the whole activation surface, and the roster the model receives has a budget — go
-long on every skill and the ones at the end of the alphabet arrive name-only. Keep each one to what
-the skill is, when to reach for it, and the boundary against its neighbour.
 
 </details>
