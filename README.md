@@ -36,9 +36,6 @@ and curated: picked one by one, filed by category, trimmed of what I don't run.
 
 | Skill | What it does |
 |---|---|
-| [frontend/frontend-dev-guidelines](./frontend/frontend-dev-guidelines/SKILL.md) | Opinionated React + TypeScript standards: Suspense-first data fetching, feature-based architecture, MUI v7, TanStack Router, strict TS |
-| [frontend/frontend-mobile-development-component-scaffold](./frontend/frontend-mobile-development-component-scaffold/SKILL.md) | Scaffolds React / React Native components with types, tests, styles and docs |
-| [frontend/nextjs-app-router-patterns](./frontend/nextjs-app-router-patterns/SKILL.md) | Next.js 14+ App Router: streaming, parallel routes, advanced data fetching |
 | [frontend/nextjs-best-practices](./frontend/nextjs-best-practices/SKILL.md) | App Router defaults: Server Components, data fetching, routing |
 | [frontend/react-patterns](./frontend/react-patterns/SKILL.md) | Modern React: hooks, composition, performance, TypeScript |
 | [frontend/react-ui-patterns](./frontend/react-ui-patterns/SKILL.md) | Loading states, error handling and async data in components |
@@ -47,11 +44,6 @@ and curated: picked one by one, filed by category, trimmed of what I don't run.
 | [backend/api-documentation-master](./backend/api-documentation-master/SKILL.md) | API docs end to end: OpenAPI 3.1, interactive docs, multi-language samples, CI/CD automation |
 | [writing/documentation-master](./writing/documentation-master/SKILL.md) | Technical documentation: API, architecture, code and user docs, with Mermaid diagrams |
 | [writing/ux-writing](./writing/ux-writing/SKILL.md) | UX writing, guided interaction and interface usability |
-| [writing/copywriting](./writing/copywriting/SKILL.md) | Marketing copy for landing, pricing, feature and about pages — clear, honest, testable |
-| [workflow/intelligent-routing](./workflow/intelligent-routing/SKILL.md) | Picks the right specialist agent for a request automatically |
-
-`api-documentation-master`, `documentation-master` and `ux-writing` are written in Portuguese; the
-rest are in English.
 
 ## Known overlaps
 

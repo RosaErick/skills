@@ -1,6 +1,6 @@
 # Games
 
-- **[game-development](./game-development/SKILL.md)** — Orquestrador de desenvolvimento de jogos; roteia para as sub-skills por plataforma e disciplina:
+- **[game-development](./game-development/SKILL.md)** — Game development orchestrator; routes to the sub-skills by platform and discipline:
   [2d-games](./game-development/2d-games/SKILL.md) ·
   [3d-games](./game-development/3d-games/SKILL.md) ·
   [web-games](./game-development/web-games/SKILL.md) ·

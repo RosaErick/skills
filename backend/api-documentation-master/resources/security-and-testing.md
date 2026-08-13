@@ -1,23 +1,23 @@
 # API Security & Testing
 
-> Princípios de segurança e testes para documentação de APIs.
+> Security and testing principles for API documentation.
 
 ---
 
 ## OWASP API Security Top 10
 
-| Vulnerabilidade | Foco do Teste | Impacto |
+| Vulnerability | Test focus | Impact |
 |----------------|---------------|---------|
-| **API1: BOLA** | Acessar recursos de outros usuários | Crítico |
-| **API2: Broken Auth** | JWT, session, credenciais | Crítico |
-| **API3: Property Auth** | Mass assignment, exposição de dados | Alto |
-| **API4: Resource Consumption** | Rate limiting, DoS | Alto |
-| **API5: Function Auth** | Endpoints admin, bypass de role | Crítico |
-| **API6: Business Flow** | Abuso de lógica, automação | Médio |
-| **API7: SSRF** | Acesso à rede interna | Alto |
-| **API8: Misconfiguration** | Debug endpoints, CORS | Médio |
-| **API9: Inventory** | Shadow APIs, versões antigas | Médio |
-| **API10: Unsafe Consumption** | Confiança em API de terceiros | Médio |
+| **API1: BOLA** | Accessing other users' resources | Critical |
+| **API2: Broken Auth** | JWT, session, credentials | Critical |
+| **API3: Property Auth** | Mass assignment, data exposure | High |
+| **API4: Resource Consumption** | Rate limiting, DoS | High |
+| **API5: Function Auth** | Admin endpoints, role bypass | Critical |
+| **API6: Business Flow** | Logic abuse, automation | Medium |
+| **API7: SSRF** | Internal network access | High |
+| **API8: Misconfiguration** | Debug endpoints, CORS | Medium |
+| **API9: Inventory** | Shadow APIs, old versions | Medium |
+| **API10: Unsafe Consumption** | Trusting third-party APIs | Medium |
 
 ---
 
@@ -25,44 +25,44 @@
 
 ### JWT Testing
 
-| Verificação | O que Testar |
+| Check | What to test |
 |------------|-------------|
-| Algoritmo | None, confusão de algoritmo |
-| Secret | Secrets fracos, brute force |
-| Claims | Expiração, issuer, audience |
-| Assinatura | Manipulação, key injection |
+| Algorithm | None, algorithm confusion |
+| Secret | Weak secrets, brute force |
+| Claims | Expiration, issuer, audience |
+| Signature | Tampering, key injection |
 
 ### Session Testing
 
-| Verificação | O que Testar |
+| Check | What to test |
 |------------|-------------|
-| Geração | Previsibilidade |
-| Storage | Segurança client-side |
-| Expiração | Enforcement do timeout |
-| Invalidação | Efetividade do logout |
+| Generation | Predictability |
+| Storage | Client-side security |
+| Expiration | Timeout enforcement |
+| Invalidation | Logout effectiveness |
 
 ---
 
 ## Authorization Testing
 
-| Tipo de Teste | Abordagem |
+| Test type | Approach |
 |--------------|-----------|
-| **Horizontal** | Acessar dados de outro user do mesmo nível |
-| **Vertical** | Acessar funções de nível superior |
-| **Contexto** | Acessar fora do scope permitido |
+| **Horizontal** | Access another user's data at the same level |
+| **Vertical** | Access higher-privilege functions |
+| **Context** | Access outside the permitted scope |
 
 ### BOLA/IDOR Testing
 
-1. Identifique resource IDs nas requests
-2. Capture request com sessão do user A
-3. Replay com sessão do user B
-4. Verifique acesso não autorizado
+1. Identify resource IDs in the requests
+2. Capture a request with user A's session
+3. Replay it with user B's session
+4. Check for unauthorized access
 
 ---
 
 ## Authentication Documentation Guide
 
-Ao documentar autenticação, inclua sempre:
+When documenting authentication, always include:
 
 ### OAuth 2.0 Flow
 
@@ -80,27 +80,27 @@ Ao documentar autenticação, inclua sempre:
 ```markdown
 ## API Keys
 
-### Obtendo sua API Key
+### Getting your API key
 
-1. Acesse o [Developer Portal](https://portal.example.com)
-2. Navegue até Settings → API Keys
-3. Clique em "Create New Key"
-4. Copie e armazene a key com segurança
+1. Go to the [Developer Portal](https://portal.example.com)
+2. Navigate to Settings → API Keys
+3. Click "Create New Key"
+4. Copy the key and store it securely
 
-### Usando a API Key
+### Using the API key
 
-Inclua no header de cada request:
+Include it in the header of every request:
 
 ```
 X-API-Key: your_api_key_here
 ```
 
-### Boas Práticas
+### Best practices
 
-- ⚠️ Nunca exponha keys em código público ou repositórios
-- 🔄 Rotacione keys regularmente (a cada 90 dias)
-- 🔒 Use keys diferentes para cada ambiente (dev, staging, prod)
-- 📊 Monitore o uso de cada key no dashboard
+- ⚠️ Never expose keys in public code or repositories
+- 🔄 Rotate keys regularly (every 90 days)
+- 🔒 Use a different key per environment (dev, staging, prod)
+- 📊 Monitor each key's usage in the dashboard
 ```
 
 ### JWT Token Documentation
@@ -108,29 +108,29 @@ X-API-Key: your_api_key_here
 ```markdown
 ## JWT Tokens
 
-### Estrutura do Token
+### Token structure
 
 ```
 Header.Payload.Signature
 ```
 
-### Claims Padrão
+### Standard claims
 
-| Claim | Descrição | Exemplo |
+| Claim | Description | Example |
 |-------|-----------|---------|
 | `sub` | Subject (user ID) | "usr_123" |
-| `exp` | Expiração (timestamp) | 1706198400 |
+| `exp` | Expiration (timestamp) | 1706198400 |
 | `iat` | Issued at | 1706194800 |
 | `iss` | Issuer | "api.example.com" |
 | `aud` | Audience | "example-app" |
 
-### Refresh Flow
+### Refresh flow
 
 ```
-1. Access token expira (status 401)
-2. Client envia refresh token para /auth/refresh
-3. Server retorna novo access token + novo refresh token
-4. Client usa novo access token
+1. Access token expires (status 401)
+2. Client sends the refresh token to /auth/refresh
+3. Server returns a new access token + new refresh token
+4. Client uses the new access token
 ```
 ```
 
@@ -138,26 +138,26 @@ Header.Payload.Signature
 
 ## Input Validation Testing
 
-| Tipo de Injection | Foco do Teste |
+| Injection type | Test focus |
 |------------------|---------------|
-| SQL | Manipulação de query |
+| SQL | Query manipulation |
 | NoSQL | Document queries |
-| Command | Comandos do sistema |
+| Command | System commands |
 | LDAP | Directory queries |
 
-**Abordagem:** Teste todos os parâmetros, tente type coercion, teste boundaries, verifique mensagens de erro.
+**Approach:** test every parameter, try type coercion, test boundaries, inspect error messages.
 
 ---
 
 ## Rate Limiting Testing
 
-| Aspecto | Verificação |
+| Aspect | Check |
 |---------|------------|
-| Existência | Existe algum limite? |
-| Bypass | Headers, rotação de IP |
+| Existence | Is there any limit at all? |
+| Bypass | Headers, IP rotation |
 | Scope | Per-user, per-IP, global |
 
-**Técnicas de bypass:** X-Forwarded-For, diferentes HTTP methods, variações de case, versioning de API.
+**Bypass techniques:** X-Forwarded-For, different HTTP methods, case variations, API versioning.
 
 ---
 
@@ -166,26 +166,26 @@ Header.Payload.Signature
 ```markdown
 ## Rate Limiting
 
-### Limites
+### Limits
 
-| Tier | Requests/minuto | Descrição |
+| Tier | Requests/minute | Description |
 |------|----------------|-----------|
-| Free | 60 | Conta gratuita |
-| Pro | 1000 | Conta profissional |
-| Enterprise | 10000 | Contato para customização |
+| Free | 60 | Free account |
+| Pro | 1000 | Professional account |
+| Enterprise | 10000 | Contact us for custom limits |
 
-### Headers de Resposta
+### Response headers
 
-Toda resposta inclui headers de rate limiting:
+Every response includes rate limiting headers:
 
-| Header | Descrição |
+| Header | Description |
 |--------|-----------|
-| `X-RateLimit-Limit` | Limite máximo de requests na janela |
-| `X-RateLimit-Remaining` | Requests restantes na janela atual |
-| `X-RateLimit-Reset` | Unix timestamp de quando o limite reseta |
-| `Retry-After` | Segundos para aguardar (apenas em 429) |
+| `X-RateLimit-Limit` | Maximum requests allowed in the window |
+| `X-RateLimit-Remaining` | Requests left in the current window |
+| `X-RateLimit-Reset` | Unix timestamp of when the limit resets |
+| `Retry-After` | Seconds to wait (429 responses only) |
 
-### Resposta 429
+### 429 response
 
 ```json
 {
@@ -195,7 +195,7 @@ Toda resposta inclui headers de rate limiting:
 }
 ```
 
-### Retry Strategy
+### Retry strategy
 
 ```javascript
 async function fetchWithRetry(url, options, maxRetries = 3) {
@@ -219,12 +219,12 @@ async function fetchWithRetry(url, options, maxRetries = 3) {
 
 ## GraphQL Security
 
-| Teste | Foco |
+| Test | Focus |
 |-------|------|
-| Introspection | Exposição do schema |
+| Introspection | Schema exposure |
 | Batching | Query DoS |
 | Nesting | Depth-based DoS |
-| Authorization | Acesso field-level |
+| Authorization | Field-level access |
 
 ---
 
@@ -233,15 +233,15 @@ async function fetchWithRetry(url, options, maxRetries = 3) {
 ```markdown
 ## CORS (Cross-Origin Resource Sharing)
 
-### Origens Permitidas
+### Allowed origins
 
-| Ambiente | Origem |
+| Environment | Origin |
 |----------|--------|
 | Production | `https://app.example.com` |
 | Staging | `https://staging.example.com` |
 | Development | `http://localhost:3000` |
 
-### Headers CORS
+### CORS headers
 
 ```
 Access-Control-Allow-Origin: https://app.example.com
@@ -252,37 +252,37 @@ Access-Control-Max-Age: 86400
 
 ### Troubleshooting
 
-| Erro | Causa | Solução |
+| Error | Cause | Fix |
 |------|-------|---------|
-| CORS blocked | Origem não permitida | Verifique a URL do seu app |
-| Preflight failed | OPTIONS não respondido | Verifique configuração do servidor |
-| Credentials error | withCredentials mismatch | Alinhe client e server settings |
+| CORS blocked | Origin not allowed | Check your app's URL |
+| Preflight failed | OPTIONS not answered | Check the server configuration |
+| Credentials error | withCredentials mismatch | Align client and server settings |
 ```
 
 ---
 
 ## Security Documentation Checklist
 
-**Autenticação:**
-- [ ] Método de auth documentado com exemplos
-- [ ] Token lifecycle (obtenção, uso, refresh, revogação)
-- [ ] Tratamento de erros de auth
+**Authentication:**
+- [ ] Auth method documented with examples
+- [ ] Token lifecycle (obtain, use, refresh, revoke)
+- [ ] Auth error handling
 
-**Autorização:**
-- [ ] Roles e permissões documentados
-- [ ] Escopo de cada endpoint definido
-- [ ] Exemplos de respostas de acesso negado
+**Authorization:**
+- [ ] Roles and permissions documented
+- [ ] Scope defined for each endpoint
+- [ ] Examples of access-denied responses
 
-**Segurança de Dados:**
-- [ ] Nenhum secret no código ou docs
-- [ ] HTTPS obrigatório documentado
-- [ ] Política de data retention
+**Data security:**
+- [ ] No secrets in code or docs
+- [ ] HTTPS requirement documented
+- [ ] Data retention policy
 
-**Rate Limiting:**
-- [ ] Limites documentados por tier
-- [ ] Headers de resposta documentados
-- [ ] Retry strategy com exemplos
+**Rate limiting:**
+- [ ] Limits documented per tier
+- [ ] Response headers documented
+- [ ] Retry strategy with examples
 
 **CORS:**
-- [ ] Origens permitidas documentadas
-- [ ] Troubleshooting guide incluído
+- [ ] Allowed origins documented
+- [ ] Troubleshooting guide included

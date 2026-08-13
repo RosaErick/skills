@@ -1,58 +1,58 @@
 # api-documentation-master
 
-Skill unificada para geração de documentação de APIs profissional e completa.
+Unified skill for generating professional, complete API documentation.
 
-## 👤 Autor
+## 👤 Author
 
-**Criado por:** Fernando Foster
-**Data:** Fevereiro 2026
-
----
-
-## 📚 Skills Consolidadas
-
-Esta skill foi construída a partir da unificação de 7 skills independentes:
-
-| Skill Original | Contribuição |
-|----------------|-------------|
-| `api-design-principles` | Princípios de design REST e GraphQL, workflow de design |
-| `api-documentation-generator` | Geração automática de docs, templates de endpoint, code examples |
-| `api-documenter` | OpenAPI 3.1+, developer portals, SDK generation, docs interativas |
-| `api-patterns` | Árvore de decisão API style, REST/GraphQL/tRPC patterns, rate limiting, auth, security testing |
-| `openapi-spec-generation` | Templates OpenAPI, abordagens design-first e code-first |
-| `documentation-generation-doc-generate` | Automação de docs, CI/CD pipelines, quality standards |
-| `documentation-templates` | Templates README, changelog, ADR, llms.txt, JSDoc/TSDoc |
+**Created by:** Fernando Foster
+**Date:** February 2026
 
 ---
 
-## 📂 Estrutura
+## 📚 Consolidated Skills
+
+This skill was built by merging 7 independent skills:
+
+| Original skill | Contribution |
+|----------------|--------------|
+| `api-design-principles` | REST and GraphQL design principles, design workflow |
+| `api-documentation-generator` | Automated doc generation, endpoint templates, code examples |
+| `api-documenter` | OpenAPI 3.1+, developer portals, SDK generation, interactive docs |
+| `api-patterns` | API style decision tree, REST/GraphQL/tRPC patterns, rate limiting, auth, security testing |
+| `openapi-spec-generation` | OpenAPI templates, design-first and code-first approaches |
+| `documentation-generation-doc-generate` | Docs automation, CI/CD pipelines, quality standards |
+| `documentation-templates` | README, changelog, ADR, llms.txt, JSDoc/TSDoc templates |
+
+---
+
+## 📂 Structure
 
 ```
 api-documentation-master/
-├── SKILL.md                              — Core: workflow 6 fases, content map, quality checklist
-├── README.md                             — Este arquivo
+├── SKILL.md                              — Core: 6-phase workflow, content map, quality checklist
+├── README.md                             — This file
 ├── resources/
 │   ├── api-design-patterns.md            — REST/GraphQL/tRPC, HTTP methods, status codes, auth
-│   ├── openapi-playbook.md               — Templates OpenAPI 3.1 (YAML + FastAPI + tsoa + GraphQL)
-│   ├── documentation-templates.md        — Templates endpoint/README/changelog/ADR, CI/CD
+│   ├── openapi-playbook.md               — OpenAPI 3.1 templates (YAML + FastAPI + tsoa + GraphQL)
+│   ├── documentation-templates.md        — Endpoint/README/changelog/ADR templates, CI/CD
 │   └── security-and-testing.md           — OWASP Top 10, JWT/OAuth, rate limiting, CORS
 └── scripts/
-    └── api_validator.py                  — Validador de endpoints e specs OpenAPI
+    └── api_validator.py                  — Endpoint and OpenAPI spec validator
 ```
 
 ---
 
-## 🚀 Como Usar
+## 🚀 How to Use
 
-Invoque a skill ao documentar, criar ou revisar qualquer API. Exemplos:
+Invoke the skill when documenting, creating or reviewing any API. Examples:
 
-- "Documente esta API REST completa com OpenAPI 3.1"
-- "Crie uma spec OpenAPI design-first para um e-commerce"
-- "Gere documentação interativa com Swagger UI"
-- "Crie um guia de migração da API v1 para v2"
+- "Document this REST API end to end with OpenAPI 3.1"
+- "Create a design-first OpenAPI spec for an e-commerce system"
+- "Generate interactive documentation with Swagger UI"
+- "Write a migration guide from API v1 to v2"
 
-### Script de Validação
+### Validation Script
 
 ```bash
-python scripts/api_validator.py <caminho_do_projeto>
+python scripts/api_validator.py <project_path>
 ```

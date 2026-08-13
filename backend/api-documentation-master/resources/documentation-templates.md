@@ -1,50 +1,50 @@
 # Documentation Templates
 
-> Templates profissionais para gerar documentação de API incrível.
+> Professional templates for generating outstanding API documentation.
 
 ---
 
 ## 1. Endpoint Documentation Template
 
-Para **cada endpoint**, use este formato:
+For **each endpoint**, use this format:
 
 ```markdown
 ## [METHOD] /path/to/resource
 
-Descrição clara e concisa do que o endpoint faz.
+Clear, concise description of what the endpoint does.
 
 **Endpoint:** `[METHOD] /api/v1/resource`
 
-**Autenticação:** Required (Bearer token) | Optional | None
+**Authentication:** Required (Bearer token) | Optional | None
 
-**Rate Limit:** 100 requests/minuto
+**Rate limit:** 100 requests/minute
 
-### Parâmetros
+### Parameters
 
 #### Path Parameters
-| Nome | Tipo | Obrigatório | Descrição |
+| Name | Type | Required | Description |
 |------|------|-------------|-----------|
-| id | string (UUID) | Sim | ID do recurso |
+| id | string (UUID) | Yes | Resource ID |
 
 #### Query Parameters
-| Nome | Tipo | Obrigatório | Default | Descrição |
+| Name | Type | Required | Default | Description |
 |------|------|-------------|---------|-----------|
-| page | integer | Não | 1 | Número da página |
-| limit | integer | Não | 20 | Itens por página (máx 100) |
+| page | integer | No | 1 | Page number |
+| limit | integer | No | 20 | Items per page (max 100) |
 
 #### Request Body
 ```json
 {
-  "email": "user@example.com",      // Obrigatório: Email válido
-  "password": "SecurePass123!",     // Obrigatório: Mín 8 chars, 1 maiúscula, 1 número
-  "name": "John Doe",               // Obrigatório: 2-50 caracteres
-  "role": "user"                    // Opcional: "user" ou "admin" (default: "user")
+  "email": "user@example.com",      // Required: valid email
+  "password": "SecurePass123!",     // Required: min 8 chars, 1 uppercase, 1 number
+  "name": "John Doe",               // Required: 2-50 characters
+  "role": "user"                    // Optional: "user" or "admin" (default: "user")
 }
 ```
 
-### Respostas
+### Responses
 
-#### Sucesso (201 Created)
+#### Success (201 Created)
 ```json
 {
   "id": "usr_1234567890",
@@ -56,28 +56,28 @@ Descrição clara e concisa do que o endpoint faz.
 }
 ```
 
-#### Erros
+#### Errors
 
-- `400 Bad Request` — Dados de entrada inválidos
+- `400 Bad Request` — Invalid input data
   ```json
   {
     "error": "VALIDATION_ERROR",
-    "message": "Formato de email inválido",
+    "message": "Invalid email format",
     "field": "email"
   }
   ```
 
-- `409 Conflict` — Email já existe
+- `409 Conflict` — Email already exists
   ```json
   {
     "error": "EMAIL_EXISTS",
-    "message": "Uma conta com este email já existe"
+    "message": "An account with this email already exists"
   }
   ```
 
-- `401 Unauthorized` — Token de autenticação ausente ou inválido
+- `401 Unauthorized` — Authentication token missing or invalid
 
-### Exemplos
+### Examples
 
 **cURL:**
 ```bash
@@ -135,11 +135,11 @@ user = response.json()
 ## 2. Authentication Documentation Template
 
 ```markdown
-## Autenticação
+## Authentication
 
-Todas as requests da API requerem autenticação via Bearer tokens.
+Every API request requires authentication via Bearer tokens.
 
-### Obtendo um Token
+### Getting a token
 
 **Endpoint:** `POST /api/v1/auth/login`
 
@@ -160,17 +160,17 @@ Todas as requests da API requerem autenticação via Bearer tokens.
 }
 ```
 
-### Usando o Token
+### Using the token
 
-Inclua o token no header Authorization:
+Include the token in the Authorization header:
 
 ```
 Authorization: Bearer YOUR_TOKEN
 ```
 
-### Token Expirado
+### Expired token
 
-Tokens expiram após 1 hora. Use o refresh token para obter novo access token:
+Tokens expire after 1 hour. Use the refresh token to get a new access token:
 
 **Endpoint:** `POST /api/v1/auth/refresh`
 
@@ -181,13 +181,13 @@ Tokens expiram após 1 hora. Use o refresh token para obter novo access token:
 }
 ```
 
-### Erros de Autenticação
+### Authentication errors
 
-| Código | Significado | Ação |
+| Code | Meaning | Action |
 |--------|------------|------|
-| 401 | Token ausente ou inválido | Faça login novamente |
-| 403 | Sem permissão | Verifique sua role |
-| 429 | Muitas tentativas | Aguarde e tente novamente |
+| 401 | Token missing or invalid | Log in again |
+| 403 | No permission | Check your role |
+| 429 | Too many attempts | Wait and retry |
 ```
 
 ---
@@ -207,21 +207,21 @@ ${FEATURES_LIST}
 
 ## Quick Start
 
-### Pré-requisitos
+### Prerequisites
 
 - Python 3.8+ / Node.js 18+
 - PostgreSQL 12+
 - Redis 6+
 
-### Instalação
+### Installation
 
 ```bash
 git clone https://github.com/${ORG}/${REPO}.git
 cd ${REPO}
-pip install -e .  # ou npm install
+pip install -e .  # or npm install
 ```
 
-### Primeiro Request
+### First request
 
 ```python
 import requests
@@ -233,18 +233,18 @@ response = requests.get(
 print(response.json())
 ```
 
-## Configuração
+## Configuration
 
-### Variáveis de Ambiente
+### Environment variables
 
-| Variável | Descrição | Default | Obrigatório |
+| Variable | Description | Default | Required |
 |----------|-----------|---------|-------------|
-| DATABASE_URL | Connection string PostgreSQL | - | Sim |
-| REDIS_URL | Connection string Redis | - | Sim |
-| SECRET_KEY | Chave secreta da aplicação | - | Sim |
-| PORT | Porta do servidor | 3000 | Não |
+| DATABASE_URL | PostgreSQL connection string | - | Yes |
+| REDIS_URL | Redis connection string | - | Yes |
+| SECRET_KEY | Application secret key | - | Yes |
+| PORT | Server port | 3000 | No |
 
-## Documentação
+## Documentation
 
 - [API Reference](./docs/api.md)
 - [Architecture](./docs/architecture.md)
@@ -262,33 +262,33 @@ MIT
 ```markdown
 # Changelog
 
-Todos os changes notáveis deste projeto serão documentados aqui.
-Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
+All notable changes to this project will be documented here.
+Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
-- Nova feature em desenvolvimento
+- New feature in development
 
 ## [2.0.0] - 2026-01-15
 ### ⚠️ Breaking Changes
-- Removido endpoint `GET /api/v1/legacy-users`
-- Campo `username` renomeado para `name`
+- Removed the `GET /api/v1/legacy-users` endpoint
+- Field `username` renamed to `name`
 
 ### Added
-- Paginação cursor-based para listagem de usuários
-- Suporte a Passkey authentication
+- Cursor-based pagination for user listing
+- Passkey authentication support
 
 ### Changed
-- Rate limit aumentado para 1000 req/min
+- Rate limit raised to 1000 req/min
 
 ### Fixed
-- Corrigido bug de timezone em `createdAt`
+- Fixed a timezone bug in `createdAt`
 
 ## [1.0.0] - 2025-06-01
 ### Added
-- Release inicial da API
-- CRUD de usuários
-- Autenticação JWT
+- Initial API release
+- User CRUD
+- JWT authentication
 ```
 
 ---
@@ -296,25 +296,25 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
 ## 5. Architecture Decision Record (ADR)
 
 ```markdown
-# ADR-001: [Título da Decisão]
+# ADR-001: [Decision title]
 
 ## Status
 Accepted | Deprecated | Superseded by ADR-XXX
 
 ## Context
-Por que estamos tomando esta decisão? Qual problema estamos resolvendo?
+Why are we making this decision? What problem are we solving?
 
 ## Decision
-O que decidimos fazer? Descreva a abordagem escolhida.
+What did we decide to do? Describe the chosen approach.
 
 ## Consequences
-Quais são os trade-offs? O que ganhamos e o que perdemos?
+What are the trade-offs? What do we gain and what do we lose?
 
-### Positivos
-- Benefício 1
-- Benefício 2
+### Positive
+- Benefit 1
+- Benefit 2
 
-### Negativos
+### Negative
 - Trade-off 1
 - Trade-off 2
 ```
@@ -323,11 +323,11 @@ Quais são os trade-offs? O que ganhamos e o que perdemos?
 
 ## 6. Code Examples Generator Pattern
 
-Ao documentar endpoints, gere exemplos em múltiplas linguagens:
+When documenting endpoints, generate examples in multiple languages:
 
 ```python
 def generate_code_examples(endpoint):
-    """Gera code examples para API endpoints em múltiplas linguagens"""
+    """Generates code examples for API endpoints in multiple languages"""
 
     # Python
     python = f'''
@@ -442,54 +442,54 @@ jobs:
 
 ```markdown
 # Project Name
-> Descrição em uma linha.
+> One-line description.
 
 ## Core Files
-- [src/index.ts]: Entry point principal
+- [src/index.ts]: Main entry point
 - [src/api/]: API routes
-- [docs/]: Documentação
+- [docs/]: Documentation
 
 ## Key Concepts
-- Conceito 1: Explicação breve
-- Conceito 2: Explicação breve
+- Concept 1: brief explanation
+- Concept 2: brief explanation
 ```
 
 ---
 
-## Princípios de Estrutura
+## Structural Principles
 
-| Princípio | Por quê |
+| Principle | Why |
 |-----------|---------|
-| **Scannable** | Headers, listas, tabelas |
-| **Exemplos primeiro** | Mostre, não apenas explique |
-| **Detalhe progressivo** | Simple → Complexo |
-| **Atualizado** | Desatualizado = enganoso |
-| **Consistente** | Mesmo formato em toda a doc |
+| **Scannable** | Headers, lists, tables |
+| **Examples first** | Show, don't just explain |
+| **Progressive detail** | Simple → complex |
+| **Up to date** | Stale = misleading |
+| **Consistent** | Same format throughout the docs |
 
 ---
 
 ## ✅ Do This / ❌ Don't Do This
 
-### ✅ Faça
+### ✅ Do
 
-- Use formato consistente para todos os endpoints
-- Inclua exemplos funcionais em múltiplas linguagens
-- Documente todos os códigos de erro possíveis
-- Use dados de exemplo realistas (não "foo" e "bar")
-- Explique cada parâmetro com tipos e constraints
-- Versione sua API com números na URL (/api/v1/)
-- Inclua timestamps de última atualização
-- Link endpoints relacionados entre si
-- Documente políticas de rate limiting
-- Forneça Postman Collection ou OpenAPI spec
+- Use a consistent format for every endpoint
+- Include working examples in multiple languages
+- Document every possible error code
+- Use realistic sample data (not "foo" and "bar")
+- Explain each parameter with types and constraints
+- Version your API with numbers in the URL (/api/v1/)
+- Include last-updated timestamps
+- Link related endpoints to each other
+- Document rate limiting policies
+- Provide a Postman collection or OpenAPI spec
 
-### ❌ Não Faça
+### ❌ Don't
 
-- Não pule cenários de erro
-- Não use descrições vagas ("Gets data")
-- Não esqueça da autenticação
-- Não ignore edge cases (paginação, filtros, ordenação)
-- Não deixe exemplos quebrados
-- Não use informação desatualizada
-- Não overcomplicate — mantenha simples e scannable
-- Não esqueça de response headers importantes
+- Don't skip error scenarios
+- Don't use vague descriptions ("Gets data")
+- Don't forget authentication
+- Don't ignore edge cases (pagination, filters, sorting)
+- Don't leave broken examples
+- Don't publish outdated information
+- Don't overcomplicate — keep it simple and scannable
+- Don't forget important response headers

@@ -1,4 +1,4 @@
 # Security
 
-- **[vulnerability-scanner](./vulnerability-scanner/SKILL.md)** — Análise de vulnerabilidades: OWASP 2025, supply chain, superfície de ataque, priorização de risco.
-- **[red-team-tactics](./red-team-tactics/SKILL.md)** — Táticas de red team baseadas em MITRE ATT&CK: fases de ataque e reporte.
+- **[vulnerability-scanner](./vulnerability-scanner/SKILL.md)** — Vulnerability analysis: OWASP 2025, supply chain, attack surface mapping, risk prioritization.
+- **[red-team-tactics](./red-team-tactics/SKILL.md)** — Red team tactics based on MITRE ATT&CK: attack phases and reporting.

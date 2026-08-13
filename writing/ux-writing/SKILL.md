@@ -1,111 +1,111 @@
 ---
 source: original
 name: UX & Interface Design Master Guide
-description: Diretrizes de User Experience, Interação Guiada e UX Writing baseadas em princípios fundamentais da usabilidade web moderna.
-risk_assessment: "Low. Diretrizes teóricas e táticas para uso em design e código de interfaces."
+description: User Experience, guided interaction and UX Writing guidelines, grounded in the fundamentals of modern web usability.
+risk_assessment: "Low. Theoretical and tactical guidelines for use in interface design and code."
 ---
 
 # UX & Interface Design Master Guide
 
-Este guia consolida os princípios essenciais de **User Experience (UX)**, **UX Writing** e **Interaction Design (IxD)** extraídos das maiores referências do mercado, incluindo os conceitos clássicos de *Steve Krug ("Don't Make Me Think")* e da *Interaction Design Foundation*.
+This guide consolidates the essential principles of **User Experience (UX)**, **UX Writing** and **Interaction Design (IxD)** drawn from the field's major references, including the classic concepts of *Steve Krug ("Don't Make Me Think")* and the *Interaction Design Foundation*.
 
 ---
 
-## 1. Princípios de "Não Me Faça Pensar" (Cognição Web)
+## 1. "Don't Make Me Think" Principles (Web Cognition)
 
-O princípio supremo da usabilidade é eliminar os "pontos de interrogação" na cabeça do usuário. Uma interface deve ser autoevidente (ou, no mínimo, autoexplicativa).
-    
-### Como os usuários realmente usam a Web:
-- **Eles escaneiam, não leem:** Usuários são como "tubarões", focados em realizar tarefas rápidas. Eles varrem a página buscando palavras-chave que correspondam ao seu objetivo.
-- **Eles se satisfazem (Satisfice):** Eles não buscam a opção perfeita e ótima. Eles clicam na primeira opção que pareça minimamente razoável.
-- **Eles "se viram" (Muddle Through):** Ninguém lê manuais de instrução de interfaces. Usuários criam modelos mentais improvisados e seguem em frente através de tentativas e erros.
+The supreme usability principle is to eliminate the question marks in the user's head. An interface must be self-evident (or, at the very least, self-explanatory).
 
-### O Design "Outdoor" (Billboard Design 101):
-A web é vista "a 100 km/h". Para facilitar o escaneamento:
-1. **Use Convenções:** Não reinvente a roda. Posições de logotipos, carrinhos de compra e navegações padrão economizam carga cognitiva. *Clareza sempre vence a Consistência*.
-2. **Crie Hierarquias Visuais Claros:** Letras maiores e mais escuras mostram importância. Agrupamento visual demonstra relacionamento.
-3. **Deixe o clique óbvio:** Links, botões e abas devem gritar "Sou clicável!". Em touchscreens, não existe 'hover'; a affordance (dica visual) deve ser óbvia.
-4. **Reduza o Ruído:** Elimine "gritos" visuais, desorganização e desordem.
-5. **Formate o texto para escaneabilidade:** Use tópicos (bullet points), sentenças curtas, negrito nos termos principais e intertítulos expressivos.
+### How users really use the web:
+- **They scan, they don't read:** Users are like sharks, focused on getting tasks done fast. They sweep the page for keywords that match their goal.
+- **They satisfice:** They don't look for the perfect, optimal option. They click the first option that looks remotely reasonable.
+- **They muddle through:** Nobody reads instruction manuals for interfaces. Users build improvised mental models and push on by trial and error.
 
----
-
-## 2. Os 7 Fatores da Experiência do Usuário
-
-Avalie qualquer produto através do "Honeycomb de UX":
-1. **Útil (Useful):** Resolve um problema real?
-2. **Usável (Usable):** É fácil e intuitivo de operar?
-3. **Encontrável (Findable):** O design navegacional faz sentido?
-4. **Crível (Credible):** O design e o conteúdo transparecem confiança?
-5. **Desejável (Desirable):** A estética e a marca geram atração emocional?
-6. **Acessível (Accessible):** Pessoas com deficiências conseguem utilizá-lo?
-7. **Valioso (Valuable):** Gera valor tanto para o negócio quanto para o usuário.
+### Billboard Design 101:
+The web is read at 60 mph. To make scanning easy:
+1. **Use conventions:** Don't reinvent the wheel. Standard positions for logos, shopping carts and navigation save cognitive load. *Clarity always beats consistency.*
+2. **Create clear visual hierarchies:** Bigger, darker type signals importance. Visual grouping signals relationship.
+3. **Make clickability obvious:** Links, buttons and tabs should shout "I'm clickable!". On touchscreens there is no hover; the affordance has to be obvious on its own.
+4. **Cut the noise:** Get rid of visual shouting, clutter and disorder.
+5. **Format text for scanning:** Bullet points, short sentences, key terms in bold, meaningful subheadings.
 
 ---
 
-## 3. Características de Produtos Usáveis
-* **Eficácia:** O usuário consegue completar sua meta.
-* **Eficiência:** A meta é completada com o mínimo de esforço de tempo e energia (atrito nulo).
-* **Engajamento:** Satisfação em usar a ferramenta.
-* **Tolerância a Erros:** O sistema previne erros naturais (ex: máscaras de input) e, caso ocorram, permite recuperação rápida sem punição ao usuário.
-* **Facilidade de Aprendizado:** Curva mínima para compreender o sistema no primeiro uso.
+## 2. The 7 Factors of User Experience
+
+Evaluate any product through the "UX Honeycomb":
+1. **Useful:** Does it solve a real problem?
+2. **Usable:** Is it easy and intuitive to operate?
+3. **Findable:** Does the navigational design make sense?
+4. **Credible:** Do the design and content convey trust?
+5. **Desirable:** Do the aesthetics and brand create emotional pull?
+6. **Accessible:** Can people with disabilities use it?
+7. **Valuable:** Does it create value for both the business and the user?
 
 ---
 
-## 4. O Guia Tático de UX Writing
-
-Palavras determinam o sucesso ou a morte de uma experiência ("Words make experiences work").
-Aplicar um design focado em conteúdo (Content-First Design) requer tratar a interface como uma **conversa**.
-
-### As 4 Fases de Edição de UX Copy
-1. **Propósito (Purposeful):** Cada palavra deve ajudar o usuário a dar o próximo passo.
-2. **Concisão (Concise):** Corte o texto pela metade. Remova jargões, redundâncias e instruções estúpidas. (A "Gordura de Fala / Happy Talk" deve morrer).
-3. **Conversacional (Conversational):** Use o tom e a voz definidos no mapa da sua marca ("Voice Chart"). Fale como um humano ajudando outro humano.
-4. **Clareza (Clear):** Substitua termos técnicos do banco de dados (ex: `JSON Parsing Error`) por falas diretas (ex: `Tivemos um problema de conexão. Tente novamente em alguns minutos.`).
-
-### Elementos Básicos de Copy
-* **Botões e CTAs:** Devem iniciar com verbos de ação imperativos e óbvios (ex: `Finalizar Compra` ao invés de apenas `Prosseguir`).
-* **Mensagens de Erro (Error States):** Assuma a culpa. Explique o que deu errado em linguagem simples, seja polido e **forneça a saída** imediatamente para o usuário resolver o problema.
-* **Empty States (Telas Vazias):** Transforme o nada ("0 Itens") em oportunidades de engajamento amigável e explicativo.
+## 3. Traits of Usable Products
+* **Effectiveness:** The user can complete their goal.
+* **Efficiency:** The goal is completed with minimum time and energy (zero friction).
+* **Engagement:** Satisfaction in using the tool.
+* **Error tolerance:** The system prevents natural mistakes (e.g. input masks) and, when they happen, allows fast recovery without punishing the user.
+* **Ease of learning:** Minimal curve to understand the system on first use.
 
 ---
 
-## 5. Interaction Design (As 5 Dimensões)
+## 4. The Tactical UX Writing Guide
 
-O Design de Interação define o comportamento entre a máquina e o usuário humano, mapeados em 5 dimensões:
-* **1D: Palavras (Words):** O texto em botões, menus e informações. Devem ser simples de entender.
-* **2D: Referências Visuais (Visual Representations):** Tipografia, ícones e gráficos com os quais o usuário interage.
-* **3D: Objetos ou Espaço Físico (Physical Space):** Com qual aparelho físico se interage (Mouse de mesa? Dedo em um celular no trem?).
-* **4D: O Tempo (Time):** Mídias que mudam com o tempo (animações de feedback e carregamento).
-* **5D: Comportamento (Behavior):** A reação do sistema. *Como* o sistema responde aos inputs do usuário e atua sobre eles?
+Words decide whether an experience lives or dies ("Words make experiences work").
+Content-first design means treating the interface as a **conversation**.
 
----
+### The 4 Editing Phases of UX Copy
+1. **Purposeful:** Every word should help the user take the next step.
+2. **Concise:** Cut the text in half. Remove jargon, redundancy and pointless instructions. (Happy talk must die.)
+3. **Conversational:** Use the tone and voice defined in your brand's voice chart. Speak like a human helping another human.
+4. **Clear:** Replace database-speak (e.g. `JSON Parsing Error`) with plain talk (e.g. `We hit a connection problem. Try again in a few minutes.`).
 
-## 6. UX para o Ambiente Mobile
-
-O Mobile exige sacrifícios severos frente ao Desktop, ditados pelo espaço vital da UI.
-1. **Telas Pequenas e Foco:** Oculte o secundário. A navegação deve ser hiper-simplificada e focada em uma ação primária por vez.
-2. **Redução Drástica de Entradas (Inputs):** Cada campo em um formulário mobile reduz expressivamente a conversão. Use dados automáticos, GPS, e botões numéricos (numpads) contextuais nativos.
-3. **Falta de Hover (No Cursor):** Interface plana em mobile pode confundir sobre o que é tocável. A *Affordance* do elemento (sua dica física, como bordas e relevos suaves visuais) precisa transparecer a intenção.
-4. **Hitbox (A regra do Dedo Gordo):** Qualquer botão manipulável na tela do celular exige alvos (targets) visuais com área de folga técnica para não gerar escorregões desastrados interativos de dedilhamento acidental.
-5. **Conexões Instáveis:** A interface deve tolerar falhas de rede, informando carregamentos e operando minimamente caches e previsões amigáveis de espera sem quebrar visualmente.
+### Basic Copy Elements
+* **Buttons and CTAs:** Start with obvious, imperative action verbs (e.g. `Complete purchase` rather than just `Continue`).
+* **Error states:** Take the blame. Explain what went wrong in plain language, stay polite, and **hand the user the way out** immediately.
+* **Empty states:** Turn nothing ("0 items") into friendly, explanatory engagement.
 
 ---
 
-## 7. A Conta de Confiança do Usuário (Reservoir of Goodwill)
+## 5. Interaction Design (The 5 Dimensions)
 
-A empatia é a métrica oculta máxima. Todo usuário inicia um acesso com um pote de boa vontade contido.
-
-* **O que esvazia esse pote?** Pedir informações desnecessárias; regras punitivas chatas (ex: rejeitar o formulário inteiro por conta do espaçamento no CEP que o usuário digitou sem traço); enganar o usuário (Dark Patterns de forçar vendas) e agir com "grosseria técnica" através de pop-ups bloqueadores.
-* **O que enche esse pote?** Conhecer as necessidades primárias deles (mostrar o telefone da loja de cara, ao invés do "Missão e Valores"); poupar o trabalho do usuário formatando de forma inteligente os inputs deles no back-end e pedindo desculpas limpas por falhas.
+Interaction design defines the behavior between the machine and the human user, mapped across 5 dimensions:
+* **1D: Words:** The text in buttons, menus and information. It must be simple to understand.
+* **2D: Visual representations:** Typography, icons and graphics the user interacts with.
+* **3D: Physical objects or space:** Which physical device is used (desktop mouse? A thumb on a phone on the train?).
+* **4D: Time:** Media that changes over time (feedback and loading animations).
+* **5D: Behavior:** The system's reaction. *How* the system responds to user input and acts on it.
 
 ---
 
-## 8. Técnicas Iniciais de Research (Pesquisa)
+## 6. UX for Mobile
 
-Design não é puro "achismo", são hipóteses baseadas em comportamentos testados:
-1. **Card Sorting (Ordenação de Cartões):** Usado para conceber e testar estruturas lógicas de navegação.
-2. **Testes de Usabilidade Básicos:** Fazer um usuário comum usar seu principal sistema e **apenas observar em silêncio**, anotando onde ele se perde. Realizar sempre que possível, com ao menos 3 pessoas, identificará 90% dos defeitos cruciais.
-3. **Pessoas e Empatia (User Personas):** Criar representações das necessidades dos reais usuários para tirar a equipe do enviesamento interno empresarial de seu próprio umbigo.
+Mobile demands severe sacrifices compared to desktop, dictated by how little UI real estate there is.
+1. **Small screens, sharp focus:** Hide the secondary. Navigation must be hyper-simplified and centered on one primary action at a time.
+2. **Drastically fewer inputs:** Every field in a mobile form measurably cuts conversion. Use automatic data, GPS and contextual native numeric keypads.
+3. **No hover, no cursor:** A flat interface on mobile can hide what's tappable. The element's affordance (its visual cues — borders, soft relief) has to convey intent.
+4. **Hitbox (the fat finger rule):** Any tappable button needs a target area with technical slack, so accidental taps don't wreck the interaction.
+5. **Unstable connections:** The interface must tolerate network failure — signal loading, lean on caches, and set expectations for waiting without breaking visually.
 
-> "A clareza é a principal cortesia do design. Não faça o usuário pensar no sistema; permita que ele pense livremente sobre aquilo que ele entrou no seu sistema tentando realizar."
+---
+
+## 7. The Reservoir of Goodwill
+
+Empathy is the ultimate hidden metric. Every user arrives with a limited pot of goodwill.
+
+* **What drains the pot?** Asking for unnecessary information; petty punitive rules (e.g. rejecting the whole form because the postcode was typed without a dash); deceiving the user (dark patterns that force sales); and technical rudeness such as blocking pop-ups.
+* **What fills it?** Knowing their primary needs (showing the store's phone number up front instead of "Mission and Values"); saving the user work by intelligently normalizing their input on the back end; and apologizing cleanly for failures.
+
+---
+
+## 8. Entry-Level Research Techniques
+
+Design isn't guesswork — it's hypotheses grounded in tested behavior:
+1. **Card sorting:** Used to devise and test logical navigation structures.
+2. **Basic usability testing:** Have an ordinary user use your main system and **just watch in silence**, noting where they get lost. Do it whenever you can; with as few as 3 people you'll find 90% of the crucial defects.
+3. **User personas:** Build representations of real users' needs to pull the team out of its own internal, navel-gazing bias.
+
+> "Clarity is design's chief courtesy. Don't make the user think about the system; let them think freely about whatever they came into your system to get done."

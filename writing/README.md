@@ -1,10 +1,10 @@
 # Writing
 
-Texto para humanos: produto, marketing, documentação e busca.
+Text for humans: product, marketing, documentation and search.
 
-- **[copywriting](./copywriting/SKILL.md)** — Copy de marketing para landing, pricing, feature e about — clara, honesta e testável.
-- **[ux-writing](./ux-writing/SKILL.md)** — Diretrizes de UX writing, interação guiada e usabilidade de interface.
-- **[documentation-master](./documentation-master/SKILL.md)** — Documentação técnica completa: API, arquitetura, código e usuário, com diagramas Mermaid.
-- **[documentation-templates](./documentation-templates/SKILL.md)** — Templates de README, docs de API, comentários e docs amigáveis a agentes.
-- **[seo-fundamentals](./seo-fundamentals/SKILL.md)** — E-E-A-T, Core Web Vitals e princípios de algoritmo do Google.
-- **[geo-fundamentals](./geo-fundamentals/SKILL.md)** — Otimização para buscadores generativos (ChatGPT, Claude, Perplexity).
+- **[copywriting](./copywriting/SKILL.md)** — Marketing copy for landing, pricing, feature and about pages — clear, honest and testable.
+- **[ux-writing](./ux-writing/SKILL.md)** — UX writing, guided interaction and interface usability guidelines.
+- **[documentation-master](./documentation-master/SKILL.md)** — Complete technical documentation: API, architecture, code and user docs, with Mermaid diagrams.
+- **[documentation-templates](./documentation-templates/SKILL.md)** — Templates for README, API docs, comments and agent-friendly docs.
+- **[seo-fundamentals](./seo-fundamentals/SKILL.md)** — E-E-A-T, Core Web Vitals and Google algorithm principles.
+- **[geo-fundamentals](./geo-fundamentals/SKILL.md)** — Optimization for generative search engines (ChatGPT, Claude, Perplexity).

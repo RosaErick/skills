@@ -1,8 +1,8 @@
 # Infra
 
-Shell, servidores e deploy.
+Shell, servers and deployment.
 
-- **[bash-linux](./bash-linux/SKILL.md)** — Padrões de Bash/Linux: comandos críticos, pipes, tratamento de erro, scripting.
-- **[powershell-windows](./powershell-windows/SKILL.md)** — Padrões de PowerShell no Windows: pegadinhas, sintaxe de operadores, erros.
-- **[server-management](./server-management/SKILL.md)** — Gerência de processos, estratégia de monitoramento e decisões de escala.
-- **[deployment-procedures](./deployment-procedures/SKILL.md)** — Deploy seguro em produção, estratégias de rollback e verificação.
+- **[bash-linux](./bash-linux/SKILL.md)** — Bash/Linux patterns: critical commands, pipes, error handling, scripting.
+- **[powershell-windows](./powershell-windows/SKILL.md)** — PowerShell on Windows: pitfalls, operator syntax, error handling.
+- **[server-management](./server-management/SKILL.md)** — Process management, monitoring strategy and scaling decisions.
+- **[deployment-procedures](./deployment-procedures/SKILL.md)** — Safe production deploys, rollback strategies and verification.

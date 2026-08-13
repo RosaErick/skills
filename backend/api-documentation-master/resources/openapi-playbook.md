@@ -1,16 +1,16 @@
 # OpenAPI 3.1 Playbook
 
-> Templates completos e patterns para criar especificações OpenAPI profissionais.
+> Complete templates and patterns for creating professional OpenAPI specifications.
 
 ---
 
 ## Design Approaches
 
-| Abordagem | Descrição | Melhor Para |
+| Approach | Description | Best for |
 |-----------|-----------|-------------|
-| **Design-First** | Escreva spec antes do código | APIs novas, contratos |
-| **Code-First** | Gere spec a partir do código | APIs existentes |
-| **Hybrid** | Anote código, gere spec | APIs em evolução |
+| **Design-First** | Write the spec before the code | New APIs, contracts |
+| **Code-First** | Generate the spec from the code | Existing APIs |
+| **Hybrid** | Annotate the code, generate the spec | Evolving APIs |
 
 ---
 
@@ -21,10 +21,10 @@ openapi: 3.1.0
 info:
   title: User Management API
   description: |
-    API para gerenciamento de usuários e perfis.
+    API for managing users and profiles.
 
-    ## Autenticação
-    Todos os endpoints requerem Bearer token.
+    ## Authentication
+    All endpoints require a Bearer token.
 
     ## Rate Limiting
     - 1000 requests/minuto (tier standard)
@@ -48,37 +48,37 @@ servers:
 
 tags:
   - name: Users
-    description: Operações de gerenciamento de usuários
+    description: User management operations
   - name: Profiles
-    description: Operações de perfil de usuário
+    description: User profile operations
   - name: Admin
-    description: Operações administrativas
+    description: Administrative operations
 
 paths:
   /users:
     get:
       operationId: listUsers
-      summary: Listar todos os usuários
-      description: Retorna lista paginada de usuários com filtros opcionais.
+      summary: List all users
+      description: Returns a paginated list of users with optional filters.
       tags: [Users]
       parameters:
         - $ref: '#/components/parameters/PageParam'
         - $ref: '#/components/parameters/LimitParam'
         - name: status
           in: query
-          description: Filtrar por status do usuário
+          description: Filter by user status
           schema:
             $ref: '#/components/schemas/UserStatus'
         - name: search
           in: query
-          description: Buscar por nome ou email
+          description: Search by name or email
           schema:
             type: string
             minLength: 2
             maxLength: 100
       responses:
         '200':
-          description: Resposta com sucesso
+          description: Successful response
           content:
             application/json:
               schema:
@@ -97,8 +97,8 @@ paths:
 
     post:
       operationId: createUser
-      summary: Criar novo usuário
-      description: Cria uma nova conta de usuário e envia email de boas-vindas.
+      summary: Create a new user
+      description: Creates a new user account and sends a welcome email.
       tags: [Users]
       requestBody:
         required: true
@@ -108,34 +108,34 @@ paths:
               $ref: '#/components/schemas/CreateUserRequest'
             examples:
               standard:
-                summary: Usuário padrão
+                summary: Standard user
                 value:
                   email: user@example.com
                   name: John Doe
                   role: user
               admin:
-                summary: Usuário admin
+                summary: Admin user
                 value:
                   email: admin@example.com
                   name: Admin User
                   role: admin
       responses:
         '201':
-          description: Usuário criado com sucesso
+          description: User created successfully
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
           headers:
             Location:
-              description: URL do usuário criado
+              description: URL of the created user
               schema:
                 type: string
                 format: uri
         '400':
           $ref: '#/components/responses/BadRequest'
         '409':
-          description: Email já existe
+          description: Email already exists
           content:
             application/json:
               schema:
@@ -149,11 +149,11 @@ paths:
 
     get:
       operationId: getUser
-      summary: Buscar usuário por ID
+      summary: Fetch user by ID
       tags: [Users]
       responses:
         '200':
-          description: Resposta com sucesso
+          description: Successful response
           content:
             application/json:
               schema:
@@ -165,7 +165,7 @@ paths:
 
     patch:
       operationId: updateUser
-      summary: Atualizar usuário
+      summary: Update user
       tags: [Users]
       requestBody:
         required: true
@@ -175,7 +175,7 @@ paths:
               $ref: '#/components/schemas/UpdateUserRequest'
       responses:
         '200':
-          description: Usuário atualizado
+          description: User updated
           content:
             application/json:
               schema:
@@ -189,11 +189,11 @@ paths:
 
     delete:
       operationId: deleteUser
-      summary: Deletar usuário
+      summary: Delete user
       tags: [Users, Admin]
       responses:
         '204':
-          description: Usuário deletado
+          description: User deleted
         '404':
           $ref: '#/components/responses/NotFound'
       security:
@@ -209,16 +209,16 @@ components:
           type: string
           format: uuid
           readOnly: true
-          description: Identificador único do usuário
+          description: Unique user identifier
         email:
           type: string
           format: email
-          description: Endereço de email do usuário
+          description: User's email address
         name:
           type: string
           minLength: 1
           maxLength: 100
-          description: Nome de exibição do usuário
+          description: User's display name
         status:
           $ref: '#/components/schemas/UserStatus'
         role:
@@ -232,7 +232,7 @@ components:
         metadata:
           type: object
           additionalProperties: true
-          description: Metadados customizados
+          description: Custom metadata
         createdAt:
           type: string
           format: date-time
@@ -245,7 +245,7 @@ components:
     UserStatus:
       type: string
       enum: [active, inactive, suspended, pending]
-      description: Status da conta do usuário
+      description: User account status
 
     CreateUserRequest:
       type: object
@@ -322,10 +322,10 @@ components:
       properties:
         code:
           type: string
-          description: Código de erro para tratamento programático
+          description: Error code for programmatic handling
         message:
           type: string
-          description: Mensagem legível para humanos
+          description: Human-readable message
         details:
           type: array
           items:
@@ -337,14 +337,14 @@ components:
                 type: string
         requestId:
           type: string
-          description: ID da request para suporte
+          description: Request ID for support
 
   parameters:
     UserIdParam:
       name: userId
       in: path
       required: true
-      description: ID do usuário
+      description: User ID
       schema:
         type: string
         format: uuid
@@ -352,7 +352,7 @@ components:
     PageParam:
       name: page
       in: query
-      description: Número da página (1-based)
+      description: Page number (1-based)
       schema:
         type: integer
         minimum: 1
@@ -361,7 +361,7 @@ components:
     LimitParam:
       name: limit
       in: query
-      description: Itens por página
+      description: Items per page
       schema:
         type: integer
         minimum: 1
@@ -370,37 +370,37 @@ components:
 
   responses:
     BadRequest:
-      description: Request inválida
+      description: Invalid request
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
           example:
             code: VALIDATION_ERROR
-            message: Parâmetros de request inválidos
+            message: Invalid request parameters
             details:
               - field: email
-                message: Deve ser um email válido
+                message: Must be a valid email address
 
     Unauthorized:
-      description: Autenticação necessária
+      description: Authentication required
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
           example:
             code: UNAUTHORIZED
-            message: Autenticação necessária
+            message: Authentication required
 
     NotFound:
-      description: Recurso não encontrado
+      description: Resource not found
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
           example:
             code: NOT_FOUND
-            message: Usuário não encontrado
+            message: User not found
 
     RateLimited:
       description: Muitas requests
@@ -410,7 +410,7 @@ components:
             $ref: '#/components/schemas/Error'
       headers:
         Retry-After:
-          description: Segundos até o rate limit resetar
+          description: Seconds until the rate limit resets
           schema:
             type: integer
         X-RateLimit-Limit:
@@ -451,7 +451,7 @@ components:
       type: apiKey
       in: header
       name: X-API-Key
-      description: API key para chamadas service-to-service
+      description: API key for service-to-service calls
 
 security:
   - bearerAuth: []
@@ -471,11 +471,11 @@ from enum import Enum
 
 app = FastAPI(
     title="User Management API",
-    description="API para gerenciamento de usuários e perfis",
+    description="API for managing users and profiles",
     version="2.0.0",
     openapi_tags=[
-        {"name": "Users", "description": "Operações de usuário"},
-        {"name": "Profiles", "description": "Operações de perfil"},
+        {"name": "Users", "description": "User operations"},
+        {"name": "Profiles", "description": "Profile operations"},
     ],
     servers=[
         {"url": "https://api.example.com/v2", "description": "Production"},
@@ -497,12 +497,12 @@ class UserRole(str, Enum):
 
 # Models
 class UserBase(BaseModel):
-    email: EmailStr = Field(..., description="Email do usuário")
-    name: str = Field(..., min_length=1, max_length=100, description="Nome de exibição")
+    email: EmailStr = Field(..., description="User's email")
+    name: str = Field(..., min_length=1, max_length=100, description="Display name")
 
 class UserCreate(UserBase):
     role: UserRole = Field(default=UserRole.user)
-    metadata: Optional[dict] = Field(default=None, description="Metadados customizados")
+    metadata: Optional[dict] = Field(default=None, description="Custom metadata")
 
     model_config = {
         "json_schema_extra": {
@@ -523,10 +523,10 @@ class UserUpdate(BaseModel):
     metadata: Optional[dict] = None
 
 class User(UserBase):
-    id: UUID = Field(..., description="Identificador único")
+    id: UUID = Field(..., description="Unique identifier")
     status: UserStatus
     role: UserRole
-    avatar: Optional[str] = Field(None, description="URL do avatar")
+    avatar: Optional[str] = Field(None, description="Avatar URL")
     metadata: Optional[dict] = None
     created_at: datetime = Field(..., alias="createdAt")
     updated_at: Optional[datetime] = Field(None, alias="updatedAt")
@@ -550,7 +550,7 @@ class ErrorDetail(BaseModel):
     message: str
 
 class ErrorResponse(BaseModel):
-    code: str = Field(..., description="Código do erro")
+    code: str = Field(..., description="Error code")
     message: str = Field(..., description="Mensagem de erro")
     details: Optional[List[ErrorDetail]] = None
     request_id: Optional[str] = Field(None, alias="requestId")
@@ -560,26 +560,26 @@ class ErrorResponse(BaseModel):
     "/users",
     response_model=UserListResponse,
     tags=["Users"],
-    summary="Listar todos os usuários",
-    description="Retorna lista paginada com filtros opcionais.",
+    summary="List all users",
+    description="Returns a paginated list with optional filters.",
     responses={
-        400: {"model": ErrorResponse, "description": "Request inválida"},
-        401: {"model": ErrorResponse, "description": "Não autorizado"},
+        400: {"model": ErrorResponse, "description": "Invalid request"},
+        401: {"model": ErrorResponse, "description": "Unauthorized"},
     },
 )
 async def list_users(
-    page: int = Query(1, ge=1, description="Número da página"),
-    limit: int = Query(20, ge=1, le=100, description="Itens por página"),
-    status: Optional[UserStatus] = Query(None, description="Filtrar por status"),
+    page: int = Query(1, ge=1, description="Page number"),
+    limit: int = Query(20, ge=1, le=100, description="Items per page"),
+    status: Optional[UserStatus] = Query(None, description="Filter by status"),
     search: Optional[str] = Query(None, min_length=2, max_length=100),
 ):
     """
-    Lista usuários com paginação e filtros.
+    Lists users with pagination and filters.
 
-    - **page**: Número da página (1-based)
-    - **limit**: Itens por página (máx 100)
-    - **status**: Filtrar por status do usuário
-    - **search**: Buscar por nome ou email
+    - **page**: Page number (1-based)
+    - **limit**: Items per page (max 100)
+    - **status**: Filter by user status
+    - **search**: Search by name or email
     """
     pass
 
@@ -588,53 +588,53 @@ async def list_users(
     response_model=User,
     status_code=201,
     tags=["Users"],
-    summary="Criar novo usuário",
+    summary="Create a new user",
     responses={
         400: {"model": ErrorResponse},
-        409: {"model": ErrorResponse, "description": "Email já existe"},
+        409: {"model": ErrorResponse, "description": "Email already exists"},
     },
 )
 async def create_user(user: UserCreate):
-    """Cria novo usuário e envia email de boas-vindas."""
+    """Creates a new user and sends a welcome email."""
     pass
 
 @app.get(
     "/users/{user_id}",
     response_model=User,
     tags=["Users"],
-    summary="Buscar usuário por ID",
+    summary="Fetch user by ID",
     responses={404: {"model": ErrorResponse}},
 )
-async def get_user(user_id: UUID = Path(..., description="ID do usuário")):
-    """Retorna um usuário específico pelo ID."""
+async def get_user(user_id: UUID = Path(..., description="User ID")):
+    """Returns a specific user by ID."""
     pass
 
 @app.patch(
     "/users/{user_id}",
     response_model=User,
     tags=["Users"],
-    summary="Atualizar usuário",
+    summary="Update user",
     responses={
         400: {"model": ErrorResponse},
         404: {"model": ErrorResponse},
     },
 )
 async def update_user(
-    user_id: UUID = Path(..., description="ID do usuário"),
+    user_id: UUID = Path(..., description="User ID"),
     user: UserUpdate = ...,
 ):
-    """Atualiza atributos do usuário."""
+    """Updates user attributes."""
     pass
 
 @app.delete(
     "/users/{user_id}",
     status_code=204,
     tags=["Users", "Admin"],
-    summary="Deletar usuário",
+    summary="Delete user",
     responses={404: {"model": ErrorResponse}},
 )
-async def delete_user(user_id: UUID = Path(..., description="ID do usuário")):
-    """Deleta permanentemente um usuário."""
+async def delete_user(user_id: UUID = Path(..., description="User ID")):
+    """Permanently deletes a user."""
     pass
 
 # Exportar spec OpenAPI
@@ -655,17 +655,17 @@ import {
 } from "tsoa";
 
 interface User {
-  /** Identificador único */
+  /** Unique identifier */
   id: string;
-  /** Email do usuário */
+  /** User's email */
   email: string;
-  /** Nome de exibição */
+  /** Display name */
   name: string;
   status: UserStatus;
   role: UserRole;
-  /** URL do avatar */
+  /** Avatar URL */
   avatar?: string;
-  /** Metadados customizados */
+  /** Custom metadata */
   metadata?: Record<string, unknown>;
   createdAt: Date;
   updatedAt?: Date;
@@ -707,15 +707,15 @@ interface ErrorResponse {
 @Tags("Users")
 export class UsersController extends Controller {
   /**
-   * Lista usuários com paginação e filtros
-   * @param page Número da página (1-based)
-   * @param limit Itens por página (máx 100)
-   * @param status Filtrar por status
-   * @param search Buscar por nome ou email
+   * Lists users with pagination and filters
+   * @param page Page number (1-based)
+   * @param limit Items per page (max 100)
+   * @param status Filter by status
+   * @param search Search by name or email
    */
   @Get()
   @Security("bearerAuth")
-  @Response<ErrorResponse>(401, "Não autorizado")
+  @Response<ErrorResponse>(401, "Unauthorized")
   @Response<ErrorResponse>(429, "Rate limited")
   public async listUsers(
     @Query() page: number = 1,
@@ -727,15 +727,15 @@ export class UsersController extends Controller {
   @Post()
   @SuccessResponse(201, "Criado")
   @Security("bearerAuth")
-  @Response<ErrorResponse>(400, "Request inválida")
-  @Response<ErrorResponse>(409, "Email já existe")
+  @Response<ErrorResponse>(400, "Invalid request")
+  @Response<ErrorResponse>(409, "Email already exists")
   public async createUser(
     @Body() body: CreateUserRequest
   ): Promise<User> { /* impl */ }
 
   @Get("{userId}")
   @Security("bearerAuth")
-  @Response<ErrorResponse>(404, "Não encontrado")
+  @Response<ErrorResponse>(404, "Not found")
   public async getUser(
     @Path() userId: string
   ): Promise<User> { /* impl */ }
@@ -758,7 +758,7 @@ type User {
   profile: UserProfile
 }
 
-# Paginação Relay-style
+# Relay-style pagination
 type OrderConnection {
   edges: [OrderEdge!]!
   pageInfo: PageInfo!

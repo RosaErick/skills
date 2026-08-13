@@ -1,40 +1,40 @@
 # API Design Patterns
 
-> Princípios de design e tomada de decisão para APIs modernas.
-> **Aprenda a PENSAR, não copiar padrões fixos.**
+> Design and decision-making principles for modern APIs.
+> **Learn to THINK, not to copy fixed patterns.**
 
 ---
 
-## 🌳 Árvore de Decisão: Qual API Style?
+## 🌳 Decision Tree: Which API Style?
 
 ```
-Quem são os consumidores da API?
+Who are the API's consumers?
 │
-├── API Pública / Múltiplas plataformas
-│   └── REST + OpenAPI (maior compatibilidade)
+├── Public API / Multiple platforms
+│   └── REST + OpenAPI (widest compatibility)
 │
-├── Dados complexos / Múltiplos frontends
-│   └── GraphQL (queries flexíveis)
+├── Complex data / Multiple frontends
+│   └── GraphQL (flexible queries)
 │
 ├── TypeScript frontend + backend (monorepo)
-│   └── tRPC (type safety end-to-end)
+│   └── tRPC (end-to-end type safety)
 │
 ├── Real-time / Event-driven
 │   └── WebSocket + AsyncAPI
 │
-└── Microserviços internos
-    └── gRPC (performance) ou REST (simplicidade)
+└── Internal microservices
+    └── gRPC (performance) or REST (simplicity)
 ```
 
-### Comparação Rápida
+### Quick Comparison
 
-| Fator | REST | GraphQL | tRPC |
+| Factor | REST | GraphQL | tRPC |
 |-------|------|---------|------|
-| **Melhor para** | APIs públicas | Apps complexos | TS monorepos |
-| **Curva de aprendizado** | Baixa | Média | Baixa (se TS) |
-| **Over/under fetching** | Comum | Resolvido | Resolvido |
-| **Type safety** | Manual (OpenAPI) | Schema-based | Automático |
-| **Caching** | HTTP nativo | Complexo | Client-based |
+| **Best for** | Public APIs | Complex apps | TS monorepos |
+| **Learning curve** | Low | Medium | Low (if TS) |
+| **Over/under fetching** | Common | Solved | Solved |
+| **Type safety** | Manual (OpenAPI) | Schema-based | Automatic |
+| **Caching** | Native HTTP | Complex | Client-based |
 
 ---
 
@@ -43,56 +43,56 @@ Quem são os consumidores da API?
 ### Resource Naming
 
 ```
-Princípios:
-├── Use SUBSTANTIVOS, não verbos (resources, não actions)
-├── Use PLURAL (/users não /user)
-├── Use lowercase com hyphens (/user-profiles)
-├── Aninhe para relacionamentos (/users/123/posts)
-└── Mantenha shallow (máx 3 níveis)
+Principles:
+├── Use NOUNS, not verbs (resources, not actions)
+├── Use PLURAL (/users, not /user)
+├── Use lowercase with hyphens (/user-profiles)
+├── Nest for relationships (/users/123/posts)
+└── Keep it shallow (3 levels max)
 ```
 
 ### HTTP Methods
 
-| Método | Propósito | Idempotente? | Body? |
+| Method | Purpose | Idempotent? | Body? |
 |--------|-----------|-------------|-------|
-| **GET** | Ler recurso(s) | Sim | Não |
-| **POST** | Criar novo recurso | Não | Sim |
-| **PUT** | Substituir recurso inteiro | Sim | Sim |
-| **PATCH** | Atualização parcial | Não | Sim |
-| **DELETE** | Remover recurso | Sim | Não |
+| **GET** | Read resource(s) | Yes | No |
+| **POST** | Create a new resource | No | Yes |
+| **PUT** | Replace the whole resource | Yes | Yes |
+| **PATCH** | Partial update | No | Yes |
+| **DELETE** | Remove resource | Yes | No |
 
 ### Status Codes
 
-| Situação | Código | Quando Usar |
+| Situation | Code | When to use |
 |----------|--------|-------------|
-| Sucesso (leitura) | 200 | Resposta padrão |
-| Criado | 201 | Novo recurso criado |
-| Sem conteúdo | 204 | Sucesso, nada a retornar |
-| Bad request | 400 | Request malformado |
-| Não autorizado | 401 | Auth ausente/inválida |
-| Proibido | 403 | Auth válida, sem permissão |
-| Não encontrado | 404 | Recurso não existe |
-| Conflito | 409 | Conflito de estado (duplicata) |
-| Erro de validação | 422 | Sintaxe válida, dados inválidos |
-| Rate limited | 429 | Muitas requests |
-| Erro do servidor | 500 | Falha interna |
+| Success (read) | 200 | Default response |
+| Created | 201 | New resource created |
+| No content | 204 | Success, nothing to return |
+| Bad request | 400 | Malformed request |
+| Unauthorized | 401 | Auth missing/invalid |
+| Forbidden | 403 | Valid auth, no permission |
+| Not found | 404 | Resource doesn't exist |
+| Conflict | 409 | State conflict (duplicate) |
+| Validation error | 422 | Valid syntax, invalid data |
+| Rate limited | 429 | Too many requests |
+| Server error | 500 | Internal failure |
 
 ### Resource Collection Pattern
 
 ```python
-# ✅ Bom: Endpoints orientados a recursos
-GET    /api/users              # Listar users (com paginação)
-POST   /api/users              # Criar user
-GET    /api/users/{id}         # Buscar user específico
-PUT    /api/users/{id}         # Substituir user
-PATCH  /api/users/{id}         # Atualizar campos do user
-DELETE /api/users/{id}         # Deletar user
+# ✅ Good: resource-oriented endpoints
+GET    /api/users              # List users (paginated)
+POST   /api/users              # Create user
+GET    /api/users/{id}         # Fetch a specific user
+PUT    /api/users/{id}         # Replace user
+PATCH  /api/users/{id}         # Update user fields
+DELETE /api/users/{id}         # Delete user
 
 # Nested resources
-GET    /api/users/{id}/orders  # Orders do user
-POST   /api/users/{id}/orders  # Criar order para user
+GET    /api/users/{id}/orders  # The user's orders
+POST   /api/users/{id}/orders  # Create an order for the user
 
-# ❌ Ruim: Endpoints orientados a ações (evitar)
+# ❌ Bad: action-oriented endpoints (avoid)
 POST   /api/createUser
 POST   /api/getUserById
 POST   /api/deleteUser
@@ -120,7 +120,7 @@ POST   /api/deleteUser
 }
 ```
 
-### Error Response (padrão)
+### Error Response (standard)
 
 ```json
 {
@@ -135,78 +135,78 @@ POST   /api/deleteUser
 }
 ```
 
-> ⚠️ **Nunca exponha** stack traces, internal paths, ou detalhes de implementação em respostas de erro.
+> ⚠️ **Never expose** stack traces, internal paths or implementation details in error responses.
 
 ### Pagination Types
 
-| Tipo | Melhor Para | Trade-offs |
+| Type | Best for | Trade-offs |
 |------|------------|------------|
-| **Offset** | Simples, "jumpable" | Performance ruim em datasets grandes |
-| **Cursor** | Datasets grandes | Não pode pular para página específica |
-| **Keyset** | Performance crítica | Requer chave ordenável |
+| **Offset** | Simple, jumpable | Poor performance on large datasets |
+| **Cursor** | Large datasets | Can't jump to a specific page |
+| **Keyset** | Performance-critical | Requires a sortable key |
 
 ---
 
-## Versionamento
+## Versioning
 
-| Estratégia | Implementação | Trade-offs |
+| Strategy | Implementation | Trade-offs |
 |-----------|--------------|------------|
-| **URI** | /v1/users | Claro, easy caching |
-| **Header** | Accept-Version: 1 | URLs limpas, difícil descobrir |
-| **Query** | ?version=1 | Fácil de adicionar, confuso |
-| **Nenhum** | Evolua com cuidado | Melhor para interno, arriscado para público |
+| **URI** | /v1/users | Clear, easy caching |
+| **Header** | Accept-Version: 1 | Clean URLs, hard to discover |
+| **Query** | ?version=1 | Easy to add, confusing |
+| **None** | Evolve carefully | Fine internally, risky in public |
 
 ```
-Regra prática:
-├── API pública? → Version na URI
-├── Somente interna? → Talvez não precise
-├── GraphQL? → Sem versões (evolua o schema)
-├── tRPC? → Types garantem compatibilidade
+Rule of thumb:
+├── Public API? → Version in the URI
+├── Internal only? → You may not need versions
+├── GraphQL? → No versions (evolve the schema)
+├── tRPC? → Types guarantee compatibility
 ```
 
 ---
 
-## Autenticação
+## Authentication
 
-| Pattern | Melhor Para |
+| Pattern | Best for |
 |---------|------------|
-| **JWT** | Stateless, microserviços |
-| **Session** | Web tradicional, simples |
-| **OAuth 2.0** | Integração com terceiros |
-| **API Keys** | Server-to-server, APIs públicas |
-| **Passkey** | Passwordless moderno (2025+) |
+| **JWT** | Stateless, microservices |
+| **Session** | Traditional web, simple |
+| **OAuth 2.0** | Third-party integration |
+| **API Keys** | Server-to-server, public APIs |
+| **Passkey** | Modern passwordless (2025+) |
 
 ### JWT Best Practices
 
 ```
-Regras:
-├── Sempre verifique a assinatura
-├── Cheque expiração
-├── Inclua claims mínimas
-├── Use expiry curto + refresh tokens
-└── Nunca armazene dados sensíveis no JWT
+Rules:
+├── Always verify the signature
+├── Check expiration
+├── Include minimal claims
+├── Use short expiry + refresh tokens
+└── Never store sensitive data in the JWT
 ```
 
 ---
 
 ## Rate Limiting
 
-### Estratégias
+### Strategies
 
-| Tipo | Como | Quando |
+| Type | How | When |
 |------|------|--------|
-| **Token bucket** | Burst permitido, recarrega ao longo do tempo | Maioria das APIs |
-| **Sliding window** | Distribuição uniforme | Limites estritos |
-| **Fixed window** | Contadores simples por janela | Necessidades básicas |
+| **Token bucket** | Bursts allowed, refills over time | Most APIs |
+| **Sliding window** | Even distribution | Strict limits |
+| **Fixed window** | Simple per-window counters | Basic needs |
 
-### Response Headers (obrigatórios)
+### Response Headers (mandatory)
 
 ```
 Headers:
-├── X-RateLimit-Limit (requests máximas)
-├── X-RateLimit-Remaining (requests restantes)
-├── X-RateLimit-Reset (quando o limite reseta)
-└── Return 429 quando excedido + Retry-After header
+├── X-RateLimit-Limit (max requests)
+├── X-RateLimit-Remaining (requests left)
+├── X-RateLimit-Reset (when the limit resets)
+└── Return 429 when exceeded + Retry-After header
 ```
 
 ---
@@ -231,80 +231,80 @@ Headers:
 
 ## GraphQL Principles
 
-### Quando Usar
+### When to Use
 
 ```
-✅ Bom fit:
-├── Dados complexos e interconectados
-├── Múltiplas plataformas frontend
-├── Clientes precisam de queries flexíveis
-├── Requisitos de dados em evolução
-└── Reduzir over-fetching importa
+✅ Good fit:
+├── Complex, interconnected data
+├── Multiple frontend platforms
+├── Clients need flexible queries
+├── Evolving data requirements
+└── Cutting over-fetching matters
 
-❌ Ruim fit:
-├── Operações CRUD simples
-├── Upload de arquivos pesado
-├── HTTP caching importante
-└── Time sem experiência em GraphQL
+❌ Poor fit:
+├── Simple CRUD operations
+├── Heavy file uploads
+├── HTTP caching matters
+└── Team has no GraphQL experience
 ```
 
 ### Schema Design
 
 ```
-Princípios:
-├── Pense em graphs, não endpoints
-├── Design para evoluibilidade (sem versões)
-├── Use connections para paginação (Relay spec)
-├── Seja específico com tipos (não use "data" genérico)
-└── Trate nullability com cuidado
+Principles:
+├── Think in graphs, not endpoints
+├── Design for evolvability (no versions)
+├── Use connections for pagination (Relay spec)
+├── Be specific with types (no generic "data")
+└── Handle nullability carefully
 ```
 
 ### Security
 
 ```
-Proteja contra:
-├── Query depth attacks → Set max depth
-├── Query complexity → Calcule custo por query
-├── Batching abuse → Limite batch size
-├── Introspection → Desabilite em produção
+Protect against:
+├── Query depth attacks → set a max depth
+├── Query complexity → compute a cost per query
+├── Batching abuse → limit batch size
+├── Introspection → disable it in production
 ```
 
 ---
 
 ## tRPC Principles
 
-### Quando Usar
+### When to Use
 
 ```
-✅ Fit perfeito:
-├── TypeScript em ambos os lados
+✅ Perfect fit:
+├── TypeScript on both sides
 ├── Monorepo
-├── Ferramentas internas
-├── Desenvolvimento rápido
-└── Type safety é crítico
+├── Internal tooling
+├── Fast development
+└── Type safety is critical
 
-❌ Ruim fit:
-├── Clientes não-TypeScript
-├── API pública
-├── Precisa de convenções REST
-└── Backends em múltiplas linguagens
+❌ Poor fit:
+├── Non-TypeScript clients
+├── Public API
+├── You need REST conventions
+└── Backends in multiple languages
 ```
 
 ---
 
 ## ❌ Anti-Patterns
 
-**NÃO FAÇA:**
-- Default REST para tudo sem avaliar
-- Verbos em REST endpoints (/getUsers, /deleteUser)
-- Formatos de resposta inconsistentes
-- Expor erros internos para clientes
-- Pular rate limiting
-- Acoplar estrutura da API ao schema do banco
+**DON'T:**
+- Default to REST for everything without evaluating
+- Put verbs in REST endpoints (/getUsers, /deleteUser)
+- Use inconsistent response formats
+- Expose internal errors to clients
+- Skip rate limiting
+- Couple the API structure to the database schema
 
-**FAÇA:**
-- Escolha API style baseado no contexto
-- Pergunte sobre requisitos dos clientes
-- Documente minuciosamente
-- Use status codes HTTP corretos
-- Padronize respostas de erro
+**DO:**
+- Choose the API style based on context
+- Ask about the clients' requirements
+- Document thoroughly
+- Use correct HTTP status codes
+- Standardize error responses

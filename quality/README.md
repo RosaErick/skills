@@ -1,14 +1,14 @@
 # Quality
 
-Testes, review e depuração.
+Testing, review and debugging.
 
-- **[clean-code](./clean-code/SKILL.md)** — Padrão de código pragmático: conciso, direto, sem over-engineering.
-- **[code-review-checklist](./code-review-checklist/SKILL.md)** — Checklist de review cobrindo qualidade, segurança e boas práticas.
-- **[testing-patterns](./testing-patterns/SKILL.md)** — Unit, integração e estratégias de mock.
-- **[tdd-workflow](./tdd-workflow/SKILL.md)** — Ciclo RED-GREEN-REFACTOR em formato de workflow curto.
-- **[webapp-testing](./webapp-testing/SKILL.md)** — Testes E2E, Playwright e auditorias profundas.
-- **[systematic-debugging](./systematic-debugging/SKILL.md)** — Metodologia de debug em 4 fases com root cause e verificação por evidência.
-- **[performance-profiling](./performance-profiling/SKILL.md)** — Medição, análise e otimização de performance.
-- **[lint-and-validate](./lint-and-validate/SKILL.md)** — Lint, formatação e análise estática após cada modificação de código.
+- **[clean-code](./clean-code/SKILL.md)** — Pragmatic coding standards: concise, direct, no over-engineering.
+- **[code-review-checklist](./code-review-checklist/SKILL.md)** — Review checklist covering quality, security and best practices.
+- **[testing-patterns](./testing-patterns/SKILL.md)** — Unit, integration and mocking strategies.
+- **[tdd-workflow](./tdd-workflow/SKILL.md)** — RED-GREEN-REFACTOR cycle as a short workflow.
+- **[webapp-testing](./webapp-testing/SKILL.md)** — E2E testing, Playwright and deep audits.
+- **[systematic-debugging](./systematic-debugging/SKILL.md)** — 4-phase debugging methodology with root cause analysis and evidence-based verification.
+- **[performance-profiling](./performance-profiling/SKILL.md)** — Measurement, analysis and optimization of performance.
+- **[lint-and-validate](./lint-and-validate/SKILL.md)** — Linting, formatting and static analysis after every code change.
 
-> Sobreposição proposital com [engineering](../engineering/README.md): `tdd` e `code-review` de lá são os fluxos longos e conduzidos; `tdd-workflow` e `code-review-checklist` daqui são as versões curtas de consulta.
+> Deliberate overlap with [engineering](../engineering/README.md): its `tdd` and `code-review` are the long, guided flows; `tdd-workflow` and `code-review-checklist` here are the short reference versions.

@@ -1,5 +1,4 @@
 ---
-source: original
 name: intelligent-routing
 description: Automatic agent selection and intelligent task routing. Analyzes user requests and automatically selects the best specialist agent(s) without requiring explicit user mentions.
 version: 1.0.0

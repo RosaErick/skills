@@ -1,5 +1,4 @@
 ---
-source: original
 name: copywriting
 description: >
   Use this skill when writing, rewriting, or improving marketing copy
