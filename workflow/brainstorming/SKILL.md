@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: Socratic questioning protocol + user communication. MANDATORY for complex requests, new features, or unclear requirements. Includes progress reporting and error handling.
+description: "Socratic questioning before building — surfacing the real requirement, exposing unstated assumptions and constraints, and agreeing on scope before any code is written, plus how to report progress and failures back. Use when a request is vague or large, when requirements conflict, at the start of a new feature, or whenever building the wrong thing is the expensive risk. For turning the outcome into tickets or a spec see `engineering/to-tickets` and `engineering/to-spec`. Trigger terms: not sure what I want, help me think through, unclear requirements, new feature, scope this, what should we build."
 allowed-tools: Read, Glob, Grep
 ---
 

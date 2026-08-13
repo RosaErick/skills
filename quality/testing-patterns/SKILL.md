@@ -1,6 +1,6 @@
 ---
 name: testing-patterns
-description: Testing patterns and principles. Unit, integration, mocking strategies.
+description: "Deciding what to test and how — the testing pyramid, choosing between unit, integration and end-to-end for a given behavior, mocking boundaries, test organization and test data strategy. Use when a codebase has no tests or the wrong ones, when deciding what a new test should cover, when tests are slow, brittle or over-mocked, or when structuring a suite. For the TDD cycle itself see `tdd-workflow`; for browser end-to-end work see `webapp-testing`. Trigger terms: what should I test, test strategy, unit vs integration, mocking, flaky tests, test coverage, test structure, fixtures."
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 

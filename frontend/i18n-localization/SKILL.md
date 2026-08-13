@@ -1,6 +1,6 @@
 ---
 name: i18n-localization
-description: Internationalization and localization patterns. Detecting hardcoded strings, managing translations, locale files, RTL support.
+description: "Internationalization and localization of a frontend — finding hardcoded strings, structuring locale files, interpolation and pluralization, formatting dates, numbers and currency per locale, language switching, and RTL layout support. Use when adding a second language, extracting strings for translation, fixing a broken translation key or plural form, formatting values per locale, or making a layout work right-to-left. Trigger terms: i18n, l10n, translation, locale, hardcoded string, pluralization, RTL, react-i18next, next-intl, date formatting, currency formatting."
 allowed-tools: Read, Glob, Grep
 ---
 

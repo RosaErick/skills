@@ -1,6 +1,6 @@
 ---
 name: ui-ux-pro-max
-description: UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings, 20 charts, 9 stacks.
+description: "Searchable reference of visual styles, color palettes, font pairings, UX guidelines and chart types, queried through its bundled scripts to produce a concrete design direction. Use when choosing an aesthetic for a new interface, picking a palette or type pairing, selecting a chart type for a dataset, or needing a defensible starting point instead of inventing a look. For design reasoning and layout principles see `frontend-design`; for auditing an existing UI see `web-design-guidelines`. Trigger terms: visual style, design direction, color palette, font pairing, typography options, chart type, UI inspiration, aesthetic."
 ---
 # ui-ux-pro-max
 

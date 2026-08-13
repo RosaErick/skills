@@ -1,6 +1,6 @@
 ---
 name: performance-profiling
-description: Performance profiling principles. Measurement, analysis, and optimization techniques.
+description: "The measurement half of performance work — choosing what to measure, profiling workflow, reading a flame chart, bundle analysis, spotting the common bottleneck classes, and ordering fixes by payoff. Use when something is slow but the cause is unknown, before optimizing anything, or when a profile needs interpreting. For applying the fixes on the web see `web-performance-optimization`. Trigger terms: profile, profiler, flame chart, why is this slow, performance bottleneck, measure performance, benchmark, memory leak."
 allowed-tools: Read, Glob, Grep, Bash
 ---
 

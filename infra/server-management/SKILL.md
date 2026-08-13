@@ -1,6 +1,6 @@
 ---
 name: server-management
-description: Server management principles and decision-making. Process management, monitoring strategy, and scaling decisions. Teaches thinking, not commands.
+description: "Running a server in production — process supervision, monitoring and alerting, log management and retention, health checks, scaling decisions, and a troubleshooting order for a box under stress. Use when a service keeps dying or leaking memory, when setting up supervision, logging or health endpoints, when deciding to scale up or out, or when triaging a server that is slow or unresponsive. Trigger terms: systemd, pm2, process manager, monitoring, alerting, logs, log rotation, health check, autoscaling, server slow, out of memory."
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 

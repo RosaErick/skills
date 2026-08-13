@@ -1,6 +1,6 @@
 ---
 name: clean-code
-description: Pragmatic coding standards - concise, direct, no over-engineering, no unnecessary comments
+description: "Pragmatic coding standards for code an agent writes or edits — naming, function size and shape, structure, comment discipline, and reading the surrounding code before changing it. Use when writing new code or editing existing code in any language, when a function or module has grown unclear, or when a diff needs a readability pass before it ships. For a full review of a change see `code-review-checklist`. Trigger terms: clean code, naming, refactor for readability, function too long, comments, code smell, simplify this code."
 allowed-tools: Read, Write, Edit
 version: 2.0
 priority: CRITICAL

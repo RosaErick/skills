@@ -1,6 +1,6 @@
 ---
 name: database-design
-description: Database design principles and decision-making. Schema design, indexing strategy, ORM selection, serverless databases.
+description: "Relational schema and data-layer decisions — modeling tables and keys, normalization vs denormalization, index strategy, constraints, migrations, ORM choice, and avoiding N+1 access. Use when designing or reviewing a schema, adding a table or column, choosing keys and indexes, planning a migration, diagnosing a slow query or repeated lookups in a loop, or picking a database or ORM for a new service. Trigger terms: database schema, table design, primary key, foreign key, index, migration, normalization, ORM, Prisma, SQLAlchemy, slow query, N+1."
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 

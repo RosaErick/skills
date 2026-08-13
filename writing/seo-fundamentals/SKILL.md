@@ -1,6 +1,6 @@
 ---
 name: seo-fundamentals
-description: SEO fundamentals, E-E-A-T, Core Web Vitals, and Google algorithm principles.
+description: "Search ranking fundamentals — E-E-A-T, technical SEO (crawlability, canonicals, sitemaps), on-page and content SEO, structured data, Core Web Vitals as a ranking input, and what to measure. Use when a page or site needs to rank, when auditing technical SEO, when adding schema markup, or when planning content around search intent. For AI answer engines see `geo-fundamentals`. Trigger terms: SEO, search ranking, E-E-A-T, meta description, canonical, sitemap, structured data, schema markup, keyword, search intent."
 allowed-tools: Read, Glob, Grep
 ---
 

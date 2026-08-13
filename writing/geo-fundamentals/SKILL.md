@@ -1,6 +1,6 @@
 ---
 name: geo-fundamentals
-description: Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexity).
+description: "Getting content cited by AI answer engines — how retrieval picks sources, the shape of a citable passage, entity and authority signals, crawler access for AI agents, and how to measure being quoted. Use when writing content meant to be surfaced by ChatGPT, Claude or Perplexity, when organic AI referrals matter, or when auditing a site for AI discoverability. For classic search ranking see `seo-fundamentals`. Trigger terms: GEO, AI search, ChatGPT citations, Perplexity, answer engine, llms.txt, AI crawler, get cited by AI."
 allowed-tools: Read, Glob, Grep
 ---
 

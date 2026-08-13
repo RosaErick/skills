@@ -1,7 +1,7 @@
 ---
 source: original
 name: ux-writing
-description: User Experience, guided interaction and UX Writing guidelines, grounded in the fundamentals of modern web usability.
+description: "Interface copy and the usability rules behind it — buttons and CTAs, error messages, empty states, tone and voice, plus the scanning, affordance and goodwill principles that decide whether an interface reads. Use when writing or reviewing text inside a product, naming an action, rewriting an error the user cannot act on, filling an empty state, or auditing an interface for clarity. For marketing pages see `copywriting`; for documentation see `documentation`. Trigger terms: UX writing, microcopy, button label, error message, empty state, tone of voice, interface copy, confusing UI text."
 risk_assessment: "Low. Theoretical and tactical guidelines for use in interface design and code."
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: nodejs-best-practices
-description: Node.js development principles and decision-making. Framework selection, async patterns, security, and architecture. Teaches thinking, not copying.
+description: "Architecture and operational decisions for Node.js services — framework selection, layering and module boundaries, error handling, async patterns, input validation, security hardening and testing strategy. Use when starting a Node service, choosing between Express, Fastify and Nest, structuring a project, deciding how errors propagate, or reviewing a Node codebase for security and robustness. For the runtime and TypeScript itself see `node`, for Fastify specifics see `fastify`, for Node internals see `nodejs-core`. Trigger terms: Node.js service, Express vs Fastify, project structure, error middleware, env config, npm audit, Node security."
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 

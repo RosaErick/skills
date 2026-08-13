@@ -83,9 +83,11 @@ model-reachable.
 
 ## Original skills
 
-They carry `source: original` in their frontmatter; everything else here comes from
-the community — public skill packs, vendor guides and open-source repos — kept because I use them,
-and curated: picked one by one, filed by category, trimmed of what I don't run.
+Mine to maintain. They carry `source: original` in their frontmatter, or `source: adapted` where the
+base came from someone else's skill and I reworked it — `documentation` builds on the Diátaxis skill
+by mcollina, credited at the bottom of the file. Everything else here comes from the community —
+public skill packs, vendor guides and open-source repos — kept because I use them, and curated:
+picked one by one, filed by category, trimmed of what I don't run.
 
 | Skill | What it does |
 |---|---|
@@ -113,9 +115,8 @@ Kept on purpose, since they're different depths of the same subject:
 - `backend/api-patterns` (the contract) × `backend/fastify` (implementing it) × `backend/api-documentation-master` (publishing it) × `backend/mcp-builder` (exposing it to agents)
 - `quality/lint-and-validate` (lint as a habit, any stack) × `quality/linting-neostandard-eslint9` (ESLint v9 setup and migration)
 
-## Pending
+## Descriptions
 
-[description-rework.md](./description-rework.md) — 20 skills whose `description` says what they are
-but never when to use them, so the model can't reach them on its own. The five reworked so far
-(`react-patterns`, `tailwind-patterns`, `api-patterns`, `python-patterns`, `mcp-builder`) are the
-reference for the shape.
+Nothing queued. Every model-invoked skill now carries a description in the same shape: topic, then
+`Use when …` in the words a real request uses, then `Trigger terms:` and, where a neighbour would
+otherwise match the same request, an explicit pointer to it.
