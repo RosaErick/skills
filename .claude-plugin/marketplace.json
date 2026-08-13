@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "erick-skills",
+  "name": "erickrosa-skills",
   "description": "Erick's curated agent skills, installable as one managed bundle.",
   "owner": {
     "name": "Erick Rosa",
@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "skills",
+      "name": "erickrosa-skills",
       "description": "Engineering workflow, frontend, backend, infra, quality, security, writing and productivity skills.",
       "source": "./",
       "category": "productivity"

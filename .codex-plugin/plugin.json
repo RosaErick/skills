@@ -1,5 +1,5 @@
 {
-  "name": "skills",
+  "name": "erickrosa-skills",
   "version": "1.0.0",
   "description": "Erick's curated agent skills: engineering workflow, frontend, backend, infra, quality, security, writing and productivity.",
   "author": {
@@ -8,7 +8,14 @@
   },
   "homepage": "https://github.com/RosaErick/skills",
   "repository": "https://github.com/RosaErick/skills",
-  "keywords": ["skills", "react", "nextjs", "documentation", "tdd", "code-review"],
+  "keywords": [
+    "skills",
+    "react",
+    "nextjs",
+    "documentation",
+    "tdd",
+    "code-review"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Erick's Skills",
@@ -16,7 +23,9 @@
     "longDescription": "Engineering workflow (spec, tickets, TDD, review, domain design), frontend, backend, infra, quality, security, writing and productivity skills.",
     "developerName": "Erick Rosa",
     "category": "Productivity",
-    "capabilities": ["Instructions"],
+    "capabilities": [
+      "Instructions"
+    ],
     "websiteURL": "https://github.com/RosaErick/skills"
   }
 }
