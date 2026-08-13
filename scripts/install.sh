@@ -86,10 +86,15 @@ for category in "${CATEGORIES[@]}"; do
         fi
         ;;
       link)
-        if [ -e "$dest" ] && [ ! -L "$dest" ]; then
-          echo "skip: $name already exists in $TARGET and is not a link" >&2
-          skipped=$((skipped + 1))
-          continue
+        # Never clobber something already there unless it is our own link: a folder is
+        # somebody's real skill, and a link elsewhere belongs to another collection.
+        if [ -e "$dest" ] || [ -L "$dest" ]; then
+          current="$(readlink "$dest" 2>/dev/null || true)"
+          if [ -z "$current" ] || [[ "$current" != "$REPO"/* ]]; then
+            echo "skip: $name already in $TARGET, pointing elsewhere" >&2
+            skipped=$((skipped + 1))
+            continue
+          fi
         fi
         ln -sfn "${skill%/}" "$dest"
         done_count=$((done_count + 1))
