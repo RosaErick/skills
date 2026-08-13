@@ -1,6 +1,6 @@
 ---
 name: node
-description: Provides domain-specific best practices for Node.js development with TypeScript, covering type stripping, async patterns, error handling, streams, modules, testing, performance, caching, logging, and more. Use when setting up Node.js projects with native TypeScript support, configuring type stripping (--experimental-strip-types), writing Node 22+ TypeScript without a build step, or when the user mentions 'native TypeScript in Node', 'strip types', 'Node 22 TypeScript', '.ts files without compilation', 'ts-node alternative', or needs guidance on error handling, graceful shutdown, flaky tests, profiling, or environment configuration in Node.js. Helps configure tsconfig.json for type stripping, set up package.json scripts, handle module resolution and import extensions, and apply robust patterns across the full Node.js stack.
+description: "Node 22+ with native TypeScript: type stripping, async patterns, errors, streams, graceful shutdown, profiling, config. Use when writing Node with .ts files and no build step. Service architecture lives in nodejs-best-practices."
 metadata:
   tags: node, nodejs, javascript, typescript, type-stripping, backend, server
 ---

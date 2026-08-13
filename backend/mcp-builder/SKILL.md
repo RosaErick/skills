@@ -1,6 +1,6 @@
 ---
 name: mcp-builder
-description: "Designing and building MCP (Model Context Protocol) servers — choosing between tools, resources and prompts, writing tool schemas and descriptions an agent can actually use, structured output, stdio vs Streamable HTTP transport, OAuth for remote servers, error handling, token-efficient responses, and testing with MCP Inspector. Use when building or reviewing an MCP server, adding or reshaping a tool, deciding what to expose to an agent, wiring transport or auth for a remote server, or debugging a server a client can't connect to or an agent misuses. Trigger terms: MCP, MCP server, Model Context Protocol, @modelcontextprotocol/sdk, FastMCP, registerTool, tool schema, stdio transport, streamable HTTP, MCP Inspector, elicitation, sampling."
+description: "Building MCP servers: tools vs resources vs prompts, schemas an agent can use, structured output, stdio vs streamable HTTP, OAuth, token-efficient responses. Use when writing or reviewing an MCP server or its tools."
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 metadata:
   tags: mcp, tools, agents, typescript, python, oauth, transport

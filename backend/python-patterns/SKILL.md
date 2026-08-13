@@ -1,7 +1,7 @@
 ---
 source: original
 name: python-patterns
-description: "Modern Python (3.11–3.13) code and project patterns — uv and pyproject layout, ruff, typing with PEP 695 generics, dataclasses vs Pydantic, async with TaskGroup and timeouts, error handling, logging, configuration, testing with pytest, and packaging. Use when starting or restructuring a Python project, choosing between sync and async, adding or fixing type hints, designing modules and dependency boundaries, handling errors and retries, configuring ruff/mypy/pytest, or reviewing Python for correctness and clarity. Trigger terms: Python project, pyproject.toml, uv, ruff, type hints, mypy, dataclass, Pydantic, asyncio, async def, pytest, virtualenv, requirements.txt."
+description: "Modern Python 3.11+: uv and pyproject, ruff, typing, dataclass vs Pydantic, asyncio TaskGroup, errors, logging, pytest. Use when starting or restructuring a project, adding types, or reviewing Python code."
 allowed-tools: Read, Write, Edit, Glob, Grep
 metadata:
   tags: python, typing, async, pytest, uv, ruff, pydantic, packaging

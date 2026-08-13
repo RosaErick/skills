@@ -1,7 +1,7 @@
 ---
 source: adapted
 name: documentation
-description: "Writes, structures and reviews technical documentation with Diátaxis (tutorial, how-to, reference, explanation), and generates the artifacts around it — READMEs, API references, ADRs, changelogs, Mermaid diagrams and llms.txt. Use when asked to write or reorganize docs, decide between a tutorial and a how-to guide, document an API or an architecture, write a README or ADR, explain complex code, audit documentation coverage, or automate a docs pipeline. Trigger terms: documentation, docs structure, Diátaxis, tutorial vs how-to, README, API reference, ADR, changelog, llms.txt, technical writing, document this code."
+description: "Technical documentation with Diataxis (tutorial, how-to, reference, explanation) plus README, API reference, ADR, changelog, Mermaid and llms.txt. Use when writing or reorganizing docs, or documenting code."
 metadata:
   tags: documentation, technical-writing, diataxis, readme, adr, api-docs, mermaid
 ---

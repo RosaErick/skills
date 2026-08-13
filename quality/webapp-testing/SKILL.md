@@ -1,6 +1,6 @@
 ---
 name: webapp-testing
-description: "End-to-end and browser testing of a web application — Playwright patterns, resilient selectors, handling async and flakiness, visual regression, API-level tests and CI integration. Use when writing or fixing E2E tests, when a browser test is flaky, when setting up Playwright, or when auditing a running app's real user flows. For choosing test types and mocking strategy see `testing-patterns`. Trigger terms: E2E test, Playwright, browser test, selector, flaky test, visual regression, test a user flow, CI browser tests."
+description: "End-to-end and browser testing: Playwright, resilient selectors, flakiness, visual regression, CI. Use when writing or fixing E2E tests, or setting up Playwright."
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 

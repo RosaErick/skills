@@ -1,7 +1,7 @@
 ---
 source: original
 name: api-patterns
-description: "HTTP API design and contracts — choosing REST vs GraphQL vs tRPC, resource and URL shape, status codes, RFC 9457 problem details, pagination, filtering, idempotency, versioning and deprecation, rate limiting, auth choices, webhooks and streaming. Use when designing a new endpoint or API, reviewing an API contract before implementation, deciding on error format or pagination strategy, versioning or deprecating an API, making writes safe to retry, or fixing an inconsistent API surface. Trigger terms: API design, REST endpoint, status code, error response, pagination, cursor, idempotency, API versioning, rate limit, webhook, GraphQL vs REST, tRPC."
+description: "HTTP API contracts: REST/GraphQL/tRPC choice, URLs, status codes, RFC 9457 errors, pagination, idempotency, versioning, rate limits, webhooks. Use when designing or reviewing an endpoint, an error format or a paging strategy."
 allowed-tools: Read, Write, Edit, Glob, Grep
 metadata:
   tags: api, rest, http, graphql, trpc, versioning, pagination, idempotency, webhooks

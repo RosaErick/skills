@@ -1,6 +1,6 @@
 ---
 name: performance-profiling
-description: "The measurement half of performance work — choosing what to measure, profiling workflow, reading a flame chart, bundle analysis, spotting the common bottleneck classes, and ordering fixes by payoff. Use when something is slow but the cause is unknown, before optimizing anything, or when a profile needs interpreting. For applying the fixes on the web see `web-performance-optimization`. Trigger terms: profile, profiler, flame chart, why is this slow, performance bottleneck, measure performance, benchmark, memory leak."
+description: "Measuring before optimizing: what to measure, profiling workflow, flame charts, bundle analysis, bottleneck classes. Use when something is slow and the cause is unknown. Web fixes live in web-performance-optimization."
 allowed-tools: Read, Glob, Grep, Bash
 ---
 

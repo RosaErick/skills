@@ -1,7 +1,7 @@
 ---
 source: original
 name: react-patterns
-description: "Modern React (18/19) component, hook, state and TypeScript patterns — composition, custom hooks, state placement, Context, refs, effects, Suspense and error boundaries, React Compiler and memoization, and the anti-patterns that cause re-render bugs. Use when writing or reviewing React components and hooks, deciding where state should live, choosing between useState/useReducer/Context/a store, typing props or generic components, removing unnecessary useEffect, or fixing stale closures, key bugs and wasted re-renders. Trigger terms: React component, custom hook, useState, useEffect, useReducer, Context, useMemo, useCallback, React Compiler, forwardRef, re-render, stale closure, props typing."
+description: "React 18/19 components and hooks: state placement, effects, composition, Context, React Compiler, TypeScript props. Use when writing or reviewing components, deciding where state lives, or fixing re-render and stale closure bugs."
 allowed-tools: Read, Write, Edit, Glob, Grep
 metadata:
   tags: react, hooks, typescript, state-management, performance, composition

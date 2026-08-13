@@ -1,7 +1,7 @@
 ---
 source: original
 name: ux-writing
-description: "Interface copy and the usability rules behind it — buttons and CTAs, error messages, empty states, tone and voice, plus the scanning, affordance and goodwill principles that decide whether an interface reads. Use when writing or reviewing text inside a product, naming an action, rewriting an error the user cannot act on, filling an empty state, or auditing an interface for clarity. For marketing pages see `copywriting`; for documentation see `documentation`. Trigger terms: UX writing, microcopy, button label, error message, empty state, tone of voice, interface copy, confusing UI text."
+description: "Interface copy: buttons, error messages, empty states, tone of voice, and the usability rules behind them. Use when writing or reviewing text inside a product, or auditing an interface for clarity."
 risk_assessment: "Low. Theoretical and tactical guidelines for use in interface design and code."
 ---
 

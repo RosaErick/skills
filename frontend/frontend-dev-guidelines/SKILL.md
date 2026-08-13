@@ -1,6 +1,6 @@
 ---
 name: frontend-dev-guidelines
-description: "Opinionated standards for React + TypeScript applications built on MUI v7, TanStack Router and Suspense-first data fetching — feature-based architecture, import aliases, component and routing standards, loading and error conventions, performance defaults and strict TypeScript. Use when working in a project that follows these conventions, setting up a new app on this stack, or reviewing code against a house standard rather than general React practice. For framework-agnostic component and hook design see `react-patterns`. Trigger terms: MUI v7, TanStack Router, Suspense-first, feature folder, import alias, frontend standards, house style."
+description: "House standards for React + TypeScript on MUI v7, TanStack Router and Suspense-first fetching: feature architecture, component and routing rules, strict TS. Use in projects that follow them."
 ---
 
 

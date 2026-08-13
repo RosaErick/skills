@@ -1,7 +1,7 @@
 ---
 source: original
 name: domain-design
-description: "Decide the domain model itself — which invariants exist, which aggregate protects each one, what is a value object, which events the domain emits, and where one bounded context ends and the next begins. Use when designing a feature whose rules matter, when a transaction spans too much, when a term means two different things in two places, when deciding what may be eventually consistent, when splitting a service or module along domain lines, or when the code has an anemic model of a rich domain. Trigger terms: aggregate, invariant, value object, entity, domain event, bounded context, context map, anti-corruption layer, consistency boundary, DDD, transaction boundary, split this service."
+description: "The domain model itself: invariants, aggregates as consistency boundaries, value objects, domain events, bounded contexts and context mapping. Use when the rules matter, a transaction spans too much, or a term means two things."
 ---
 
 # Domain Design

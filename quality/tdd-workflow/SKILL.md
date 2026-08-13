@@ -1,6 +1,6 @@
 ---
 name: tdd-workflow
-description: "Quick reference for the red-green-refactor cycle — the three laws, what belongs in each phase, AAA structure, when TDD pays off and when it does not, and the anti-patterns that hollow it out. Use when you need the rules of the cycle mid-task, or a compact reminder of what 'red' and 'refactor' actually require. For the full guided loop with test-quality references and seam selection see `engineering/tdd`. Trigger terms: TDD cycle, red green refactor, write the test first, three laws of TDD, AAA, arrange act assert."
+description: "The red-green-refactor cycle in short: the three laws, each phase, AAA, when TDD pays off. Use when you need the rules of the cycle mid-task. The full guided loop is tdd."
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 

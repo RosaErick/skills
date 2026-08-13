@@ -1,6 +1,6 @@
 ---
 name: code-review-checklist
-description: "A fast review pass over a diff — correctness, error handling, security, test coverage, readability, the failure patterns typical of AI-generated code, and how to phrase the comments. Use when reviewing a pull request or a diff, self-reviewing before committing, or checking generated code before accepting it. For the full two-axis review against the repo's standards and the originating spec see `engineering/code-review`. Trigger terms: review this code, review my PR, check this diff, code review, pre-commit check, is this ready to merge."
+description: "Fast review pass over a diff: correctness, errors, security, tests, readability, AI-code smells. Use when reviewing a PR or self-reviewing before committing. The full two-axis review is code-review."
 allowed-tools: Read, Glob, Grep
 ---
 

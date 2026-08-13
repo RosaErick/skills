@@ -1,6 +1,6 @@
 ---
 name: deployment-procedures
-description: "Shipping to production safely — platform selection, pre-deployment checks, rolling, blue-green and canary strategies, post-deploy verification, rollback plans and incident procedures. Use when setting up or reviewing a deployment pipeline, planning a risky release or migration, deciding how to roll back, or writing the runbook for a production change. Trigger terms: deploy, deployment pipeline, release, rollback, blue-green, canary, zero-downtime, production checklist, runbook, incident."
+description: "Shipping safely: platform choice, pre-deploy checks, rolling, blue-green and canary, verification, rollback, incidents. Use when building a deploy pipeline or planning a risky release."
 allowed-tools: Read, Glob, Grep, Bash
 ---
 

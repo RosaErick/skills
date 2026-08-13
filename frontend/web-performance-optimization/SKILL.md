@@ -1,7 +1,7 @@
 ---
 source: original
 name: web-performance-optimization
-description: "Fixing web loading and runtime performance — bundle size and code splitting, image and font delivery, caching and CDN headers, third-party scripts, and Core Web Vitals (LCP, INP, CLS). Use when a page loads slowly, a bundle is too large, Lighthouse or field data flags poor vitals, or before shipping a performance-sensitive page. For the measurement workflow and profiler usage see `performance-profiling`; for React re-render cost see `react-patterns`. Trigger terms: slow page, bundle size, code splitting, LCP, INP, CLS, Core Web Vitals, Lighthouse, image optimization, caching headers, third-party script."
+description: "Web loading and runtime performance: bundle size, code splitting, images, fonts, caching, third-party scripts, Core Web Vitals. Use when a page is slow or vitals are poor. Measurement lives in performance-profiling."
 ---
 
 # Web Performance Optimization

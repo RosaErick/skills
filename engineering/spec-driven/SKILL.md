@@ -1,7 +1,7 @@
 ---
 source: original
 name: spec-driven
-description: "Turn a spec into numbered acceptance criteria that live in the repo, bind each criterion to the test that proves it, and verify the binding against a test run — finding criteria no passing test claims, tests citing criteria that no longer exist, tests that carry an id without asserting the behavior, and criteria the code now contradicts. Use when a spec needs criteria before implementation starts, when asked whether the code still does what the spec says, when writing or reviewing acceptance criteria, when a feature's behavior is disputed, or when checking that a change kept its promises. Trigger terms: acceptance criteria, spec-driven development, SDD, given when then, does the code match the spec, spec drift, traceability, definition of done, is this covered by a test."
+description: "Numbered acceptance criteria in the repo, bound to tests by id and verified against a test run. Use when a spec needs criteria before implementation, or when asked whether the code still does what the spec says."
 ---
 
 # Spec-Driven

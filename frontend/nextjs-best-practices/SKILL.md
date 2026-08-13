@@ -1,7 +1,7 @@
 ---
 source: original
 name: nextjs-best-practices
-description: "Next.js App Router decisions — Server vs Client Components, data fetching and caching, route handlers, Server Actions, metadata, streaming and project structure. Use when building or reviewing an App Router application, deciding what runs on the server, choosing a caching or revalidation strategy, adding a route handler or Server Action, or fixing a 'use client' boundary that leaked too far. For component and hook design see `react-patterns`; for a step-by-step implementation playbook see `nextjs-app-router-patterns`. Trigger terms: Next.js, App Router, Server Component, use client, generateMetadata, revalidate, Server Action, route handler, streaming."
+description: "Next.js App Router: Server vs Client Components, data fetching, caching, route handlers, Server Actions, metadata. Use when deciding what runs on the server or fixing a 'use client' boundary that leaked."
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 

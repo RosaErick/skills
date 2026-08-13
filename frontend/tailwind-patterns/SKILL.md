@@ -1,6 +1,6 @@
 ---
 name: tailwind-patterns
-description: "Tailwind CSS v4 in practice — CSS-first configuration with @theme, design tokens as CSS variables, @utility and @custom-variant, container queries, dark mode strategies, component variants with cva and tailwind-merge, and migrating from v3 (config file, renamed utilities, opacity syntax). Use when setting up Tailwind, defining or reorganizing design tokens, writing responsive or dark-mode styles, taming repeated class strings, building component variants, or upgrading a v3 codebase to v4. Trigger terms: Tailwind, tailwind.config, @theme, @apply, utility classes, container query, dark mode, cva, tailwind-merge, Tailwind v4, class soup."
+description: "Tailwind v4: @theme tokens as CSS variables, @utility and custom variants, container queries, dark mode, cva variants, v3 migration. Use when setting up Tailwind, defining tokens or taming class soup."
 allowed-tools: Read, Write, Edit, Glob, Grep
 metadata:
   tags: tailwind, css, design-tokens, responsive, dark-mode, v4

@@ -1,6 +1,6 @@
 ---
 name: nodejs-best-practices
-description: "Architecture and operational decisions for Node.js services — framework selection, layering and module boundaries, error handling, async patterns, input validation, security hardening and testing strategy. Use when starting a Node service, choosing between Express, Fastify and Nest, structuring a project, deciding how errors propagate, or reviewing a Node codebase for security and robustness. For the runtime and TypeScript itself see `node`, for Fastify specifics see `fastify`, for Node internals see `nodejs-core`. Trigger terms: Node.js service, Express vs Fastify, project structure, error middleware, env config, npm audit, Node security."
+description: "Node service architecture: framework choice, layering, error propagation, validation, security, testing. Use when starting a Node service, choosing Express vs Fastify, or reviewing one. Runtime and TypeScript live in node."
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
