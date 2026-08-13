@@ -83,17 +83,18 @@ Real files, copied in, yours to hack on. They never see an update from here agai
 ## Maintaining
 
 ```bash
-python3 scripts/check.py           # validate, refresh the README counts and the plugin bundle
-python3 scripts/check.py --check   # verify only, non-zero exit if something is off
+scripts/check.sh           # validate, and rebuild the plugin bundle if it drifted
+scripts/check.sh --check   # verify only, non-zero exit if something is off
 ```
 
 It checks frontmatter (name present and matching the folder, description present), listing in the
-category README, dead relative links and repeated skills, then rewrites the counts below and
+category README, dead relative links in every README and skill file, repeated skills, and the counts
+below — reporting a stale count rather than rewriting it, since fixing it is one number. It also
 regenerates `skills/` — the flat folder the plugin ships, one symlink
 per skill, since plugins expect `skills/<name>/SKILL.md` with no categories in between.
 
 A new skill goes into whichever category fits. If none fits, create the folder, write its README,
-add the row to the table below, and run `scripts/check.py`.
+add the row to the table below, and run `scripts/check.sh`.
 
 ## Categories
 
