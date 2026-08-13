@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: two-axis-review
 description: "Review the changes since a fixed point along two axes — Standards (this repo's coding standards) and Spec (does it implement the originating issue?) — in parallel sub-agents. Use to review a branch, a PR or work in progress."
 ---
 

@@ -1,28 +1,30 @@
 # skills
 
-My curated agent skills — 80 of them, all in one place, organized by category.
+My curated agent skills — 79 of them, all in one place, organized by category.
 
 Each skill is a folder with a `SKILL.md` (frontmatter `name` + `description`) and supporting files
 alongside it when needed. It's the standard format Claude Code, Codex, opencode and the like read.
 
-## Installing
-
-Two ways in. **Pick one per machine or project** — installing both leaves every skill twice, and
-the model then sees two candidates for every trigger.
-
-### Managed — read-only, updates when I ship
-
-Both plugin manifests (`.claude-plugin/`, `.codex-plugin/`) point at the same flat `skills/` folder,
-so every host installs the identical set.
-
-**Claude Code** — two separate prompts; the install doesn't take in one:
+## Install
 
 ```
 /plugin marketplace add RosaErick/skills
 /plugin install erickrosa-skills@rosaerick
-/plugin marketplace update rosaerick     # pick up whatever I pushed since
+```
+
+Two separate prompts — the install doesn't take in one. They arrive namespaced as
+`erickrosa-skills:<name>`, read-only, and update when I ship:
+
+```
+/plugin marketplace update rosaerick
 /plugin update erickrosa-skills
 ```
+
+<details>
+<summary><b>Other hosts</b> — Codex, Copilot CLI</summary>
+
+Both plugin manifests (`.claude-plugin/`, `.codex-plugin/`) point at the same flat `skills/` folder,
+so every host installs the identical set.
 
 **Codex** — add the marketplace from the shell, then install from inside the TUI:
 
@@ -31,20 +33,21 @@ codex plugin marketplace add RosaErick/skills
 codex
 ```
 
-Then `/plugins`, select the `rosaerick` marketplace, install. Skills are invoked with `@name`.
-The desktop app picks the same install up after a restart. Remove with `codex plugin remove erickrosa-skills`.
+Then `/plugins`, select the `rosaerick` marketplace, install. Skills are invoked with `@name`. The
+desktop app picks the same install up after a restart. Remove with
+`codex plugin remove erickrosa-skills`.
 
 **GitHub Copilot CLI** uses the same marketplace mechanism
 (`copilot plugin marketplace add RosaErick/skills`), and namespaces the skills under the plugin name.
 
-The host keeps its own checkout and reads the skills from there. Nothing lands in your project and
-nothing is yours to edit — an update overwrites it. This is the option to want unless you
-specifically need to change a skill.
+</details>
 
-### Linked from a clone — one copy on disk, edits go back to the repo
+<details>
+<summary><b>From a clone</b> — symlinks, edits go straight back to the repo</summary>
 
-The script links skill by skill, because hosts look for `<target>/<skill>/SKILL.md` and linking a
-whole category would hide everything inside it.
+For the machine where you maintain them: one copy on disk, and editing a linked skill edits this
+repo. The script links skill by skill, because hosts look for `<target>/<skill>/SKILL.md` and linking
+a whole category would hide everything inside it.
 
 ```bash
 scripts/install.sh                       # ~/.claude/skills
@@ -66,11 +69,16 @@ scripts/install.sh -u                    # remove the links again
 | `agents` | — | `<project>/.agents/skills` — the shared folder several hosts read |
 
 Anything not in that table — Qwen Code, Antigravity, a host I haven't tried — takes `-T` with its
-skills directory. Editing a linked skill edits this repo, which is what you want on the machine where
-you maintain them. It never overwrites a real folder already in the target, and `-u` only removes
-links pointing back here.
+skills directory. It never overwrites a real folder or someone else's link already in the target, and
+`-u` only removes links pointing back here.
 
-### Vendored — editable, frozen
+Skills installed this way arrive **without** the `erickrosa-skills:` prefix — indistinguishable from
+any other personal skill.
+
+</details>
+
+<details>
+<summary><b>Vendored</b> — copies you own, frozen at copy time</summary>
 
 ```bash
 npx github:RosaErick/skills -c -t .                    # copy into ./.claude/skills
@@ -81,28 +89,17 @@ npx github:RosaErick/skills -c -t . frontend           # or just one category
 Real files, copied in, yours to hack on. They never see an update from here again; re-running with
 `-f` overwrites your edits. Use it when a skill needs to become project-specific.
 
-## Maintaining
+</details>
 
-```bash
-scripts/check.sh           # validate, and rebuild the plugin bundle if it drifted
-scripts/check.sh --check   # verify only, non-zero exit if something is off
-```
-
-The skills are the source of truth; the script reads them and complains about everything that fell
-out of step. It checks frontmatter (name present and matching the folder, description present),
-whether each skill is listed in its category README, dead relative links in every README and skill
-file, and repeated skills. It also regenerates `skills/` — the flat folder the plugin ships, one symlink
-per skill, since plugins expect `skills/<name>/SKILL.md` with no categories in between.
-
-A new skill goes into whichever category fits. If none fits, create the folder, write its README,
-add the row to the table below, and run `scripts/check.sh`.
+> **Pick one route per machine or project.** Two of them leaves every skill twice, and the model
+> then sees two candidates for every trigger.
 
 ## Categories
 
 | Folder | What's in it | Skills |
 |---|---|---|
 | [engineering](./engineering/README.md) | Code workflow: spec → tickets → implement → review, TDD, bug diagnosis, domain modeling | 20 |
-| [frontend](./frontend/README.md) | React, Next.js, Tailwind, interface design, mobile, web performance, i18n | 16 |
+| [frontend](./frontend/README.md) | React, Next.js, Tailwind, interface design, mobile, web performance, i18n | 15 |
 | [backend](./backend/README.md) | APIs, Node, Python, Rust, databases, MCP | 11 |
 | [infra](./infra/README.md) | Shell, server management, deployment | 3 |
 | [quality](./quality/README.md) | Testing, review, debugging, linting, profiling | 10 |
@@ -110,19 +107,20 @@ add the row to the table below, and run `scripts/check.sh`.
 | [workflow](./workflow/README.md) | How the agent works: brainstorming, planning, architecture, multi-agent orchestration | 7 |
 | [writing](./writing/README.md) | Copy, UX writing, documentation, SEO/GEO | 5 |
 | [productivity](./productivity/README.md) | Non-code work: grilling, handoff, teaching, questionnaires | 7 |
-| **Total** | | **80** |
+| **Total** | | **79** |
 
 The READMEs under `engineering/`, `productivity/` and `workflow/` split their skills into
 **user-invoked** (only run when you type them, `disable-model-invocation: true`) and **model-invoked**
 (the model reaches for them from the description). Everything in the other categories is
 model-reachable.
 
-## Original skills
+<details>
+<summary><b>Original skills</b> — the twelve that are mine to maintain</summary>
 
-Mine to maintain. They carry `source: original` in their frontmatter, or `source: adapted` where the
-base came from someone else's skill and I reworked it. Everything else here comes from the community —
-public skill packs, vendor guides and open-source repos — kept because I use them, and curated:
-picked one by one, filed by category, trimmed of what I don't run.
+They carry `source: original` in their frontmatter, or `source: adapted` where the base came from
+someone else's skill and I reworked it. Everything else here comes from the community — public skill
+packs, vendor guides and open-source repos — kept because I use them, and curated: picked one by one,
+filed by category, trimmed of what I don't run.
 
 | Skill | What it does |
 |---|---|
@@ -139,14 +137,15 @@ picked one by one, filed by category, trimmed of what I don't run.
 | [writing/documentation](./writing/documentation/SKILL.md) | Diátaxis documentation plus README, API reference, ADR, changelog, diagrams, llms.txt |
 | [writing/ux-writing](./writing/ux-writing/SKILL.md) | UX writing, guided interaction and interface usability |
 
-## Known overlaps
+</details>
 
-Kept on purpose, since they're different depths of the same subject:
+<details>
+<summary><b>Known overlaps</b> — kept on purpose, different depths of the same subject</summary>
 
 - `engineering/domain-modeling` (the glossary) × `engineering/domain-design` (the model) × `engineering/codebase-design` (the module shape)
 - `engineering/to-spec` (writes the spec) × `engineering/spec-driven` (makes it falsifiable and keeps it honest)
 - `engineering/tdd` (guided loop, with references) × `quality/tdd-workflow` (short checklist)
-- `engineering/code-review` (two-axis review, sub-agents) × `quality/code-review-checklist`
+- `engineering/two-axis-review` (Standards + Spec, sub-agents) × `quality/code-review-checklist` (fast pass)
 - `engineering/diagnosing-bugs` (diagnosis loop) × `quality/systematic-debugging` (4 phases)
 - `frontend/nextjs-best-practices` (principles) × `frontend/nextjs-app-router-patterns` (implementation playbook)
 - `frontend/react-patterns` (general patterns) × `frontend/react-ui-patterns` (loading, error and empty states)
@@ -154,3 +153,27 @@ Kept on purpose, since they're different depths of the same subject:
 - `backend/api-patterns` (the contract) × `backend/fastify` (implementing it) × `backend/api-documentation-master` (publishing it) × `backend/mcp-builder` (exposing it to agents)
 - `quality/lint-and-validate` (lint as a habit, any stack) × `quality/linting-neostandard-eslint9` (ESLint v9 setup and migration)
 
+</details>
+
+<details>
+<summary><b>Maintaining</b> — the one script, and where a new skill goes</summary>
+
+```bash
+scripts/check.sh           # validate, and rebuild the plugin bundle if it drifted
+scripts/check.sh --check   # verify only, non-zero exit if something is off
+```
+
+The skills are the source of truth; the script reads them and complains about everything that fell
+out of step. It checks frontmatter (name present and matching the folder, description present),
+whether each skill is listed in its category README, dead relative links in every README and skill
+file, and repeated skills. It also regenerates `skills/` — the flat folder the plugin ships, one
+symlink per skill, since plugins expect `skills/<name>/SKILL.md` with no categories in between.
+
+A new skill goes into whichever category fits. If none fits, create the folder, write its README, add
+the row to the categories table, and run `scripts/check.sh`.
+
+Descriptions carry the whole activation surface, and the roster the model receives has a budget — go
+long on every skill and the ones at the end of the alphabet arrive name-only. Keep each one to what
+the skill is, when to reach for it, and the boundary against its neighbour.
+
+</details>

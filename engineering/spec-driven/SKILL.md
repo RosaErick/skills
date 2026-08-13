@@ -166,7 +166,7 @@ are different claims, and only reading the criteria against the suite tells them
 | `to-tickets` | Splits work; a ticket should carry the criterion ids it closes. |
 | `tdd` | Writes the tests. Each red test starts as a criterion id. |
 | `implement` | Builds it; the criteria are the definition of done. |
-| `code-review` | Its Spec axis asks "does this match the spec?" — criteria give it something exact to check instead of re-reading prose. |
+| `two-axis-review` | Its Spec axis asks "does this match the spec?" — criteria give it something exact to check instead of re-reading prose. |
 | `domain-design` | Invariants in `MODEL.md` become criteria nearly verbatim. |
 | `triage` | An incoming bug is a criterion that was missing or wrong. Add it, then fix. |
 

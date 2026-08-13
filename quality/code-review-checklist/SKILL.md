@@ -1,6 +1,6 @@
 ---
 name: code-review-checklist
-description: "Fast review pass over a diff: correctness, errors, security, tests, readability, AI-code smells. Use when reviewing a PR or self-reviewing before committing. The full two-axis review is code-review."
+description: "Fast review pass over a diff: correctness, errors, security, tests, readability, AI-code smells. Use when reviewing a PR or self-reviewing before committing. The full two-axis review is two-axis-review."
 allowed-tools: Read, Glob, Grep
 ---
 

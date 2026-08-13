@@ -184,7 +184,7 @@ Write it lazily, as decisions crystallize, the same way `domain-modeling` writes
 - **Feeding `tdd`** — an invariant is the best test there is. Each one in `MODEL.md` should have a
   test that proves it holds and a test that proves the aggregate rejects the violation.
 - **Feeding `spec-driven`** — invariants become acceptance criteria almost verbatim.
-- **During `code-review`** — a diff that adds a rule to a service instead of an aggregate, or makes
+- **During `two-axis-review`** — a diff that adds a rule to a service instead of an aggregate, or makes
   two aggregates atomic, is a model regression, not a style issue.
 
 ## Anti-patterns
