@@ -15,7 +15,6 @@ React, Next.js, CSS and interface work.
 
 ## Style and interface design
 
-- **[frontend-design](./frontend-design/SKILL.md)** — Design decisions for web UI: components, layout, color, typography.
 - **[tailwind-patterns](./tailwind-patterns/SKILL.md)** — Tailwind v4: `@theme` tokens, custom utilities and variants, container queries, dark mode, cva, v3 migration.
 - **[ui-ux-pro-max](./ui-ux-pro-max/SKILL.md)** — Searchable database of styles, palettes, font pairings, UX guidelines and chart types.
 - **[web-design-guidelines](./web-design-guidelines/SKILL.md)** — Reviews UI code against the Web Interface Guidelines (accessibility, UX).

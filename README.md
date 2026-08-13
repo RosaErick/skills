@@ -19,8 +19,9 @@ so every host installs the identical set.
 
 ```
 /plugin marketplace add RosaErick/skills
-/plugin install erickrosa-skills@erickrosa-skills
-/plugin update erickrosa-skills          # pick up whatever I pushed since
+/plugin install erickrosa-skills@rosaerick
+/plugin marketplace update rosaerick     # pick up whatever I pushed since
+/plugin update erickrosa-skills
 ```
 
 **Codex** — add the marketplace from the shell, then install from inside the TUI:
@@ -30,7 +31,7 @@ codex plugin marketplace add RosaErick/skills
 codex
 ```
 
-Then `/plugins`, select the `erickrosa-skills` marketplace, install. Skills are invoked with `@name`.
+Then `/plugins`, select the `rosaerick` marketplace, install. Skills are invoked with `@name`.
 The desktop app picks the same install up after a restart. Remove with `codex plugin remove erickrosa-skills`.
 
 **GitHub Copilot CLI** uses the same marketplace mechanism

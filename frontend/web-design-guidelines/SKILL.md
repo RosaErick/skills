@@ -44,7 +44,7 @@ If no files specified, ask the user which files to review.
 
 | Skill | When to Use |
 |-------|-------------|
-| **[frontend-design](../frontend-design/SKILL.md)** | Before coding - Learn design principles (color, typography, UX psychology) |
+| **frontend-design** (official Claude plugin, not in this repo) | Before coding - Learn design principles (color, typography, UX psychology) |
 | **web-design-guidelines** (this) | After coding - Audit for accessibility, performance, and best practices |
 
 ## Design Workflow
