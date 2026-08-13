@@ -1,6 +1,6 @@
 # skills
 
-My curated agent skills — 81 of them, all in one place, organized by category.
+My curated agent skills — 80 of them, all in one place, organized by category.
 
 Each skill is a folder with a `SKILL.md` (frontmatter `name` + `description`) and supporting files
 alongside it when needed. It's the standard format Claude Code, Codex, opencode and the like read.
@@ -107,8 +107,8 @@ add the row to the table below, and run `scripts/check.py`.
 | [security](./security/README.md) | Vulnerability analysis and OWASP | 1 |
 | [workflow](./workflow/README.md) | How the agent works: brainstorming, planning, architecture, multi-agent orchestration | 7 |
 | [writing](./writing/README.md) | Copy, UX writing, documentation, SEO/GEO | 5 |
-| [productivity](./productivity/README.md) | Non-code work: grilling, handoff, teaching, job search | 8 |
-| **Total** | | **81** |
+| [productivity](./productivity/README.md) | Non-code work: grilling, handoff, teaching, questionnaires | 7 |
+| **Total** | | **80** |
 
 The READMEs under `engineering/`, `productivity/` and `workflow/` split their skills into
 **user-invoked** (only run when you type them, `disable-model-invocation: true`) and **model-invoked**
