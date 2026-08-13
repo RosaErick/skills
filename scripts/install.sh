@@ -59,8 +59,12 @@ if [ $# -gt 0 ]; then
 else
   CATEGORIES=()
   for dir in "$REPO"/*/; do
-    # A category is a top-level folder holding at least one skill.
-    compgen -G "${dir}*/SKILL.md" > /dev/null && CATEGORIES+=("$(basename "$dir")")
+    name="$(basename "$dir")"
+    # A category is a top-level folder holding at least one skill. skills/ is the flat
+    # bundle generated for the plugin manifests — installing from it would link every
+    # skill a second time, through a folder that gets rebuilt.
+    case "$name" in skills | scripts) continue ;; esac
+    compgen -G "${dir}*/SKILL.md" > /dev/null && CATEGORIES+=("$name")
   done
 fi
 
