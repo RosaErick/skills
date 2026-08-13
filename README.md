@@ -22,7 +22,6 @@ and add the row to the table below.
 | [workflow](./workflow/README.md) | How the agent works: brainstorming, planning, architecture, multi-agent orchestration | 7 |
 | [writing](./writing/README.md) | Copy, UX writing, documentation, SEO/GEO | 6 |
 | [productivity](./productivity/README.md) | Non-code work: grilling, handoff, teaching, job search | 8 |
-| [games](./games/README.md) | Game development (orchestrator + 10 platform sub-skills) | 11 |
 
 The READMEs under `engineering/` and `productivity/` split their skills into **user-invoked** (only
 run when you type them) and **model-invoked** (the model reaches for them from the description). The
@@ -30,7 +29,7 @@ other categories don't make that distinction yet — everything in them is model
 
 ## Original skills
 
-Written by me. They carry `source: original` in their frontmatter; everything else here comes from
+They carry `source: original` in their frontmatter; everything else here comes from
 the community — public skill packs, vendor guides and open-source repos — kept because I use them,
 and curated: picked one by one, filed by category, trimmed of what I don't run.
 
