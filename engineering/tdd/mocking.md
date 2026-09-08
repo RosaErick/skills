@@ -1,17 +1,13 @@
 # When to Mock
 
-Mock at **system boundaries** only:
+Prefer mocks at **system boundaries** when isolation is useful:
 
 - External APIs (payment, email, etc.)
 - Databases (sometimes - prefer test DB)
 - Time/randomness
 - File system (sometimes)
 
-Don't mock:
-
-- Your own classes/modules
-- Internal collaborators
-- Anything you control
+Avoid mocking internal collaborators by default. A focused unit test may isolate one when the actual boundary and risk justify it; keep integration evidence for contracts a mock assumes.
 
 ## Designing for Mockability
 

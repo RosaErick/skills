@@ -1,129 +1,17 @@
 ---
 name: seo-fundamentals
-description: "Search ranking: E-E-A-T, technical SEO, on-page content, structured data, Core Web Vitals. Use when a page needs to rank or technical SEO needs an audit. AI answer engines are geo-fundamentals."
-allowed-tools: Read, Glob, Grep
----
-
-# SEO Fundamentals
-
-> Principles for search engine visibility.
+description: "Diagnose or improve technical search discoverability and page presentation using source-backed checks and measurements."
 
 ---
 
-## 1. E-E-A-T Framework
+# Work from a defined search problem
 
-| Principle | Signals |
-|-----------|---------|
-| **Experience** | First-hand knowledge, real examples |
-| **Expertise** | Credentials, depth of knowledge |
-| **Authoritativeness** | Backlinks, mentions, industry recognition |
-| **Trustworthiness** | HTTPS, transparency, accurate info |
+Identify the affected pages, search engine and symptom: discovery, crawling, indexing, canonical selection, result presentation or user experience. Inspect actual HTML/headers, robots rules, sitemap and internal links; use authorized search-console evidence when available.
 
----
+Keep titles and descriptions accurate, content useful, navigation crawlable and canonical/redirect behavior consistent. Structured data should match visible content and the engine's supported feature. Satisfying markup requirements does not guarantee a rich result or ranking.
 
-## 2. Core Web Vitals
+Separate documented technical eligibility from ranking hypotheses. Do not assign universal factor weights, promise ranking gains or treat a content checklist as a search engine model. Use performance metrics as user-experience evidence, with the current LCP/INP/CLS definitions when applicable.
 
-| Metric | Target | Measures |
-|--------|--------|----------|
-| **LCP** | < 2.5s | Loading performance |
-| **INP** | < 200ms | Interactivity |
-| **CLS** | < 0.1 | Visual stability |
+[seo_checker.py](scripts/seo_checker.py) is a local heuristic aid. Confirm its candidates in rendered pages and actual response behavior; a score is not an indexability or ranking guarantee. Measure the requested outcome with dated observations and note confounders.
 
----
-
-## 3. Technical SEO Principles
-
-### Site Structure
-
-| Element | Purpose |
-|---------|---------|
-| XML sitemap | Help crawling |
-| robots.txt | Control access |
-| Canonical tags | Prevent duplicates |
-| HTTPS | Security signal |
-
-### Performance
-
-| Factor | Impact |
-|--------|--------|
-| Page speed | Core Web Vital |
-| Mobile-friendly | Ranking factor |
-| Clean URLs | Crawlability |
-
----
-
-## 4. Content SEO Principles
-
-### Page Elements
-
-| Element | Best Practice |
-|---------|---------------|
-| Title tag | 50-60 chars, keyword front |
-| Meta description | 150-160 chars, compelling |
-| H1 | One per page, main keyword |
-| H2-H6 | Logical hierarchy |
-| Alt text | Descriptive, not stuffed |
-
-### Content Quality
-
-| Factor | Importance |
-|--------|------------|
-| Depth | Comprehensive coverage |
-| Freshness | Regular updates |
-| Uniqueness | Original value |
-| Readability | Clear writing |
-
----
-
-## 5. Schema Markup Types
-
-| Type | Use |
-|------|-----|
-| Article | Blog posts, news |
-| Organization | Company info |
-| Person | Author profiles |
-| FAQPage | Q&A content |
-| Product | E-commerce |
-| Review | Ratings |
-| BreadcrumbList | Navigation |
-
----
-
-## 6. AI Content Guidelines
-
-### What Google Looks For
-
-| ✅ Do | ❌ Don't |
-|-------|----------|
-| AI draft + human edit | Publish raw AI content |
-| Add original insights | Copy without value |
-| Expert review | Skip fact-checking |
-| Follow E-E-A-T | Keyword stuffing |
-
----
-
-## 7. Ranking Factors (Prioritized)
-
-| Priority | Factor |
-|----------|--------|
-| 1 | Quality, relevant content |
-| 2 | Backlinks from authority sites |
-| 3 | Page experience (Core Web Vitals) |
-| 4 | Mobile optimization |
-| 5 | Technical SEO fundamentals |
-
----
-
-## 8. Measurement
-
-| Metric | Tool |
-|--------|------|
-| Rankings | Search Console, Ahrefs |
-| Traffic | Analytics |
-| Core Web Vitals | PageSpeed Insights |
-| Indexing | Search Console |
-| Backlinks | Ahrefs, Semrush |
-
----
-
-> **Remember:** SEO is a long-term game. Quality content + technical excellence + patience = results.
+Sources: [Google Search Essentials](https://developers.google.com/search/docs/essentials), [SEO starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide). Recheck provider documentation for changing technical requirements.

@@ -55,7 +55,7 @@ export const MyComponent: React.FC<Props> = ({ id }) => {
 - Very simple cases without Suspense
 - Polling with background updates
 
-**For new components: Always prefer useSuspenseQuery**
+**Use the project’s established query mode. Choose useSuspenseQuery when a Suspense/error-boundary design fits; ordinary useQuery is equally valid for explicit state handling.**
 
 ---
 

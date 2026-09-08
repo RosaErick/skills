@@ -1,7 +1,8 @@
-# Infra
+# infra
 
-Shell, servers and deployment.
+2 active skills. Read the entrypoint for scope and task-specific references.
 
-- **[bash-linux](./bash-linux/SKILL.md)** — Bash/Linux patterns: critical commands, pipes, error handling, scripting.
-- **[server-management](./server-management/SKILL.md)** — Process management, monitoring strategy and scaling decisions.
-- **[deployment-procedures](./deployment-procedures/SKILL.md)** — Safe production deploys, rollback strategies and verification.
+| Skill | Use | Invocation intent |
+|---|---|---|
+| [deployment-procedures](deployment-procedures/SKILL.md) | Prepare, execute, or troubleshoot a deployment using the target platform’s runbook and verification signals. | Automatic when relevant |
+| [server-management](server-management/SKILL.md) | Diagnose a specific server or supervised service failure and apply a verified recovery using its actual configuration. | Automatic when relevant |

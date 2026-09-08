@@ -324,7 +324,7 @@ import { Box } from "@mui/material";
 
 ### Trailing Commas
 
-**Always use trailing commas** in objects and arrays
+Follow the configured formatter for trailing commas in objects and arrays
 
 ```typescript
 // ✅ CORRECT

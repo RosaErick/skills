@@ -1,34 +1,26 @@
-# Engineering
+# engineering
 
-Skills I use daily for code work.
+20 active skills. Read the entrypoint for scope and task-specific references.
 
-## User-invoked
-
-Reachable only when you type them (Claude Code: `disable-model-invocation: true`; Codex: `policy.allow_implicit_invocation: false` in `agents/openai.yaml`).
-
-- **[ask-matt](./ask-matt/SKILL.md)** — Ask which skill or flow fits your situation. A router over the user-invoked skills in this repo.
-- **[grill-with-docs](./grill-with-docs/SKILL.md)** — Grilling session that also builds your project's domain model, sharpening terminology and updating `CONTEXT.md` and ADRs inline.
-- **[triage](./triage/SKILL.md)** — Move issues through a state machine of triage roles.
-- **[improve-codebase-architecture](./improve-codebase-architecture/SKILL.md)** — Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
-- **[setup-matt-pocock-skills](./setup-matt-pocock-skills/SKILL.md)** — Configure this repo for the engineering skills (issue tracker, triage labels, domain doc layout). Run once per repo.
-- **[to-spec](./to-spec/SKILL.md)** — Turn the current conversation into a spec and publish it to the issue tracker.
-- **[to-tickets](./to-tickets/SKILL.md)** — Break any plan, spec, or conversation into a set of tracer-bullet tickets, each declaring its blocking edges — text in a local file, or native blocking links on a real tracker.
-- **[implement](./implement/SKILL.md)** — Build the work described by a spec or set of tickets, driving `/tdd` at pre-agreed seams and closing out with `/two-axis-review` before committing.
-- **[wayfinder](./wayfinder/SKILL.md)** — Plan a huge chunk of work — more than one agent session can hold — as a shared map of decision tickets on the issue tracker, resolved one at a time until the way to the destination is clear.
-
-## Model-invoked
-
-Model- or user-reachable (rich trigger phrasing so the model can reach for them).
-
-- **[prototype](./prototype/SKILL.md)** — Build a throwaway prototype to answer a design question: a single shareable HTML file for state/logic, or several toggleable UI variations.
-
-- **[diagnosing-bugs](./diagnosing-bugs/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: build a feedback loop that goes red on this bug → minimise → hypothesise → instrument → fix → regression-test.
-- **[research](./research/SKILL.md)** — Investigate a question against high-trust primary sources and capture the findings as a cited Markdown file in the repo, run as a background agent.
-- **[tdd](./tdd/SKILL.md)** — Test-driven development with a red-green-refactor loop. Builds features or fixes bugs one vertical slice at a time.
-- **[domain-design](./domain-design/SKILL.md)** — Decide the model itself: invariants first, aggregates as consistency boundaries, value objects, domain events, context boundaries and how contexts relate. Writes `MODEL.md`.
-- **[spec-driven](./spec-driven/SKILL.md)** — Turn a spec into numbered, falsifiable acceptance criteria in the repo, bind each to the test that proves it, and verify them against a test run.
-- **[domain-modeling](./domain-modeling/SKILL.md)** — Actively build and sharpen a project's domain model — challenge terms, stress-test with scenarios, update `CONTEXT.md` and ADRs inline.
-- **[codebase-design](./codebase-design/SKILL.md)** — Shared discipline and vocabulary for designing deep modules: small interfaces, clean seams, testable through the interface.
-- **[two-axis-review](./two-axis-review/SKILL.md)** — Two-axis review of the diff since a fixed point: **Standards** (does it follow the repo's coding standards, plus a Fowler smell baseline?) and **Spec** (does it faithfully implement the originating issue/spec?), run as parallel sub-agents.
-- **[resolving-merge-conflicts](./resolving-merge-conflicts/SKILL.md)** — Work through an in-progress git merge or rebase conflict hunk by hunk, resolving by intent traced to each side's primary source, then finish the operation — never `--abort`.
-- **[wizard](./wizard/SKILL.md)** — Generate an interactive bash wizard that walks a human through steps only they can perform: provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover.
+| Skill | Use | Invocation intent |
+|---|---|---|
+| [ask-matt](ask-matt/SKILL.md) | Choose an engineering workflow for an idea, specification, implementation, review, or handoff. | Explicit |
+| [codebase-design](codebase-design/SKILL.md) | Design module interfaces and test seams that hide complexity and keep related changes local. | Automatic when relevant |
+| [diagnosing-bugs](diagnosing-bugs/SKILL.md) | Diagnose a reported failure, isolate its cause with evidence, and verify a targeted fix. | Automatic when relevant |
+| [domain-design](domain-design/SKILL.md) | Translate domain rules into implementation boundaries, state transitions, and consistency decisions. | Automatic when relevant |
+| [domain-modeling](domain-modeling/SKILL.md) | Build and sharpen a project's domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, record an architectural decision, or when another skill needs to maintain the domain model. | Automatic when relevant |
+| [grill-with-docs](grill-with-docs/SKILL.md) | A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go. | Explicit |
+| [implement](implement/SKILL.md) | Implement an agreed spec, ticket, or clearly scoped change through validation and review. | Explicit |
+| [improve-codebase-architecture](improve-codebase-architecture/SKILL.md) | Find concrete architectural friction in an existing codebase and propose focused module-boundary improvements. | Explicit |
+| [prototype](prototype/SKILL.md) | Build a focused UI or logic experiment to resolve an identified design uncertainty. | Automatic when relevant |
+| [research](research/SKILL.md) | Investigate an engineering question using repository evidence and authoritative technical sources. | Automatic when relevant |
+| [resolving-merge-conflicts](resolving-merge-conflicts/SKILL.md) | Resolve an in-progress git merge or rebase while preserving both intended changes and unrelated local work. | Automatic when relevant |
+| [setup-matt-pocock-skills](setup-matt-pocock-skills/SKILL.md) | Configure project conventions for the Matt Pocock workflow skills when setup is requested. | Explicit |
+| [spec-driven](spec-driven/SKILL.md) | Numbered acceptance criteria in the repo, bound to tests by id and verified against a test run. Use when a spec needs criteria before implementation, or when asked whether the code still does what the spec says. | Automatic when relevant |
+| [tdd](tdd/SKILL.md) | Develop or fix behavior through a failing test, a minimal implementation, and safe refactoring. | Automatic when relevant |
+| [to-spec](to-spec/SKILL.md) | Turn an agreed change into an implementation-ready specification with observable acceptance criteria. | Explicit |
+| [to-tickets](to-tickets/SKILL.md) | Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker — edges as text in one file per ticket locally, or native blocking links on a real tracker. | Explicit |
+| [triage](triage/SKILL.md) | Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs. | Explicit |
+| [two-axis-review](two-axis-review/SKILL.md) | Review a code change for correctness and design, including committed, staged, and uncommitted work. | Automatic when relevant |
+| [wayfinder](wayfinder/SKILL.md) | Map a large engineering change into ordered milestones, dependencies, and decision points. | Explicit |
+| [wizard](wizard/SKILL.md) | Generate an interactive bash wizard for steps only a human can do. Use when provisioning infrastructure, setting up credentials or CI secrets, or walking an unfamiliar third-party dashboard. | Automatic when relevant |

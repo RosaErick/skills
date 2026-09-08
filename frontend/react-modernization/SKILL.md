@@ -1,35 +1,15 @@
 ---
 source: original
 name: react-modernization
-description: Upgrade React applications to latest versions, migrate from class components to hooks, and adopt concurrent features. Use when modernizing React codebases, migrating to React Hooks, or upgrading to latest React versions.
+description: "Migrate an existing React application between identified versions or replace legacy APIs incrementally."
 ---
 
-# React Modernization
+# Migrate from an identified baseline
 
-Master React version upgrades, class to hooks migration, concurrent features adoption, and codemods for automated transformation.
+Record current and target React/React DOM versions, framework, TypeScript types, test utilities and third-party compatibility. Choose a supported target from the project's constraints; an old 16→17→18 sequence is not a definition of the latest release.
 
-## Use this skill when
+Use the matching official upgrade guide and [migration playbook](resources/implementation-playbook.md). Inventory removed/deprecated APIs, root rendering, effects, refs and test assumptions in affected code. Apply a relevant codemod to a reviewable scope and inspect the resulting diff; do not run an unpinned migration blindly across unrelated files.
 
-- Upgrading React applications to latest versions
-- Migrating class components to functional components with hooks
-- Adopting concurrent React features (Suspense, transitions)
-- Applying codemods for automated refactoring
-- Modernizing state management patterns
-- Updating to TypeScript
-- Improving performance with React 18+ features
+Migrate in slices that keep the app runnable. Preserve observable behavior and test the flows most exposed to rendering, effect cleanup and state changes. Treat Strict Mode diagnostics as evidence of lifecycle assumptions rather than disabling it to hide failures.
 
-## Do not use this skill when
-
-- The task is unrelated to react modernization
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
-
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns and examples.
+A version upgrade does not automatically require converting every class, replacing the state library or enabling a compiler. Adopt new APIs only where they solve the requested problem. Report the actual target, changes, compatibility decisions and validation performed.

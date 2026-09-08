@@ -1,6 +1,6 @@
 # skills
 
-My curated agent skills — 79 of them, all in one place, organized by category.
+My curated agent skills — 67 of them, all in one place, organized by category.
 
 Each skill is a folder with a `SKILL.md` (frontmatter `name` + `description`) and supporting files
 alongside it when needed. It's the standard format agent hosts read — Codex, OpenCode, Claude Code, Copilot CLI and others.
@@ -107,21 +107,22 @@ Real files, copied in, yours to hack on. They never see an update from here agai
 
 | Folder | What's in it | Skills |
 |---|---|---|
-| [engineering](./engineering/README.md) | Code workflow: spec → tickets → implement → review, TDD, bug diagnosis, domain modeling | 20 |
-| [frontend](./frontend/README.md) | React, Next.js, Tailwind, interface design, mobile, web performance, i18n | 15 |
-| [backend](./backend/README.md) | APIs, Node, Python, Rust, databases, MCP | 11 |
-| [infra](./infra/README.md) | Shell, server management, deployment | 3 |
-| [quality](./quality/README.md) | Testing, review, debugging, linting, profiling | 10 |
+| [engineering](./engineering/README.md) | Engineering workflows, TDD, bug diagnosis, review, domain modeling | 20 |
+| [frontend](./frontend/README.md) | React, Next.js, Tailwind, interface design, mobile, web performance, i18n | 14 |
+| [backend](./backend/README.md) | APIs, Node, Python, databases, MCP | 9 |
+| [infra](./infra/README.md) | Server diagnosis and deployment runbooks | 2 |
+| [quality](./quality/README.md) | Testing, linting, validation, skill evaluation | 6 |
 | [security](./security/README.md) | Vulnerability analysis and OWASP | 1 |
-| [workflow](./workflow/README.md) | How the agent works: brainstorming, planning, architecture, multi-agent orchestration | 7 |
+| [workflow](./workflow/README.md) | App delivery, planning, architecture, optional agent coordination | 4 |
 | [writing](./writing/README.md) | Copy, UX writing, documentation, SEO/GEO | 5 |
 | [productivity](./productivity/README.md) | Non-code work: grilling, handoff, teaching, questionnaires | 7 |
-| **Total** | | **79** |
+| **Total** | | **67** |
 
-The READMEs under `engineering/`, `productivity/` and `workflow/` split their skills into
-**user-invoked** (only run when you type them, `disable-model-invocation: true`) and **model-invoked**
-(the model reaches for them from the description). Everything in the other categories is
-model-reachable.
+Category READMEs identify workflows intended for explicit invocation. They retain
+`disable-model-invocation: true` for Claude Code and `policy.allow_implicit_invocation: false`
+in `agents/openai.yaml` for Codex. Invocation syntax and discovery behavior depend on the host.
+
+The [September 2026 migration](MIGRATION.md) maps the seven merged skills and five archived entries.
 
 <details>
 <summary><b>Original skills</b> — the twelve that are mine to maintain</summary>
@@ -142,7 +143,7 @@ filed by category, trimmed of what I don't run.
 | [frontend/web-performance-optimization](./frontend/web-performance-optimization/SKILL.md) | Core Web Vitals, bundle size, caching, runtime performance |
 | [backend/api-patterns](./backend/api-patterns/SKILL.md) | API contracts: style, URLs, status codes, problem details, pagination, idempotency, versioning |
 | [backend/python-patterns](./backend/python-patterns/SKILL.md) | Python 3.11+: uv and pyproject, typing, async, errors, pytest |
-| [backend/api-documentation-master](./backend/api-documentation-master/SKILL.md) | API docs end to end: OpenAPI 3.1, interactive docs, multi-language samples, CI/CD automation |
+| [backend/api-documentation-master](./backend/api-documentation-master/SKILL.md) | Requested API docs: OpenAPI contracts, reference pages, quickstarts and examples |
 | [writing/documentation](./writing/documentation/SKILL.md) | Diátaxis documentation plus README, API reference, ADR, changelog, diagrams, llms.txt |
 | [writing/ux-writing](./writing/ux-writing/SKILL.md) | UX writing, guided interaction and interface usability |
 
@@ -153,23 +154,20 @@ filed by category, trimmed of what I don't run.
 
 - `engineering/domain-modeling` (the glossary) × `engineering/domain-design` (the model) × `engineering/codebase-design` (the module shape)
 - `engineering/to-spec` (writes the spec) × `engineering/spec-driven` (makes it falsifiable and keeps it honest)
-- `engineering/tdd` (guided loop, with references) × `quality/tdd-workflow` (short checklist)
-- `engineering/two-axis-review` (Standards + Spec, sub-agents) × `quality/code-review-checklist` (fast pass)
-- `engineering/diagnosing-bugs` (diagnosis loop) × `quality/systematic-debugging` (4 phases)
-- `frontend/nextjs-best-practices` (principles) × `frontend/nextjs-app-router-patterns` (implementation playbook)
 - `frontend/react-patterns` (general patterns) × `frontend/react-ui-patterns` (loading, error and empty states)
-- `backend/node` (Node 22+ and native TypeScript) × `backend/nodejs-best-practices` (framework and architecture choices) × `backend/nodejs-core` (contributing to Node itself)
+- `backend/node` (application runtime and service decisions) × `backend/nodejs-core` (contributing to Node itself)
 - `backend/api-patterns` (the contract) × `backend/fastify` (implementing it) × `backend/api-documentation-master` (publishing it) × `backend/mcp-builder` (exposing it to agents)
-- `quality/lint-and-validate` (lint as a habit, any stack) × `quality/linting-neostandard-eslint9` (ESLint v9 setup and migration)
+- `quality/lint-and-validate` (configured checks for a coherent change) × `quality/linting-neostandard-eslint9` (ESLint v9 setup and migration)
 
 </details>
 
 <details>
-<summary><b>Maintaining</b> — the one script, and where a new skill goes</summary>
+<summary><b>Maintaining</b> — validation, generated files and tests</summary>
 
 ```bash
-scripts/check.sh           # validate, and rebuild the plugin bundle if it drifted
-scripts/check.sh --check   # verify only, non-zero exit if something is off
+scripts/check.sh           # validate and refresh generated files and plugin links
+scripts/check.sh --check   # read-only catalogue, links and metadata checks
+python3 -m unittest discover -s scripts/tests -v  # repository helper tests
 ```
 A new skill goes into whichever category fits. If none fits, create the folder, write its README, add
 the row to the categories table, and run `scripts/check.sh`.

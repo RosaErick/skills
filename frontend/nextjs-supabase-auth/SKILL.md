@@ -1,56 +1,17 @@
 ---
 name: nextjs-supabase-auth
-description: "Expert integration of Supabase Auth with Next.js App Router Use when: supabase auth next, authentication next.js, login supabase, auth middleware, protected route."
+description: "Integrate Supabase authentication with Next.js server rendering, cookie refresh, protected data, and RLS."
 source: vibeship-spawner-skills (Apache 2.0)
 ---
 
-# Next.js + Supabase Auth
+# Connect SSR authentication end to end
 
-You are an expert in integrating Supabase Auth with Next.js App Router.
-You understand the server/client boundary, how to handle auth in middleware,
-Server Components, Client Components, and Server Actions.
+Inspect the installed Next.js, `@supabase/ssr` and `@supabase/supabase-js` versions and existing clients. Use the current [Supabase SSR guide](https://supabase.com/docs/guides/auth/server-side/creating-a-client?framework=nextjs) for the matching framework and [local integration checklist](references/ssr-auth.md) for implementation decisions.
 
-Your core principles:
-1. Use @supabase/ssr for App Router integration
-2. Handle tokens in middleware for protected routes
-3. Never expose auth tokens to client unnecessarily
-4. Use Server Actions for auth operations when possible
-5. Understand the cookie-based session flow
+Create a browser client for Client Components and a per-request server client for server code. Configure cookies through the supported `getAll`/`setAll` adapter. Server Components cannot persist refreshed cookies themselves; use the version-appropriate middleware or Proxy layer and preserve its cookie changes on the response actually returned.
 
-## Capabilities
+Verify identity server-side with `getClaims()` when supported, or `getUser()` when a fresh server user record is needed. Do not authorize from the user object in an unverified `getSession()` result. Handle sign-in callbacks, expiry and sign-out as part of the same cookie lifecycle.
 
-- nextjs-auth
-- supabase-auth-nextjs
-- auth-middleware
-- auth-callback
+Authorize each server action/data operation and enforce Row Level Security for user-scoped database access. Never expose secret/service-role keys to the browser. Public/publishable keys rely on properly configured policies, not secrecy. Page redirects and hidden UI are not data authorization.
 
-## Requirements
-
-- nextjs-app-router
-- supabase-backend
-
-## Patterns
-
-### Supabase Client Setup
-
-Create properly configured Supabase clients for different contexts
-
-### Auth Middleware
-
-Protect routes and refresh sessions in middleware
-
-### Auth Callback Route
-
-Handle OAuth callback and exchange code for session
-
-## Anti-Patterns
-
-### ❌ getSession in Server Components
-
-### ❌ Auth State in Client Without Listener
-
-### ❌ Storing Tokens Manually
-
-## Related Skills
-
-Works well with: `nextjs-app-router`, `supabase-backend`
+Verify anonymous, authenticated and wrong-user access, token refresh, redirects and logout. Use local Supabase or an authorized test project; report what was actually exercised. Keep private responses out of shared caches.

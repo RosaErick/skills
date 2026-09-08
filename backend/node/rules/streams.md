@@ -13,7 +13,7 @@ If the prompt mentions **CSV**, **ETL**, **ingestion**, **large files**, **trans
 
 ## Use pipeline for Stream Composition
 
-Always use `pipeline` instead of `.pipe()` for proper error handling:
+Prefer `pipeline` for composed streams when it provides the needed error propagation and teardown:
 
 ```typescript
 import { pipeline } from 'node:stream/promises';
@@ -54,7 +54,7 @@ async function processFile(input: string, output: string): Promise<void> {
 
 ### CSV/ETL pattern: pipeline + async transform + deduplicated enrichment
 
-For ingestion-style tasks, show an explicit `async function*` transform and integrate deduped async lookups:
+For ingestion that needs a streaming transform and repeated async enrichment, this example combines an async generator with deduplicated lookups. Use an existing Transform/parser or omit caching when those requirements are absent:
 
 ```typescript
 import { pipeline } from 'node:stream/promises';

@@ -10,5 +10,30 @@
     "type": "git",
     "url": "https://github.com/RosaErick/skills.git"
   },
-  "license": "SEE LICENSE IN README.md"
+  "license": "SEE LICENSE IN README.md",
+  "files": [
+    "README.md",
+    "MIGRATION.md",
+    "APLICACAO-SKILLS-2026-09-08.md",
+    "AUDITORIA-SKILLS-2026-09-07.md",
+    "scripts/",
+    "engineering/",
+    "frontend/",
+    "backend/",
+    "infra/",
+    "quality/",
+    "security/",
+    "workflow/",
+    "writing/",
+    "productivity/",
+    ".codex-plugin/",
+    ".claude-plugin/",
+    "!**/node_modules/**",
+    "!**/__pycache__/**",
+    "!**/*.pyc"
+  ],
+  "scripts": {
+    "check": "bash scripts/check.sh --check",
+    "test": "python3 -m unittest discover -s scripts/tests -v"
+  }
 }

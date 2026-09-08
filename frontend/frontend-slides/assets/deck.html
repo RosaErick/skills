@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentation starter</title>
+<style>
+:root { color-scheme: light; font-family: system-ui, sans-serif; background: #f4f0e8; color: #20252b; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 90rem; margin: auto; }
+.slide { min-height: 100svh; padding: clamp(2rem, 6vw, 7rem); display: flex; flex-direction: column; justify-content: center; }
+.slide[hidden] { display: none; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .85rem; color: #52686b; }
+h1, h2 { font-weight: 600; letter-spacing: -.04em; line-height: 1.04; max-width: 17ch; font-size: clamp(2.3rem, 6.5vw, 6.5rem); margin: .25em 0; overflow-wrap: anywhere; }
+p, li { max-width: 55ch; font-size: clamp(1.1rem, 2vw, 1.8rem); line-height: 1.5; }
+nav { position: fixed; right: 1rem; bottom: 1rem; display: flex; align-items: center; gap: .7rem; background: #f4f0efef; border-radius: .6rem; padding: .5rem; }
+button { font: inherit; padding: .65rem .9rem; min-height: 44px; border: 1px solid #667; border-radius: .4rem; color: inherit; background: white; cursor: pointer; }
+button:disabled { opacity: .45; cursor: default; }
+:focus-visible { outline: 3px solid #256d85; outline-offset: 4px; }
+progress { position: fixed; bottom: 0; left: 0; width: 100%; height: 4px; border: 0; accent-color: #256d85; }
+.notes { display: none; }
+@media (prefers-reduced-motion: no-preference) { .slide { animation: appear .2s ease-out; } @keyframes appear { from { opacity: .5; transform: translateY(5px); } to { opacity: 1; transform: none; } } }
+@media print { nav, progress { display: none; } .slide, .slide[hidden] { display: flex; min-height: 0; height: 95vh; break-after: page; animation: none; } }
+</style>
+</head>
+<body>
+<main>
+<section class="slide" aria-labelledby="title-1"><p class="eyebrow">A useful starting point</p><h1 id="title-1" tabindex="-1">One clear idea per slide.</h1><p>Replace this story, language and visual direction with the presentation's actual content.</p><aside class="notes">Speaker notes belong here. They are not visible on the projected slide.</aside></section>
+<section class="slide" aria-labelledby="title-2"><p class="eyebrow">Evidence and implication</p><h2 id="title-2" tabindex="-1">Make the takeaway visible.</h2><p>Use a concrete example, a readable figure or a short explanation that supports the audience's next decision.</p></section>
+<section class="slide" aria-labelledby="title-3"><p class="eyebrow">The next step</p><h2 id="title-3" tabindex="-1">End with an action.</h2><p>State what the audience can do with the information.</p></section>
+</main>
+<nav aria-label="Slide navigation"><button id="prev" type="button" aria-label="Previous slide">←</button><span id="count" aria-live="polite" aria-atomic="true"></span><button id="next" type="button" aria-label="Next slide">→</button></nav>
+<progress id="progress" aria-label="Presentation progress"></progress>
+<script>
+const slides = [...document.querySelectorAll('.slide')];
+const prev = document.querySelector('#prev'), next = document.querySelector('#next');
+const count = document.querySelector('#count'), progress = document.querySelector('#progress');
+let current = 0;
+function show(index, focus = false) {
+  current = Math.max(0, Math.min(slides.length - 1, Number.isFinite(index) ? index : 0));
+  slides.forEach((slide, i) => { slide.hidden = i !== current; });
+  prev.disabled = current === 0; next.disabled = current === slides.length - 1;
+  count.textContent = `${current + 1} / ${slides.length}`;
+  progress.max = slides.length; progress.value = current + 1;
+  history.replaceState(null, '', `#${current + 1}`);
+  if (focus) slides[current].querySelector('h1, h2')?.focus({ preventScroll: true });
+}
+prev.addEventListener('click', () => show(current - 1, true));
+next.addEventListener('click', () => show(current + 1, true));
+document.addEventListener('keydown', event => {
+  if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.target.closest('input, textarea, select, button, a, [contenteditable]')) return;
+  const direction = { ArrowRight: 1, PageDown: 1, ' ': 1, ArrowLeft: -1, PageUp: -1 }[event.key];
+  if (direction) { event.preventDefault(); show(current + direction, true); }
+  else if (event.key === 'Home' || event.key === 'End') { event.preventDefault(); show(event.key === 'Home' ? 0 : slides.length - 1, true); }
+});
+window.addEventListener('hashchange', () => show(Number(location.hash.slice(1)) - 1));
+show(Number(location.hash.slice(1)) - 1);
+</script>
+</body>
+</html>

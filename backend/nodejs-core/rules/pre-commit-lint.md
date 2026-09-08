@@ -51,7 +51,7 @@ tools/lint-sh.mjs .                    # requires shellcheck on PATH
 Only commit once all of these are clean, and always commit with `-s`:
 
 ```bash
-git add -A && git commit -s
+git add <intended-paths> && git commit -s
 ```
 
 **`-s` is not optional.** It adds the `Signed-off-by:` trailer that certifies
@@ -268,7 +268,7 @@ make -j$(nproc)                                   # rebuild (mandatory)
 make lint                                         # lint gate
 CLANG_FORMAT_START="$(git merge-base HEAD upstream/main)" make format-cpp
 ./node test/parallel/test-your-feature.js         # targeted test
-git add -A && git commit -s                       # only now
+git add <intended-paths> && git commit -s                       # only now
 npx core-validate-commit --no-validate-metadata HEAD   # amend if it fails
 ```
 

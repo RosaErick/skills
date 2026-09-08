@@ -1,52 +1,22 @@
 ---
 name: database-design
-description: "Schema and data-layer decisions: tables and keys, indexes, normalization, migrations, ORM choice, N+1. Use when designing or reviewing a schema, picking indexes, planning a migration or chasing a slow query."
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
-# Database Design
-
-> **Learn to THINK, not copy SQL patterns.**
-
-## 🎯 Selective Reading Rule
-
-**Read ONLY files relevant to the request!** Check the content map, find what you need.
-
-| File | Description | When to Read |
-|------|-------------|--------------|
-| `database-selection.md` | PostgreSQL vs Neon vs Turso vs SQLite | Choosing database |
-| `orm-selection.md` | Drizzle vs Prisma vs Kysely | Choosing ORM |
-| `schema-design.md` | Normalization, PKs, relationships | Designing schema |
-| `indexing.md` | Index types, composite indexes | Performance tuning |
-| `optimization.md` | N+1, EXPLAIN ANALYZE | Query optimization |
-| `migrations.md` | Safe migrations, serverless DBs | Schema changes |
+description: "Design or review database schemas, indexes, query plans, ORM choices, and safe migrations."
 
 ---
 
-## ⚠️ Core Principle
+# Choose from the actual data problem
 
-- ASK user for database preferences when unclear
-- Choose database/ORM based on CONTEXT
-- Don't default to PostgreSQL for everything
+Read the existing database/ORM, migrations, schema and affected queries first. Infer established choices from configuration. Ask about a database preference only when a new selection is in scope and cannot be resolved from requirements.
 
----
+| Decision | Reference |
+|---|---|
+| Database selection | [database-selection.md](database-selection.md) |
+| ORM/query builder | [orm-selection.md](orm-selection.md) |
+| Entities, keys and relationships | [schema-design.md](schema-design.md) |
+| Index design | [indexing.md](indexing.md) |
+| Query performance/N+1 | [optimization.md](optimization.md) |
+| Schema evolution | [migrations.md](migrations.md) |
 
-## Decision Checklist
+Define integrity and consistency requirements before picking representation. Add indexes from access patterns and inspect query plans where performance is the question. Consider write cost, data volume and deployment constraints; neither adding every possible index nor changing the database by default is appropriate.
 
-Before designing schema:
-
-- [ ] Asked user about database preference?
-- [ ] Chosen database for THIS context?
-- [ ] Considered deployment environment?
-- [ ] Planned index strategy?
-- [ ] Defined relationship types?
-
----
-
-## Anti-Patterns
-
-❌ Default to PostgreSQL for simple apps (SQLite may suffice)
-❌ Skip indexing
-❌ Use SELECT * in production
-❌ Store JSON when structured data is better
-❌ Ignore N+1 queries
+Plan compatible migration ordering and data recovery where needed. Validate the affected invariant/query/migration using the actual database version and project checks. [schema_validator.py](scripts/schema_validator.py) is a heuristic helper and does not prove a migration safe.

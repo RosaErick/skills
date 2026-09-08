@@ -161,9 +161,9 @@ def main():
     if not pages:
         print("\n[!] No page files found.")
         print("    Looking for: HTML, JSX, TSX in pages/app/routes directories")
-        output = {"script": "seo_checker", "files_checked": 0, "passed": True}
+        output = {"script": "seo_checker", "files_checked": 0, "passed": None, "status": "unverified"}
         print("\n" + json.dumps(output, indent=2))
-        sys.exit(0)
+        sys.exit(2)
     
     print(f"Found {len(pages)} page files to analyze\n")
     
@@ -196,13 +196,14 @@ def main():
         if len(all_issues) > 5:
             print(f"  ... and {len(all_issues) - 5} more")
     else:
-        print("\n[OK] No SEO issues found!")
+        print("\nNo heuristic candidates found in scanned source; indexing and ranking are not verified.")
     
     total_issues = sum(len(item["issues"]) for item in all_issues)
     passed = total_issues == 0
     
     output = {
         "script": "seo_checker",
+        "scope": "source-text heuristics; not a ranking or indexability guarantee",
         "project": str(project_path),
         "files_checked": len(pages),
         "files_with_issues": len(all_issues),

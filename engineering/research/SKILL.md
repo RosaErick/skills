@@ -1,12 +1,14 @@
 ---
 name: research
-description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.
+description: "Investigate an engineering question using repository evidence and authoritative technical sources."
 ---
 
-Spin up a **background agent** to do the research, so you keep working while it reads.
+# Research a bounded question
 
-Its job:
+Identify the decision or uncertainty the research must resolve. Start with relevant repository code, configuration and existing documentation. For changing or unfamiliar technical claims, consult primary documentation, standards or original papers and check the applicable version.
 
-1. Investigate the question against **primary sources** — official docs, source code, specs, first-party APIs — not a secondary write-up of them. Follow every claim back to the source that owns it.
-2. Write the findings to a single Markdown file, citing each claim's source.
-3. Save it where the repo already keeps such notes; match the existing convention, and if there is none, put it somewhere sensible and say where.
+Separate observed facts, source claims, inference and unresolved questions. Compare alternatives against the actual constraints rather than collecting an exhaustive feature catalogue. Stop gathering when the evidence is sufficient to support the decision or identify the specific missing fact.
+
+Return a direct finding with supporting links or file references, version/date context when relevant and any practical limitation. Save a durable note in the repository's existing documentation location when requested or needed by subsequent work; do not require a fixed output path.
+
+Independent source checks can be delegated when available, authorized and useful alongside local work. Research does not require a subagent or a user interview for every question. Never present a summary as a quote or an unrun experiment as evidence.

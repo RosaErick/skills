@@ -9,6 +9,8 @@ metadata:
 
 # React Patterns
 
+Check the installed React version before using a newer API. `useEffectEvent` requires React 19.2; APIs introduced in React 19 are not available in React 18. Keep existing state/library choices unless changing them is part of the task.
+
 Component and hook design for React 18/19. Framework-level concerns (routing, server rendering,
 data loading in the App Router) belong to `nextjs-best-practices`; loading, error and empty state
 UI belongs to `react-ui-patterns`; utility classes belong to `tailwind-patterns`.
@@ -59,8 +61,7 @@ deduplication, retries and race handling — badly. Use a query library or a Ser
 ### Placement
 
 Start with the state inside the component that uses it. Move it up only when a second component
-needs to read the same value. Move it into Context only when passing it down would cross three or
-more layers that don't care about it. Move it into a store only when unrelated trees need it and
+needs to read the same value. Consider Context when repeated prop passing obscures ownership across components that do not use the value. Move it into a store only when unrelated trees need it and
 Context re-renders become the actual, profiled problem.
 
 ---
@@ -146,7 +147,7 @@ function useDebouncedValue<T>(value: T, delay = 300): T {
 }
 ```
 
-Signs a hook is doing too much: it returns more than four things, takes a config object, or its name
+Signs a hook may be doing too much: it mixes unrelated responsibilities or its name
 needs "and" to be accurate.
 
 ---
@@ -251,7 +252,7 @@ function Button({ variant = "primary", ...props }: ButtonProps) { … }
 | `useMemo`/`useCallback` everywhere by default | Compiler, or profile then memoize the hot path |
 | Mutating state or props in place | New object/array, or `useReducer` with immutable updates |
 | Conditional hooks, hooks in loops | Always top level, always the same order |
-| A hook that returns eight values | Split it, or return an object with a documented shape |
+| A hook mixes unrelated responsibilities | Separate the responsibilities or clarify the returned interface |
 | Business logic inside JSX | Extract to a function or a hook and unit-test it |
 
 ---

@@ -1,94 +1,29 @@
 ---
 name: node
-description: "Node 22+ with native TypeScript: type stripping, async patterns, errors, streams, graceful shutdown, profiling, config. Use when writing Node with .ts files and no build step. Service architecture lives in nodejs-best-practices."
+description: "Build or debug Node.js application runtime behavior: async work, streams, modules, errors, shutdown, and profiling."
 metadata:
   tags: node, nodejs, javascript, typescript, type-stripping, backend, server
 ---
 
-## When to use
+# Node.js application decisions
 
-Use this skill whenever you are dealing with Node.js code to obtain domain-specific knowledge for building robust, performant, and maintainable Node.js applications.
+Check the actual Node version, package manager, module format and build/test scripts. Preserve the established runtime and TypeScript toolchain unless a change is part of the task. This skill concerns applications; `nodejs-core` covers contributing to the Node runtime itself.
 
-## TypeScript with Type Stripping
+Read only the reference needed:
 
-When writing TypeScript for Node.js, use **type stripping** (Node.js 22.6+) instead of build tools like ts-node or tsx. Type stripping runs TypeScript directly by removing type annotations at runtime without transpilation.
+| Problem | Reference |
+|---|---|
+| TypeScript execution or module resolution | [TypeScript](rules/typescript.md), [modules](rules/modules.md) |
+| Concurrency, cancellation or backpressure | [async work](rules/async-patterns.md), [streams](rules/streams.md) |
+| Repeated expensive work | [caching](rules/caching.md) |
+| Failure boundaries or diagnostics | [errors](rules/error-handling.md), [logging](rules/logging.md) |
+| Process lifecycle | [shutdown](rules/graceful-shutdown.md), [stuck processes](rules/stuck-processes-and-tests.md) |
+| Tests | [testing](rules/testing.md), [flaky tests](rules/flaky-tests.md) |
+| CPU/memory/latency | [profiling](rules/profiling.md), [performance](rules/performance.md) |
+| Configuration | [environment](rules/environment.md) |
+| Service boundaries and deployment | [service architecture](rules/service-architecture.md) |
+| Library implementation investigation | [node_modules exploration](rules/node-modules-exploration.md) |
 
-Key requirements for type stripping compatibility:
-- Use `import type` for type-only imports
-- Use const objects instead of enums
-- Avoid namespaces and parameter properties
-- Use `.ts` extensions in imports
+Native type stripping is an option for compatible Node versions and erasable TypeScript syntax; it does not type-check or honor all tsconfig transformations. Do not replace a working build just because files end in `.ts`.
 
-**Minimal example** — a valid type-stripped TypeScript file:
-
-```ts
-// greet.ts
-import type { IncomingMessage } from 'node:http';
-
-const greet = (name: string): string => `Hello, ${name}!`;
-console.log(greet('world'));
-```
-
-Run directly with:
-```bash
-node greet.ts
-```
-
-See [rules/typescript.md](rules/typescript.md) for complete configuration and examples.
-
-## Common Workflows
-
-For multi-step processes, follow these high-level sequences before consulting the relevant rule file:
-
-**Graceful shutdown**: Register signal handlers (SIGTERM/SIGINT) → stop accepting new work → drain in-flight requests → close external connections (DB, cache) → exit with appropriate code. See [rules/graceful-shutdown.md](rules/graceful-shutdown.md).
-
-**Error handling**: Define a shared error base class → classify errors (operational vs programmer) → add async boundary handlers (`process.on('unhandledRejection')`) → propagate typed errors through the call stack → log with context before responding or crashing. See [rules/error-handling.md](rules/error-handling.md).
-
-**Diagnosing flaky tests**: Isolate the test with `--test-only` → check for shared state or timer dependencies → inspect async teardown order → add retry logic as a temporary diagnostic step → fix root cause. See [rules/flaky-tests.md](rules/flaky-tests.md).
-
-**Diagnosing stuck processes/tests** (`node --test` hangs, "process did not exit", CI timeout, open handles): isolate file/test → run with explicit timeout/reporter → inspect handles via `why-is-node-running` (`SIGUSR1`) → patch deterministic teardown in resource-creation scope → rerun isolated + full suite until stable. See [rules/stuck-processes-and-tests.md](rules/stuck-processes-and-tests.md).
-
-**Profiling a slow path**: Reproduce under realistic load → capture a CPU profile with `--cpu-prof` → identify hot functions → check for stream backpressure or unnecessary serialisation → validate improvement with a benchmark. See [rules/profiling.md](rules/profiling.md) and [rules/performance.md](rules/performance.md).
-
-## High-priority activation checklist (streams + caching)
-
-When the task mentions **CSV**, **ETL**, **ingestion pipelines**, **large file processing**, **backpressure**, **repeated lookups**, or **deduplicating concurrent async calls**, explicitly apply this checklist:
-
-1. Use `await pipeline(...)` from `node:stream/promises` (prefer this over chained `.pipe()` in guidance/code).
-2. Include at least one explicit `async function*` transform when data is being transformed in-stream.
-3. Choose a cache strategy when repeated work appears:
-   - `lru-cache` for bounded in-memory reuse in a single process.
-   - `async-cache-dedupe` for async request deduplication / stale-while-revalidate behavior.
-4. Show where backpressure is handled (implicitly via `pipeline()` or explicitly via `drain`).
-
-### Integrated example pattern (CSV/ETL)
-
-For CSV/ETL-style prompts, prefer an answer structure like:
-- `createReadStream(input)`
-- `async function*` parser/transform
-- optional cached enrichment lookup (`async-cache-dedupe` or `lru-cache`)
-- `await pipeline(...)` to a writable destination
-
-Link relevant rules directly in explanations so models can retrieve details:
-- [rules/streams.md](rules/streams.md)
-- [rules/caching.md](rules/caching.md)
-
-## How to use
-
-Read individual rule files for detailed explanations and code examples:
-
-- [rules/error-handling.md](rules/error-handling.md) - Error handling patterns in Node.js
-- [rules/async-patterns.md](rules/async-patterns.md) - Async/await and Promise patterns
-- [rules/streams.md](rules/streams.md) - Working with Node.js streams
-- [rules/modules.md](rules/modules.md) - ES Modules and CommonJS patterns
-- [rules/testing.md](rules/testing.md) - Testing strategies for Node.js applications
-- [rules/flaky-tests.md](rules/flaky-tests.md) - Identifying and diagnosing flaky tests with node:test
-- [rules/stuck-processes-and-tests.md](rules/stuck-processes-and-tests.md) - Diagnosing processes that do not exit and tests that get stuck
-- [rules/node-modules-exploration.md](rules/node-modules-exploration.md) - Navigating and analyzing node_modules directories
-- [rules/performance.md](rules/performance.md) - Performance optimization techniques
-- [rules/caching.md](rules/caching.md) - Caching patterns and libraries
-- [rules/profiling.md](rules/profiling.md) - Profiling and benchmarking tools
-- [rules/logging.md](rules/logging.md) - Logging and debugging patterns
-- [rules/environment.md](rules/environment.md) - Environment configuration and secrets management
-- [rules/graceful-shutdown.md](rules/graceful-shutdown.md) - Graceful shutdown and signal handling
-- [rules/typescript.md](rules/typescript.md) - TypeScript configuration and type stripping in Node.js
+For large data flows, bound memory and concurrency and propagate failures. `pipeline` is often useful, but a Transform stream, async iterator or established parser may already fit the problem. CSV does not require an async generator or a cache by itself. Verify runtime behavior at the relevant boundary and use the existing project's checks.

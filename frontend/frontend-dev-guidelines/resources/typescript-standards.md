@@ -169,7 +169,7 @@ interface ContainerProps {
     title: string;
 }
 
-// React.FC automatically includes children type, but be explicit
+// Declare children explicitly; modern React.FC does not add it automatically
 export const Container: React.FC<ContainerProps> = ({ children, title }) => {
     return (
         <div>

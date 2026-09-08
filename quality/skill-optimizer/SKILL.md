@@ -1,47 +1,18 @@
 ---
 name: skill-optimizer
-description: "Tuning agent skills: activation, clarity, examples, context cost, benchmarks and release gates. Use when creating or editing skills, or when a skill is not firing when it should."
+description: "Diagnose a skill’s false activations, missed triggers, harmful instructions, or excessive context cost."
 metadata:
   tags: skills, optimization, benchmarking, activation, regressions, prompt-engineering
 ---
 
-## When to use
+# Improve an observed skill failure
 
-Use this skill when you need to:
-- Improve whether a skill is actually applied by models
-- Diagnose why some criteria fail across all models
-- Prevent a skill from making outputs worse
-- Refactor skill text for stronger retrieval under context pressure
-- Build repeatable benchmark loops and release gates
+Start with the task, expected behavior and actual failure. Decide whether the problem is discovery, instruction ambiguity, missing domain knowledge, stale resources or an unnecessary workflow. More activation is not always better: unintended activation and scope expansion are regressions too.
 
-## Optimization loop (default workflow)
+Make the smallest useful revision. Keep a discriminating description and the core decisions near the entrypoint; move branch-specific detail into references. Remove redundant instructions before adding stronger wording or more checklists.
 
-1. **Measure baseline and skill-on behavior** (per model, per scenario, per criterion)
-2. **Find failure pattern**:
-   - universal failure (0% with skill)
-   - model-specific weakness
-   - regression (negative delta)
-3. **Edit for salience**:
-   - add explicit triggers
-   - add concrete integrated examples
-   - tighten checklists and decision rules
-4. **Re-run evals** and compare deltas
-5. **Ship with guardrails** (documented gate + run history + follow-up issues)
+Scale evaluation to the change. For a wording/link correction, inspect the resulting text and validate the link. For a workflow rewrite or runnable helper, exercise representative behavior, including a nearby task that should not activate the skill. For uncertain model-dependent gains, use a controlled with/without comparison and record the environment and limits.
 
-## How to use
+Choose a reference when needed: [activation](rules/activation-design.md), [context budget](rules/context-budget.md), [comparative benchmarks](rules/benchmark-loop.md), [regression triage](rules/regression-triage.md), or [release checks](rules/release-gates.md). A benchmark matrix and external follow-up issues are not mandatory for every edit.
 
-Read individual rule files for detailed procedures and templates:
-
-- [rules/benchmark-loop.md](rules/benchmark-loop.md) - End-to-end benchmark loop and scoring
-- [rules/activation-design.md](rules/activation-design.md) - Improve retrieval and instruction uptake
-- [rules/context-budget.md](rules/context-budget.md) - Reduce token cost without losing behavior
-- [rules/regression-triage.md](rules/regression-triage.md) - Diagnose and fix skill-on regressions
-- [rules/release-gates.md](rules/release-gates.md) - Go/no-go criteria before shipping skill updates
-
-## Practical heuristics
-
-- Prefer **few high-signal rules** over many soft recommendations
-- Put fragile, high-value behaviors in **top-level checklists**
-- Include at least one **integrated example** per common scenario
-- Add explicit wording for what must **not** be omitted
-- Track gains/losses with **with-skill vs without-skill** comparisons
+Report what improved and the evidence actually collected. Structural validation or shorter text alone does not prove better task performance.

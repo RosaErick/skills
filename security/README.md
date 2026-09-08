@@ -1,3 +1,7 @@
-# Security
+# security
 
-- **[vulnerability-scanner](./vulnerability-scanner/SKILL.md)** — Vulnerability analysis: OWASP 2025, supply chain, attack surface mapping, risk prioritization.
+1 active skills. Read the entrypoint for scope and task-specific references.
+
+| Skill | Use | Invocation intent |
+|---|---|---|
+| [vulnerability-scanner](vulnerability-scanner/SKILL.md) | Investigate a scoped security concern or audit dependencies, secrets, code patterns, and configuration with evidence. | Automatic when relevant |

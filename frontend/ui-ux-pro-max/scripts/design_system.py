@@ -16,9 +16,15 @@ Usage:
 import csv
 import json
 import os
+import re
 from datetime import datetime
 from pathlib import Path
-from core import search, DATA_DIR
+from core import search, DATA_DIR, CSV_CONFIG
+
+
+def slugify(value):
+    """A single portable path component, never a caller-controlled path."""
+    return re.sub(r"[^\w-]+", "-", value.lower()).strip("-_") or "project"
 
 
 # ============ CONFIGURATION ============
@@ -38,6 +44,10 @@ class DesignSystemGenerator:
     """Generates design system recommendations from aggregated searches."""
 
     def __init__(self):
+        required = [REASONING_FILE] + [CSV_CONFIG[domain]["file"] for domain in SEARCH_CONFIG]
+        missing = [name for name in required if not (DATA_DIR / name).is_file()]
+        if missing:
+            raise FileNotFoundError("UI catalogue incomplete; restore data files: " + ", ".join(missing))
         self.reasoning_data = self._load_reasoning()
 
     def _load_reasoning(self) -> list:
@@ -505,7 +515,7 @@ def persist_design_system(design_system: dict, page: str = None, output_dir: str
     
     # Use project name for project-specific folder
     project_name = design_system.get("project_name", "default")
-    project_slug = project_name.lower().replace(' ', '-')
+    project_slug = slugify(project_name)
     
     design_system_dir = base_dir / "design-system" / project_slug
     pages_dir = design_system_dir / "pages"
@@ -526,7 +536,7 @@ def persist_design_system(design_system: dict, page: str = None, output_dir: str
     
     # If page is specified, create page override file with intelligent content
     if page:
-        page_file = pages_dir / f"{page.lower().replace(' ', '-')}.md"
+        page_file = pages_dir / f"{slugify(page)}.md"
         page_content = format_page_override_md(design_system, page, page_query)
         with open(page_file, 'w', encoding='utf-8') as f:
             f.write(page_content)
@@ -556,7 +566,7 @@ def format_master_md(design_system: dict) -> str:
     # Logic header
     lines.append("# Design System Master File")
     lines.append("")
-    lines.append("> **LOGIC:** When building a specific page, first check `design-system/pages/[page-name].md`.")
+    lines.append("> **LOGIC:** When building a specific page, first check `pages/[page-name].md` relative to this master.")
     lines.append("> If that file exists, its rules **override** this Master file.")
     lines.append("> If not, strictly follow the rules below.")
     lines.append("")
@@ -819,7 +829,7 @@ def format_page_override_md(design_system: dict, page_name: str, page_query: str
     lines.append(f"> **Generated:** {timestamp}")
     lines.append(f"> **Page Type:** {page_overrides.get('page_type', 'General')}")
     lines.append("")
-    lines.append("> ⚠️ **IMPORTANT:** Rules in this file **override** the Master file (`design-system/MASTER.md`).")
+    lines.append("> ⚠️ **IMPORTANT:** Rules in this file **override** the Master file (`../MASTER.md` relative to this page).")
     lines.append("> Only deviations from the Master are documented here. For all other rules, refer to the Master.")
     lines.append("")
     lines.append("---")

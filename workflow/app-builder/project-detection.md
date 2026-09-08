@@ -1,34 +1,5 @@
-# Project Type Detection
+# Identify the actual application
 
-> Analyze user requests to determine project type and template.
+Inspect the target directory, manifests, framework configuration and existing routes. Use the user's desired platform and deliverable to identify whether this is a new project or a feature in an existing one. A word such as API, dashboard or mobile is a clue, not a command to choose a framework or invoke a specialist.
 
-## Keyword Matrix
-
-| Keywords | Project Type | Template |
-|----------|--------------|----------|
-| blog, post, article | Blog | astro-static |
-| e-commerce, product, cart, payment | E-commerce | nextjs-saas |
-| dashboard, panel, management | Admin Dashboard | nextjs-fullstack |
-| api, backend, service, rest | API Service | express-api |
-| python, fastapi, django | Python API | python-fastapi |
-| mobile, android, ios, react native | Mobile App (RN) | react-native-app |
-| flutter, dart | Mobile App (Flutter) | flutter-app |
-| portfolio, personal, cv | Portfolio | nextjs-static |
-| crm, customer, sales | CRM | nextjs-fullstack |
-| saas, subscription, stripe | SaaS | nextjs-saas |
-| landing, promotional, marketing | Landing Page | nextjs-static |
-| docs, documentation | Documentation | astro-static |
-| extension, plugin, chrome | Browser Extension | chrome-extension |
-| desktop, electron | Desktop App | electron-desktop |
-| cli, command line, terminal | CLI Tool | cli-tool |
-| monorepo, workspace | Monorepo | monorepo-turborepo |
-
-## Detection Process
-
-```
-1. Tokenize user request
-2. Extract keywords
-3. Determine project type
-4. Detect missing information → forward to conversation-manager
-5. Suggest tech stack
-```
+For a new project, select a relevant template from [the index](templates/SKILL.md). For an existing project, follow its architecture and skip scaffolding. Ask only for a missing choice that materially changes the implementation. Do not delegate to a hypothetical conversation-manager or start a new interview when the request already supplies the needed context.

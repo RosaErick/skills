@@ -30,7 +30,7 @@ export const MyComponent: React.FC = () => {
 };
 ```
 
-**NEVER make direct API calls for auth** - always use `useAuth` hook.
+Use the app’s existing authentication client/hook. The `useAuth` examples assume that hook is already implemented; they do not define a universal authentication dependency.
 
 ---
 

@@ -66,7 +66,20 @@ else
   done
 fi
 
+# Validate category input before changing a target.
+for category in "${CATEGORIES[@]}"; do
+  case "$category" in
+    backend|engineering|frontend|infra|productivity|quality|security|workflow|writing) ;;
+    *) echo "unknown category: $category" >&2; exit 2 ;;
+  esac
+done
 mkdir -p "$TARGET"
+TARGET="$(cd "$TARGET" && pwd -P)"
+case "$TARGET" in
+  "$REPO"|"$REPO/skills"|"$REPO/backend"|"$REPO/engineering"|"$REPO/frontend"|"$REPO/infra"|"$REPO/productivity"|"$REPO/quality"|"$REPO/security"|"$REPO/workflow"|"$REPO/writing")
+    echo "target is a source or generated catalogue directory" >&2; exit 2 ;;
+esac
+python3 "$REPO/scripts/migrate_links.py" "$TARGET" "${CATEGORIES[@]}"
 done_count=0 skipped=0
 
 for category in "${CATEGORIES[@]}"; do
@@ -102,13 +115,13 @@ for category in "${CATEGORIES[@]}"; do
         done_count=$((done_count + 1))
         ;;
       copy)
-        if [ -e "$dest" ] && ! $FORCE; then
+        if { [ -e "$dest" ] || [ -L "$dest" ]; } && ! $FORCE; then
           echo "skip: $name already exists in $TARGET (use -f to overwrite)" >&2
           skipped=$((skipped + 1))
           continue
         fi
         rm -rf "$dest"
-        cp -RL "${skill%/}" "$dest"
+        python3 "$REPO/scripts/copy_skill.py" "${skill%/}" "$dest"
         done_count=$((done_count + 1))
         ;;
     esac

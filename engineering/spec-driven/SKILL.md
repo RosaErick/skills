@@ -23,7 +23,7 @@ without it the spec closes with the ticket and stops describing reality.
 
 ## When it runs
 
-- **Before implementation** — turn an agreed spec into criteria, and get them confirmed. Cheapest
+- **Before implementation** — turn an agreed spec into criteria, reusing already approved behavior and seams. Clarify only unresolved material ambiguity. This is the cheapest
   possible moment to discover that two people read the spec differently.
 - **During implementation** — each criterion is a red test waiting to be written. `tdd` does the loop.
 - **After a change** — verify: is every criterion still proven, and does any of them now disagree
@@ -54,8 +54,7 @@ Five rules, all of which fail loudly when broken:
 3. **Observable at a seam.** State the seam it will be tested at, and prefer one that already exists
    (`codebase-design`'s vocabulary, `tdd`'s seam discipline). A criterion nobody can observe without
    reaching into internals is describing implementation, not behavior.
-4. **Glossary vocabulary.** Terms from `CONTEXT.md`. A criterion that invents a word has found a
-   missing glossary entry — send it to `domain-modeling` first.
+4. **Glossary vocabulary.** Use existing domain terminology, including `CONTEXT.md` when present. Clarify a new business term if needed; a glossary update is not an automatic gate.
 5. **No implementation.** No file paths, no function names beyond the seam, no "sets `status` to
    `'cancelled'`". What the system does, not how.
 
@@ -63,8 +62,7 @@ Five rules, all of which fail loudly when broken:
 a 10k-row cart"*, not *"fast"*. If nobody will commit to the number, the requirement isn't real yet —
 say so instead of writing an unprovable line.
 
-**Invariants make the best criteria.** If `MODEL.md` exists (`domain-design`), every invariant should
-appear here twice: once proving it holds, once proving the system rejects the violation.
+**Invariants make the best criteria.** If `MODEL.md` exists (`domain-design`), cover each relevant invariant with meaningful evidence. A positive case and rejection case are often useful, but do not mechanically require two tests when one demonstrates the contract or another check is more appropriate.
 
 ## 2. Where criteria live
 
@@ -72,7 +70,7 @@ appear here twice: once proving it holds, once proving the system rejects the vi
 docs/specs/0007-checkout-rejection.md
 ```
 
-In the repo, versioned with the code, changed in the same commit as the behavior they describe. The
+Use the existing canonical spec location; the path above is a default when no convention exists. Keep criteria updated alongside behavior without requiring an extra document or commit. The
 tracker keeps the discussion and the decision trail; the repo keeps the contract. An issue gets
 closed and forgotten — a file in `docs/specs/` shows up in every grep and every review.
 
@@ -162,7 +160,7 @@ are different claims, and only reading the criteria against the suite tells them
 
 | Skill | Relationship |
 |---|---|
-| `to-spec` | Writes the spec. This skill turns it into criteria — run it right after. |
+| `to-spec` | Writes a spec; use this skill when durable criterion-to-test traceability is useful. |
 | `to-tickets` | Splits work; a ticket should carry the criterion ids it closes. |
 | `tdd` | Writes the tests. Each red test starts as a criterion id. |
 | `implement` | Builds it; the criteria are the definition of done. |

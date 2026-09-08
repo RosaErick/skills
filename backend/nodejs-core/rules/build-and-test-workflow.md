@@ -45,8 +45,7 @@ against stale code wastes far more time.
 
 ## Ask the User About Their Build Setup
 
-Before starting work on a Node.js core change, **ask the user** about their
-build configuration rather than assuming one. Key questions:
+Before starting a Node core change, inspect the checkout’s current build configuration and artifacts. Ask only when a necessary build choice is still unknown. Preserve an existing configuration unless changing it is part of the task.
 
 - Has `./configure` already been run? With what flags?
 - Are they using Make or Ninja?
@@ -285,7 +284,7 @@ make lint-js
 ./node test/parallel/test-stream-transform.js
 
 # 5. Commit only once lint is clean, then validate the message
-git add -A && git commit -s
+git add <intended-paths> && git commit -s
 npx core-validate-commit --no-validate-metadata HEAD
 
 # 6. Before pushing, run broader tests
@@ -315,7 +314,7 @@ make lint-cpp
 make cctest
 
 # 7. Commit only once format and lint are clean, then validate the message
-git add -A && git commit -s
+git add <intended-paths> && git commit -s
 npx core-validate-commit --no-validate-metadata HEAD
 
 # 8. Run broader tests
@@ -342,7 +341,7 @@ make lint
 ./node test/parallel/test-your-feature.js
 
 # 5. Commit only once format and lint are clean, then validate the message
-git add -A && git commit -s
+git add <intended-paths> && git commit -s
 npx core-validate-commit --no-validate-metadata HEAD
 
 # 6. Full test run

@@ -9,12 +9,7 @@ Comprehensive performance optimization guide for React and Next.js applications,
 
 ## When to Apply
 
-Reference these guidelines when:
-- Writing new React components or Next.js pages
-- Implementing data fetching (client or server-side)
-- Reviewing code for performance issues
-- Refactoring existing React/Next.js code
-- Optimizing bundle size or load times
+Use these guidelines for an identified React/Next.js performance review or optimization. Read rules relevant to the measured bottleneck or concrete risk; creating a component or fixing its copy does not require a pass over all 45 rules. Check the framework version and preserve established architecture. Confirm the change with relevant profiling or behavior checks rather than treating every impact label as a measured result in this app.
 
 ## Rule Categories by Priority
 

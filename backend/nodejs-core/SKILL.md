@@ -5,6 +5,8 @@ metadata:
   tags: nodejs, nodejs-core, contributing, commit-message, pull-request, v8, libuv, cpp, native-addons, performance, debugging, internals
 ---
 
+For `nodejs/node`, follow its contribution/build rules below. For an external addon, use that project’s build, lint and commit conventions; Node core commands and DCO policy do not automatically apply.
+
 ## When to use
 
 Use this skill when you need deep Node.js internals expertise, including:
@@ -101,10 +103,7 @@ edit src/ or lib/  →  make -j$(nproc)  →  make lint  →  then test
 Never skip the rebuild step. Never run `./node test/...` after editing
 without building first.
 
-Before starting work, **ask the user** about their build configuration
-(Make vs Ninja, debug vs release, what configure flags they use). Do not
-assume a specific setup. Most of the time, `./configure` has already been
-run and only `make -j$(nproc)` is needed to rebuild.
+Inspect the checkout’s existing build configuration, build artifacts and documented commands first. Ask only if a material configuration choice remains unresolved. Rebuild the affected Node runtime before testing changes to embedded `lib/` or native `src/` code.
 
 ### MANDATORY: Lint and format before every commit
 
@@ -121,7 +120,8 @@ make lint                                              # JS, C++, MD, docs, YAML
 CLANG_FORMAT_START="$(git merge-base HEAD upstream/main)" make format-cpp
 git --no-pager diff --exit-code                        # must be empty
 
-git add -A && git commit -s                            # -s is mandatory
+git add <resolved-paths>  # stage only the intended work
+git commit -s  # when committing is authorized                            # -s is mandatory
 npx core-validate-commit --no-validate-metadata HEAD
 ```
 

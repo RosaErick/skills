@@ -1,6 +1,6 @@
 ---
 name: templates
-description: Project scaffolding templates for new applications. Use when creating new projects from scratch. Contains 12 templates for various tech stacks.
+description: Project scaffolding templates for new applications. Use when creating new projects from scratch. Contains 13 templates for various tech stacks.
 allowed-tools: Read, Glob, Grep
 ---
 
@@ -27,6 +27,7 @@ allowed-tools: Read, Glob, Grep
 | [chrome-extension](chrome-extension/TEMPLATE.md) | Chrome MV3 | Browser extension |
 | [cli-tool](cli-tool/TEMPLATE.md) | Node.js + Commander | CLI app |
 | [monorepo-turborepo](monorepo-turborepo/TEMPLATE.md) | Turborepo + pnpm | Monorepo |
+| [nuxt-app](nuxt-app/TEMPLATE.md) | Nuxt + Vue | Vue application |
 | [astro-static](astro-static/TEMPLATE.md) | Astro + MDX | Blog / Docs |
 
 ---
@@ -36,4 +37,4 @@ allowed-tools: Read, Glob, Grep
 1. User says "create [type] app"
 2. Match to appropriate template
 3. Read ONLY that template's TEMPLATE.md
-4. Follow its tech stack and structure
+4. Adapt its suggested structure and compatible versions to the actual requirements

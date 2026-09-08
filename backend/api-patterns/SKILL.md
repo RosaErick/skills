@@ -22,14 +22,13 @@ predictable API beats a clever one.**
 | Consumers | Style |
 |---|---|
 | Public, third parties, many languages, long life | **REST + OpenAPI** |
-| One TypeScript frontend and backend in a monorepo | **tRPC** (delete it the day a non-TS client appears) |
+| One TypeScript frontend and backend in a monorepo | **tRPC** when shared TypeScript contracts fit; reassess interoperability when clients change |
 | Many clients with genuinely different data needs, deep graphs | **GraphQL** |
 | Internal service-to-service, latency and payload critical | **gRPC** |
 | Agents and LLM tools | **MCP** — see `backend/mcp-builder` |
 | Server-pushed events, incremental output | **SSE** for one-way, **WebSocket** for duplex |
 
-Two failure modes to avoid: GraphQL adopted for CRUD (you inherit N+1, caching and complexity limits
-for nothing), and REST adopted for a monorepo TS app (you hand-maintain types that tRPC infers).
+Preserve an existing API style unless the requested change justifies migration. Compare client needs, tooling, caching and operational complexity; CRUD alone does not rule GraphQL out, and shared TypeScript does not make REST wrong.
 
 ## 2. Resources and URLs
 
@@ -111,8 +110,7 @@ One shape for every error, `Content-Type: application/problem+json`:
 ```
 
 Offset pagination degrades with depth (the database scans and discards) and skips or repeats rows
-when the underlying data shifts between pages. Cursors are opaque, encode the sort key, and stay
-constant-time. Cap `limit` server-side and document the cap.
+when the underlying data shifts between pages. Cursors are opaque, encode the sort key, and can make deep pagination more efficient with an appropriate index and stable unique ordering; they are not inherently constant-time. Cap `limit` server-side and document the cap.
 
 **Filtering and sorting.** Explicit query parameters (`?status=pending&createdAfter=…&sort=-createdAt`)
 beat a query DSL in a string. Whitelist sortable fields — every sortable field is an index you owe
@@ -126,9 +124,8 @@ asks for it. Sparse fieldsets are a caching problem you don't want early.
 Non-idempotent writes will be retried — by flaky networks, by clients, by queues. Design for it:
 
 - `POST` that creates something accepts an `Idempotency-Key` header. Store the key with the response
-  for 24h; a repeat with the same key returns the original response instead of creating a second
-  resource. A repeat with the same key and a *different* body is a 422.
-- `PUT`, `PATCH` and `DELETE` should be naturally idempotent. Deleting something already gone is 204
+  for a documented retention period matching the retry horizon; scope keys by caller and operation, handle concurrent requests atomically, and reject reuse with a different payload using the documented conflict response.
+- `PUT` and `DELETE` have idempotent semantics. `PATCH` depends on the patch operation: setting a value and incrementing it have different retry behavior. Deleting something already gone is 204
   (or 404, consistently) — never 500.
 - Lost-update protection with `ETag` + `If-Match`, or a `version` field returning 409 on mismatch.
 
@@ -137,8 +134,7 @@ Non-idempotent writes will be retried — by flaky networks, by clients, by queu
 - Version in the URL (`/v1/…`) for public APIs: visible in logs, trivial to route, obvious to the
   reader. Header versioning is cleaner in theory and worse in practice.
 - Version the whole API, not each endpoint. Per-endpoint versions become a matrix nobody can hold.
-- Additive changes don't need a version: new optional fields, new endpoints, new enum values the
-  client can ignore. **Removing or renaming a field, tightening validation, or changing a status code
+- Additive changes don't need a version: new optional fields, new endpoints, new enum values only when the existing contract and consumers tolerate unknown values. **Removing or renaming a field, tightening validation, or changing a status code
   is breaking** — even when it "fixes" the behavior.
 - Deprecate with signal, not surprise: `Deprecation` and `Sunset` headers, a `Link` to the migration
   guide, a changelog entry, and metrics on who is still calling before you remove anything.
@@ -179,8 +175,8 @@ a reason to back off politely instead of hammering.
 - [ ] Consistent URL, casing and pluralization across every endpoint
 - [ ] Correct status codes; no 200-with-an-error-body anywhere
 - [ ] One error shape (problem+json), stable `type` URIs, request id included
-- [ ] Cursor pagination with a server-side `limit` cap
-- [ ] Creation endpoints accept `Idempotency-Key`; updates guarded by `ETag`/version
+- [ ] Pagination appropriate to consumers and query/index behavior, with a server-side `limit` cap
+- [ ] Retry-sensitive side effects have a documented idempotency policy; concurrent updates have appropriate conflict protection
 - [ ] Object-level authorization on every read and write, not just route-level
 - [ ] Rate limit headers on responses, `Retry-After` on 429
 - [ ] Breaking changes gated behind a version, with `Deprecation`/`Sunset` before removal

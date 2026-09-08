@@ -189,7 +189,7 @@ const Component = () => {
 };
 
 // Benefits:
-// ├── Runs on UI thread (60fps guaranteed)
+// ├── Runs on UI thread (avoids some JS-thread contention; measure frame delivery on target devices)
 // ├── Can animate any property
 // ├── Gesture-driven animations
 // └── Worklets for complex logic
@@ -474,7 +474,7 @@ Human eye detects:
 ├── 60 fps → "Buttery" (target)
 └── 120 fps → "Premium" (ProMotion devices)
 
-NEVER ship < 60fps animations.
+Target smooth frame delivery at the device’s refresh rate; measure dropped frames and prioritize the affected interaction.
 ```
 
 ### GPU vs CPU Animation
@@ -724,7 +724,7 @@ COMPRESS: Reduce payload size
   getItemLayout={useCallback((_, i) => ({length: H, offset: H*i, index: i}), [])}
 />
 
-// Animation: Always native
+// Animation: use a supported native/UI-thread path when the animated properties permit it
 useNativeDriver: true
 
 // Cleanup: Always present
@@ -736,10 +736,10 @@ useEffect(() => {
 ### Flutter Essentials
 
 ```dart
-// Widgets: Always const
+// Widgets: use const where construction is constant
 const MyWidget()
 
-// Lists: Always builder
+// Lists: use lazy builders for sufficiently large/dynamic lists
 ListView.builder(itemBuilder: ...)
 
 // State: Always targeted

@@ -10,14 +10,13 @@ metadata:
 
 Two questions decide everything here, in this order:
 
-1. **What kind of document is this?** Diátaxis answers it — four types, never mixed.
+1. **What kind of document is this?** Diátaxis offers four reader needs; choose a primary purpose and separate longer branches when useful.
 2. **What artifact does it become?** README, API reference, ADR, changelog, diagram, llms.txt.
 
 Get the type wrong and no amount of polish saves the page: a tutorial that explains architecture
 loses the beginner, a reference that teaches wastes the expert's time.
 
-Always ask about audience, context and goal **before** writing. If the answer is "everyone", the
-document is going to fail — push for the actual reader.
+Infer audience, context and goal from the request and existing docs. Ask only when a missing distinction would materially change the document.
 
 ## When to use
 
@@ -97,7 +96,7 @@ Quick decision tree:
 
 ## Step 3 — Keep the types separate, and linked
 
-- One type per document. No reference tables inside a tutorial, no conceptual digressions in a how-to.
+- Keep each section focused on its reader need. A README or compact guide may combine quickstart, reference and explanation with clear navigation; split material when the mixed structure becomes hard to use.
 - Cross-link instead of merging: tutorial → reference for the parameters, how-to → explanation for the why.
 - Same headings and same vocabulary across the set, so the whole thing navigates as one system.
 
@@ -124,7 +123,7 @@ Which artifact carries which type:
 
 | Artifact | Diátaxis type | Notes |
 |---|---|---|
-| README | How-to + reference, with a tutorial-shaped quick start | Quick start must work in under 5 minutes |
+| README | How-to + reference, with a tutorial-shaped quick start | Quick start should have a clear, achievable result for its stated prerequisites |
 | API reference | Reference | One shape per endpoint, no exceptions; every error documented |
 | Tutorial / getting started | Tutorial | Lives outside the README once it grows past a screen |
 | ADR | Explanation | Context → decision → consequences; never rewrite a decided one, supersede it |
@@ -156,7 +155,7 @@ Which artifact carries which type:
 
 | ❌ | ✅ |
 |---|---|
-| One page that teaches, instructs and specifies at once | One type per page, cross-linked |
+| One page that teaches, instructs and specifies at once | A clear primary purpose with focused sections or linked pages |
 | "Comprehensive guide" with no named audience | A stated reader and a stated goal |
 | Steps with no visible result | Every step produces something the reader can see |
 | Reference written as prose | Reference written as a repeated structure |

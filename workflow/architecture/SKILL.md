@@ -1,55 +1,15 @@
 ---
 name: architecture
-description: Architectural decision-making framework. Requirements analysis, trade-off evaluation, ADR documentation. Use when making architecture decisions or analyzing system design.
-allowed-tools: Read, Glob, Grep
----
-
-# Architecture Decision Framework
-
-> "Requirements drive architecture. Trade-offs inform decisions. ADRs capture rationale."
-
-## 🎯 Selective Reading Rule
-
-**Read ONLY files relevant to the request!** Check the content map, find what you need.
-
-| File | Description | When to Read |
-|------|-------------|--------------|
-| `context-discovery.md` | Questions to ask, project classification | Starting architecture design |
-| `trade-off-analysis.md` | ADR templates, trade-off framework | Documenting decisions |
-| `pattern-selection.md` | Decision trees, anti-patterns | Choosing patterns |
-| `examples.md` | MVP, SaaS, Enterprise examples | Reference implementations |
-| `patterns-reference.md` | Quick lookup for patterns | Pattern comparison |
+description: "Evaluate system-level architecture choices against deployment, consistency, scaling, ownership, and migration constraints."
 
 ---
 
-## 🔗 Related Skills
+# Make the system decision explicit
 
-| Skill | Use For |
-|-------|---------|
-| `@[skills/database-design]` | Database schema design |
-| `@[skills/api-patterns]` | API design patterns |
-| `@[skills/deployment-procedures]` | Deployment architecture |
+Use the existing architecture and concrete requirement. Distinguish system boundaries/deployment from domain vocabulary (`domain-modeling`), domain invariants (`domain-design`) and module interfaces (`codebase-design`). These scopes can cooperate without duplicating every design review.
 
----
+Read only the relevant branch: [context discovery](context-discovery.md), [tradeoff analysis](trade-off-analysis.md), [pattern selection](pattern-selection.md), [examples](examples.md) or [pattern reference](patterns-reference.md).
 
-## Core Principle
+Compare credible alternatives against the actual load, consistency, availability, operating cost and team constraints. Include the cost of migration and recovery, not only the target diagram. Prefer the least complicated design that meets the requirements, while acknowledging constraints that make later change costly.
 
-**"Simplicity is the ultimate sophistication."**
-
-- Start simple
-- Add complexity ONLY when proven necessary
-- You can always add patterns later
-- Removing complexity is MUCH harder than adding it
-
----
-
-## Validation Checklist
-
-Before finalizing architecture:
-
-- [ ] Requirements clearly understood
-- [ ] Constraints identified
-- [ ] Each decision has trade-off analysis
-- [ ] Simpler alternatives considered
-- [ ] ADRs written for significant decisions
-- [ ] Team expertise matches chosen patterns
+Document significant durable decisions in the project's ADR format with context, choice, consequences and rejected alternatives. Routine implementation choices need not create an ADR. When execution is requested and the choice is supported, continue with the authorized change and validate the relevant system behavior.

@@ -1,33 +1,7 @@
----
-name: release-gates
-description: Go/no-go checks for shipping skill updates safely
-metadata:
-  tags: release, quality-gates, governance, process
----
+# Proportional release checks
 
-# Release gates for skill changes
+Check structure and changed references for any release. Run changed helpers in a realistic fixture, including a meaningful failure path. For an invocation or workflow change, exercise a representative intended task and a nearby false-positive task.
 
-## Required pass conditions
+Use a larger model/scenario matrix when the change targets model-dependent behavior or prior regressions justify it. Record baseline, variant, prompts, evaluation criteria and uncertainty so comparisons can be interpreted. Choose acceptance thresholds from the use case instead of a universal zero-regression percentage.
 
-- No universal 0% criteria with skill enabled
-- No negative delta on critical scenarios
-- Benchmark run recorded with date, matrix, and deltas
-- Follow-up issues opened for unresolved failures/regressions
-
-## Soft pass conditions
-
-- At least one measurable gain on a target weak model
-- No significant context-size increase without measured benefit
-
-## PR checklist
-
-- [ ] Updated `SKILL.md` links for any new/renamed rule file
-- [ ] Added/updated benchmark run log entry
-- [ ] Included validation command outputs (`test`, `typecheck`, `lint`)
-- [ ] Linked tracking issues and remediation notes
-
-## Post-merge loop
-
-- schedule rerun after next model update
-- compare against prior run history
-- prune stale guidance that no longer moves metrics
+Document actual checks and known limitations. Open external issues, schedule future runs or publish changes only when those actions belong to the user's requested workflow. A local edit does not require all of those steps.

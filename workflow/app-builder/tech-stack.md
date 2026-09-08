@@ -1,40 +1,7 @@
-# Tech Stack Selection (2026)
+# Select a stack from the requirements
 
-> Default and alternative technology choices for web applications.
+For an existing project, reuse the installed framework, runtime, database and package manager. A template is not a reason to migrate them. For a new project, compare the required client/platform, data needs, deployment model and team constraints, then choose the smallest supported combination that fits.
 
-## Default Stack (Web App - 2026)
+Read the selected framework's official compatibility documentation before pinning versions. Use an actively supported runtime compatible with its dependencies; do not copy an old numbered runtime from a generic stack table. Reuse the user's provider choices for authentication, payments, storage and email, adding those services only when the requested product needs them.
 
-```yaml
-Frontend:
-  framework: Next.js 16 (Stable)
-  language: TypeScript 5.7+
-  styling: Tailwind CSS v4
-  state: React 19 Actions / Server Components
-  bundler: Turbopack (Stable for Dev)
-
-Backend:
-  runtime: Node.js 23
-  framework: Next.js API Routes / Hono (for Edge)
-  validation: Zod / TypeBox
-
-Database:
-  primary: PostgreSQL
-  orm: Prisma / Drizzle
-  hosting: Supabase / Neon
-
-Auth:
-  provider: Auth.js (v5) / Clerk
-
-Monorepo:
-  tool: Turborepo 2.0
-```
-
-## Alternative Options
-
-| Need | Default | Alternative |
-|------|---------|-------------|
-| Real-time | - | Supabase Realtime, Socket.io |
-| File storage | - | Cloudinary, S3 |
-| Payment | Stripe | LemonSqueezy, Paddle |
-| Email | - | Resend, SendGrid |
-| Search | - | Algolia, Typesense |
+Use the template index for an initial layout after making the relevant choices. Vue/Nuxt, React/Next.js, a plain API, static HTML or a mobile framework can each be appropriate; keywords such as dashboard or SaaS do not decide the architecture by themselves.

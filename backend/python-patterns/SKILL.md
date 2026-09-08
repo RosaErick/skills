@@ -12,14 +12,14 @@ metadata:
 Language and project-level Python. HTTP contract design is `backend/api-patterns`; API docs are
 `backend/api-documentation-master`.
 
-Target 3.11+ — that's where `TaskGroup`, `ExceptionGroup`, `Self` and `tomllib` live. Prefer 3.12+
+Check the project’s supported Python versions and tooling first. The examples here target 3.11+ — that's where `TaskGroup`, `ExceptionGroup`, `Self` and `tomllib` live. Prefer 3.12+
 for PEP 695 generics. Everything below assumes type hints are on by default.
 
 ## 1. Project layout
 
 ```
 project/
-├── pyproject.toml          the only config file that matters
+├── pyproject.toml          standard package metadata and optional tool configuration
 ├── src/mypackage/          src layout: tests import the installed package, not the working copy
 │   ├── __init__.py
 │   ├── config.py           settings, loaded once
@@ -50,11 +50,9 @@ strict = true
 addopts = "-q --strict-markers"
 ```
 
-- **uv** for environments, installs, locking and running (`uv sync`, `uv run pytest`,
-  `uv add httpx`). It replaces pip + virtualenv + pip-tools, and it's fast enough that nobody skips
-  the lockfile anymore. `requirements.txt` only survives where a platform demands it.
-- **ruff** for lint and format — one tool instead of flake8 + isort + black.
-- Commit the lockfile for applications; don't for libraries.
+- **uv** is a useful choice for a new project. Preserve pip/venv, Poetry, requirements files or another established workflow unless migration is requested.
+- **ruff** can combine lint and format for a new setup; reuse configured tools in an existing project.
+- Use reproducible environments. Applications commonly commit a lockfile; libraries may also lock contributor/test environments while declaring compatible dependency ranges for consumers.
 - Keep the dependency arrow pointing inward: `api → domain ← adapters`. The domain importing a
   framework is how a codebase becomes untestable.
 
@@ -62,7 +60,7 @@ addopts = "-q --strict-markers"
 
 ```python
 from collections.abc import Iterable, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Self
 
 type OrderId = str                      # PEP 695 alias (3.12+)
@@ -175,7 +173,7 @@ def test_line_total(quantity: int, expected: int) -> None:
     assert line_total(price=10, quantity=quantity) == expected
 ```
 
-- pytest, plain `assert`, fixtures for setup — no `unittest` boilerplate.
+- Use the existing test runner. pytest with assertions and fixtures is a useful default for a new project; existing unittest tests do not require conversion.
 - Test behavior through the public function. Tests that import a private helper break on every
   refactor and prove nothing about the contract.
 - Parametrize instead of copy-pasting cases; the failure output tells you which case broke.
