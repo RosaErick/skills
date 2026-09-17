@@ -65,8 +65,3 @@ Invoke a skill with `/skill:name`, such as `/skill:tdd`. Use `/discuss` to clari
 
 Pi handles skill discovery; individual helpers have their own requirements. Terminal automation uses `tmux`, GitHub workflows use `gh`, browser automation requires Chrome/Chromium and its script dependencies, and native web search requires Node.js and provider authentication. Follow each skill's setup instructions.
 
-## Sources
-
-Selected from [RosaErick/skills](https://github.com/RosaErick/skills) and [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff). Imports retain their supporting files and original content for incremental review.
-
-`frontend-design-mitsuhiko` was recovered from the `agent-stuff` history and given a distinct invocation name to coexist with other `frontend-design` skills. See [SOURCES.md](SOURCES.md) for provenance and licensing notes.
