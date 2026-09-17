@@ -1,0 +1,456 @@
+{
+  "imports": [
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "writing/documentation",
+      "destination": "writing/documentation",
+      "files": [
+        {
+          "path": "writing/documentation/SKILL.md",
+          "sha256": "ee0fd96081906d9f4bf11a7591299c25a518f434e490f6b3db5878f6b08e98f4"
+        },
+        {
+          "path": "writing/documentation/references/mermaid.md",
+          "sha256": "3ab425d8b7475605b2e9df0ffa682a23fb40135dff906a12a98316c1e2875a7e"
+        },
+        {
+          "path": "writing/documentation/references/templates.md",
+          "sha256": "14637bb3385c2a902abdd8d9f3e976f7b49de93692fc35510a4146050c356733"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "writing/ux-writing",
+      "destination": "writing/ux-writing",
+      "files": [
+        {
+          "path": "writing/ux-writing/SKILL.md",
+          "sha256": "77d3fb23215976adda443d1a83fb5fb0a47ccfd0bb7304533a099801ee3c8ff5"
+        },
+        {
+          "path": "writing/ux-writing/references/microcopy.md",
+          "sha256": "9baac7ba44e7ec0802ab15b54b4b7cb28f0112e8824d7666b243279a18bca037"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "workflow/parallel-agents",
+      "destination": "workflow/parallel-agents",
+      "files": [
+        {
+          "path": "workflow/parallel-agents/SKILL.md",
+          "sha256": "5d7dd1e2f8b81b3c80531eb9387b0b0fd4a9c045236077b707cdd096ef8e32ff"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "workflow/plan-writing",
+      "destination": "workflow/plan-writing",
+      "files": [
+        {
+          "path": "workflow/plan-writing/SKILL.md",
+          "sha256": "a880a0a9f575dbdac1344ecfa9586a0cf71b42bb89c4775a536fe8600741a292"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "workflow/architecture",
+      "destination": "workflow/architecture",
+      "files": [
+        {
+          "path": "workflow/architecture/SKILL.md",
+          "sha256": "3d50e0c31a01ff754a9f4784b47ac6f4daab48f4aec57a7c7af3907630a7b61c"
+        },
+        {
+          "path": "workflow/architecture/context-discovery.md",
+          "sha256": "0698e38a37669c36c819bac70c51213bb955e99125ca96b690c840c317595a17"
+        },
+        {
+          "path": "workflow/architecture/examples.md",
+          "sha256": "5bdd281a7409189049af4c55fbf8c8f562c250cd3e34cd60741be113110843a5"
+        },
+        {
+          "path": "workflow/architecture/pattern-selection.md",
+          "sha256": "6bdc74d7900a0574057d7c03b79afa3bf35b9efc4bc719cf6e198575373b879d"
+        },
+        {
+          "path": "workflow/architecture/patterns-reference.md",
+          "sha256": "264d0c372a6b5d2a7bba506a4dd4d74855f69298d4dabf1ae046d51f2f49bd9d"
+        },
+        {
+          "path": "workflow/architecture/trade-off-analysis.md",
+          "sha256": "14a0ceb22e88af2d39b24f06a9095312aa04bc72e8980f244bf2b42f8260abaa"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "backend/api-documentation-master",
+      "destination": "backend/api-documentation-master",
+      "files": [
+        {
+          "path": "backend/api-documentation-master/README.md",
+          "sha256": "a4620909c0709f8c1c381141863885a28a1923e6f5ae69db381d9fc3defa80ac"
+        },
+        {
+          "path": "backend/api-documentation-master/SKILL.md",
+          "sha256": "76b3c82e122fd7af5926dedf9045751adffc6c520c294d2b89c388d414478088"
+        },
+        {
+          "path": "backend/api-documentation-master/resources/api-design-patterns.md",
+          "sha256": "e00afa3461452e822aafd41ebe2c4aae8ecd7177ec924515863acd6ed7424f23"
+        },
+        {
+          "path": "backend/api-documentation-master/resources/documentation-templates.md",
+          "sha256": "6bdf7b55ca35b9e53032610f5ef5f189260c8561c41a5095053ac607a8a19640"
+        },
+        {
+          "path": "backend/api-documentation-master/resources/openapi-playbook.md",
+          "sha256": "9d6e3b6ae75c0dad3384220c3019163f38841913da636c84b4e3cfd059750b4d"
+        },
+        {
+          "path": "backend/api-documentation-master/resources/security-and-testing.md",
+          "sha256": "599499077bad88dfd11bc07179692fd8c219da9dc943a7367e8eb0e5f94e5a6f"
+        },
+        {
+          "path": "backend/api-documentation-master/scripts/api_validator.py",
+          "sha256": "eb591794ab9d68642f0cdaaf09dd0c74e0f4eb826067abf246d5929c85019b09"
+        },
+        {
+          "path": "backend/api-documentation-master/scripts/requirements.txt",
+          "sha256": "b345d9f230a55a44eb8b07130a9d0d4e329d497ecfcad95f64684438cf900bc0"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "backend/api-patterns",
+      "destination": "backend/api-patterns",
+      "files": [
+        {
+          "path": "backend/api-patterns/SKILL.md",
+          "sha256": "49d5461a5c15e42a8b505cd1710b0faac6d3d36c1f285f087df695af86c553c4"
+        },
+        {
+          "path": "backend/api-patterns/api-style.md",
+          "sha256": "ac7b7677e862c7b6f1a622425ac398807890272a3dcb31f528993f6411abccc2"
+        },
+        {
+          "path": "backend/api-patterns/auth.md",
+          "sha256": "d35ba351bf05454ad097522b80fb19368b47f66ff4ab0e76a0d69e303c2b72f0"
+        },
+        {
+          "path": "backend/api-patterns/documentation.md",
+          "sha256": "aa1d0262be74814e7d72d5dd2a4acf074235e8ca33c0dff0ec986adfd962a124"
+        },
+        {
+          "path": "backend/api-patterns/graphql.md",
+          "sha256": "f7f49e84697c8993d9cdc66b3ada56f71b01d2221107cfe70bbf291628136b8c"
+        },
+        {
+          "path": "backend/api-patterns/rate-limiting.md",
+          "sha256": "f1538d288ce362012241a6085beb3b5ff06d11f754b5867bf0adb7b62afd0657"
+        },
+        {
+          "path": "backend/api-patterns/response.md",
+          "sha256": "37bc83dfd2c4365ea9f50e531149c22e6ecdafd9d0b66c2170528b2d88a8cfa6"
+        },
+        {
+          "path": "backend/api-patterns/rest.md",
+          "sha256": "20bbf589c4f583b482f4610f41d25669af7224e989427353f18092e11d59970f"
+        },
+        {
+          "path": "backend/api-patterns/scripts/api_validator.py",
+          "sha256": "0666e623b4659cc2ac92d98622302de349390de5f606d9412621379982d1777d"
+        },
+        {
+          "path": "backend/api-patterns/scripts/requirements.txt",
+          "sha256": "c86f55f64218f9fa4db53a16c8e8074ec789c6c08254d5080a63c59ba375470e"
+        },
+        {
+          "path": "backend/api-patterns/security-testing.md",
+          "sha256": "e5cbe598d1b44356362325d5f55ee703efdbf8908a92cbd91a9c989d1ec1f9de"
+        },
+        {
+          "path": "backend/api-patterns/trpc.md",
+          "sha256": "722dde150b45392b9517a2053e53958619cb8fc0c2047c8ef09be4bcb5e9095d"
+        },
+        {
+          "path": "backend/api-patterns/versioning.md",
+          "sha256": "58abb2fc534e687bb54a4a191188f2698ec9ed3e4e12ba269d93cc03ed8d1ee6"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "frontend/i18n-localization",
+      "destination": "frontend/i18n-localization",
+      "files": [
+        {
+          "path": "frontend/i18n-localization/SKILL.md",
+          "sha256": "96d21bcc395d15f0ceedfa573eea0d5b5db7ea53ad7cee4e0e35d73929f3b283"
+        },
+        {
+          "path": "frontend/i18n-localization/scripts/i18n_checker.py",
+          "sha256": "a90946f9ffee5fc83b1dbdbd001616eceb299101bf255efaec4601cecf210379"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "frontend/web-performance-optimization",
+      "destination": "frontend/web-performance-optimization",
+      "files": [
+        {
+          "path": "frontend/web-performance-optimization/SKILL.md",
+          "sha256": "a7b4734b670f0d78f67504a5482f76a4044fccc6dea0ffd704da5702f777e3e9"
+        },
+        {
+          "path": "frontend/web-performance-optimization/references/measurement.md",
+          "sha256": "abb64ded7de79290af51e9a513823218abe354f8d50aa365dbd8c640148c6024"
+        },
+        {
+          "path": "frontend/web-performance-optimization/scripts/lighthouse_audit.py",
+          "sha256": "7e3928f1ac24e472fd9b0bc390f223379d8ce3e3d9ff6136e557ac4bdad7f52c"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "engineering/domain-design",
+      "destination": "engineering/domain-design",
+      "files": [
+        {
+          "path": "engineering/domain-design/MODEL-FORMAT.md",
+          "sha256": "b6d92eeed424fd108fa5ff13933ea8ee9a9cc7aeca93957e2c23f40d577ac802"
+        },
+        {
+          "path": "engineering/domain-design/SKILL.md",
+          "sha256": "ce7c1eec9c0be668b27a1058cbb6de40569236a682e23007d5ed217523cb0f00"
+        },
+        {
+          "path": "engineering/domain-design/agents/openai.yaml",
+          "sha256": "b6e3585e7f9d6709f5142447957434300a90249a9803d86dde49b86a4fdfa84a"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/RosaErick/skills",
+      "revision": "5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2",
+      "sourcePath": "engineering/tdd",
+      "destination": "engineering/tdd",
+      "files": [
+        {
+          "path": "engineering/tdd/SKILL.md",
+          "sha256": "9f23b030a98f60ce9cdac6e6a6883a734cd467d992605fe9eb86e0a7e2ee4b0b"
+        },
+        {
+          "path": "engineering/tdd/agents/openai.yaml",
+          "sha256": "ea6f01cf1b8c06a4b0f5b649d74b1b8ce8685e72af1b38d70d877693e092af0b"
+        },
+        {
+          "path": "engineering/tdd/mocking.md",
+          "sha256": "bdc4834a8e4bdee9b0ddc52497dea03d09524ff0cec96d79d5c23bcb41aa5372"
+        },
+        {
+          "path": "engineering/tdd/tests.md",
+          "sha256": "fa0d68b3ae6ddc59b49425a9590d4f50095057412b9c36782daef21295877314"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/mitsuhiko/agent-stuff",
+      "revision": "122e2994adddb113c04764c5697217dae120fcc6",
+      "sourcePath": "skills/tmux",
+      "destination": "productivity/tmux",
+      "files": [
+        {
+          "path": "productivity/tmux/SKILL.md",
+          "sha256": "114465682ecd85b4c5176acebbd991e6b952f0360d0602b51e2c6cdc01ba497e"
+        },
+        {
+          "path": "productivity/tmux/scripts/find-sessions.sh",
+          "sha256": "3628e421046f71781a8413365ee3782f78caf9b348fb25c2a9707e2c8029e5be"
+        },
+        {
+          "path": "productivity/tmux/scripts/wait-for-text.sh",
+          "sha256": "96bc42702f7353c32233c223d61dd11f2f99033267aeefac838aea8983a67735"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/mitsuhiko/agent-stuff",
+      "revision": "122e2994adddb113c04764c5697217dae120fcc6",
+      "sourcePath": "skills/update-changelog",
+      "destination": "writing/update-changelog",
+      "files": [
+        {
+          "path": "writing/update-changelog/SKILL.md",
+          "sha256": "68f67516baaa881bb304ed29d1e407f6e88e90952f0126f9fa6d9941cad80522"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/mitsuhiko/agent-stuff",
+      "revision": "122e2994adddb113c04764c5697217dae120fcc6",
+      "sourcePath": "skills/web-browser",
+      "destination": "frontend/web-browser",
+      "files": [
+        {
+          "path": "frontend/web-browser/SKILL.md",
+          "sha256": "10055dcc9ea93867e5463c43d0fcc40a10f69c4f0f02a556ef32f82be64121f3"
+        },
+        {
+          "path": "frontend/web-browser/scripts/browser-processes.js",
+          "sha256": "46f0c7a436ac3d8bb3bad06d622caa30c6fe77c77498b6ea779f0ea7d16be7d7"
+        },
+        {
+          "path": "frontend/web-browser/scripts/browser-processes.test.js",
+          "sha256": "987fd9787fc54c27a8eab0f9063a531580fd710539ba32558947fc8f5402c9a5"
+        },
+        {
+          "path": "frontend/web-browser/scripts/cdp.js",
+          "sha256": "e15611b5991687e98b47239bd3aea2f2efeec2f55383597ef76ea9a6cd600c60"
+        },
+        {
+          "path": "frontend/web-browser/scripts/devices.js",
+          "sha256": "976f5f8fa512e1c67d1644d70c18bf60d8d5736017ba1230c27f18774bba687e"
+        },
+        {
+          "path": "frontend/web-browser/scripts/dismiss-cookies.js",
+          "sha256": "91794e6d5a4398b708eed29a624cc273de732206207419d56c15507a58e6a154"
+        },
+        {
+          "path": "frontend/web-browser/scripts/emulate.js",
+          "sha256": "a4d6b8ace1bac17ffe3e5eaa4dbf78c13cff1f4768328698c187afc3403ef87a"
+        },
+        {
+          "path": "frontend/web-browser/scripts/emulation-state.js",
+          "sha256": "6e81646729df9d83f143c1a34fa261782193f0cf8a4b258c2cb31057141cbd16"
+        },
+        {
+          "path": "frontend/web-browser/scripts/eval.js",
+          "sha256": "4c4b23d1e33d0357d35bfaf492c437b2502c32e8f6e53abb920c32bb767883f8"
+        },
+        {
+          "path": "frontend/web-browser/scripts/logs-tail.js",
+          "sha256": "7d187965504de0cc2dc87a356e4562be35c561735243b8555af735c4b0a42ae0"
+        },
+        {
+          "path": "frontend/web-browser/scripts/nav.js",
+          "sha256": "3d7a2d3ca2a1a0ae0eaebef95cdc3604064934f4a8dc92b68cdaaaeab3f35c3a"
+        },
+        {
+          "path": "frontend/web-browser/scripts/net-summary.js",
+          "sha256": "684a0c80faea51c8dc789a7ada3740a7e26e1d1636ed1328c7a1bb7092994fd1"
+        },
+        {
+          "path": "frontend/web-browser/scripts/package-lock.json",
+          "sha256": "a8526d4732a96a593da096f688671174cf633989ad870670a1799b0f3c442ae4"
+        },
+        {
+          "path": "frontend/web-browser/scripts/package.json",
+          "sha256": "7420b683903c7fafadfa37f179e5a355b0a1e585e1c55aaff4a39a6e0990ffd9"
+        },
+        {
+          "path": "frontend/web-browser/scripts/pick.js",
+          "sha256": "2cd231a90bade2f33d27ee8fdfda847dab959a6782fbd5f61a7a030f9e88abf9"
+        },
+        {
+          "path": "frontend/web-browser/scripts/screenshot.js",
+          "sha256": "77fdd292e967d2387cfc10a17413b098be5a2bd0573b3c6c61e24c65378c0f58"
+        },
+        {
+          "path": "frontend/web-browser/scripts/start.js",
+          "sha256": "790c823538373e6771a74155b5c77b870386882b555df3d846bdb105cf2ad372"
+        },
+        {
+          "path": "frontend/web-browser/scripts/stop.js",
+          "sha256": "017d538791a6e315999368414ee0289096d22179cd324eb2443e7a13e175b410"
+        },
+        {
+          "path": "frontend/web-browser/scripts/watch.js",
+          "sha256": "fb675f641fa4cc7ba04d43a0441aa2ff08d118d238fe77072203ad4e63998db5"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/mitsuhiko/agent-stuff",
+      "revision": "122e2994adddb113c04764c5697217dae120fcc6",
+      "sourcePath": "skills/native-web-search",
+      "destination": "productivity/native-web-search",
+      "files": [
+        {
+          "path": "productivity/native-web-search/SKILL.md",
+          "sha256": "e6df83dde50d3ef66a30830cbb55724065497fc160eb27461c1411392306d3cf"
+        },
+        {
+          "path": "productivity/native-web-search/search.mjs",
+          "sha256": "d7314be4bd3e49f99b89a2516ff06bb3dcfce07a5898f54febbce379169adc61"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/mitsuhiko/agent-stuff",
+      "revision": "122e2994adddb113c04764c5697217dae120fcc6",
+      "sourcePath": "skills/github",
+      "destination": "productivity/github",
+      "files": [
+        {
+          "path": "productivity/github/SKILL.md",
+          "sha256": "51b28818a6f0359287d5c8244a6fdc59a4ac5504596deb193b28b81832221c86"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/mitsuhiko/agent-stuff",
+      "revision": "ebbb8ac40a1344fb1ac6a77457d8c691a4018d8e",
+      "sourcePath": "skills/frontend-design",
+      "destination": "frontend/frontend-design",
+      "files": [
+        {
+          "path": "frontend/frontend-design/SKILL.md",
+          "sha256": "94f3c664e469abbc978a34eec366014d2abdfd80761de6e9bbbd4a6d83e801ab"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/mitsuhiko/agent-stuff",
+      "revision": "122e2994adddb113c04764c5697217dae120fcc6",
+      "sourcePath": "commands/discuss.md",
+      "destination": "prompts/discuss.md",
+      "files": [
+        {
+          "path": "prompts/discuss.md",
+          "sha256": "645488252bbe825cb4b9a00042c492ef4be04608d50fc9166c8943e04ce9c0c3"
+        }
+      ]
+    },
+    {
+      "source": "https://github.com/mitsuhiko/agent-stuff",
+      "revision": "122e2994adddb113c04764c5697217dae120fcc6",
+      "sourcePath": "LICENSE",
+      "destination": "licenses/agent-stuff-Apache-2.0.txt",
+      "files": [
+        {
+          "path": "licenses/agent-stuff-Apache-2.0.txt",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        }
+      ]
+    }
+  ]
+}

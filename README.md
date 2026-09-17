@@ -1,176 +1,72 @@
-# skills
+# Skills
 
-My curated agent skills — 67 of them, all in one place, organized by category.
+A curated collection of **17 skills and one prompt command**, with **Pi Agent** as the default host.
 
-Each skill is a folder with a `SKILL.md` (frontmatter `name` + `description`) and supporting files
-alongside it when needed. It's the standard format agent hosts read — Codex, OpenCode, Claude Code, Copilot CLI and others.
+A focused, Pi-first collection rebuilt from selected skills. The previous collection is preserved on the [`old_version`](https://github.com/RosaErick/skills/tree/old_version) branch.
 
-## Install
+## Use with Pi Agent
 
-Three routes. **Pick one per machine or project** — two of them leaves every skill twice, and the
-model then sees two candidates for every trigger.
+The package manifest exposes the skill categories and `/discuss` directly to Pi. Each skill contains a `SKILL.md` and any supporting scripts or references.
 
-<details>
-<summary><b>As a plugin</b> — read-only, namespaced, updates when I ship</summary>
-
-The host keeps its own checkout and reads the skills from there. Nothing lands in your project and
-nothing is yours to edit — an update overwrites it. Skills arrive namespaced as
-`erickrosa-skills:<name>`, so it's obvious where they came from.
-
-Both manifests (`.claude-plugin/`, `.codex-plugin/`) point at the same flat `skills/` folder, so
-every host installs the identical set.
-
-**Codex** — add the marketplace from the shell, then install from inside the TUI:
+Install directly from GitHub:
 
 ```bash
-codex plugin marketplace add RosaErick/skills
-codex
+pi install git:github.com/RosaErick/skills
 ```
 
-Then `/plugins`, select the `rosaerick` marketplace, install. Skills are invoked with `@name`. The
-desktop app picks the same install up after a restart. Remove with
-`codex plugin remove erickrosa-skills`.
-
-**GitHub Copilot CLI** — same mechanism, from the shell or as slash commands:
+Or use a local clone when editing the collection:
 
 ```bash
-copilot plugin marketplace add RosaErick/skills
-copilot plugin install erickrosa-skills@rosaerick
+pi install /path/to/skills
 ```
 
-**Claude Code** — two separate prompts; the install doesn't take in one:
+Choose one route; do not also register the same skills through symlinks or the `skills` setting. Restart Pi or use `/reload` after changing resources. See [MIGRATION.md](MIGRATION.md) for upgrading and rollback.
 
-```
-/plugin marketplace add RosaErick/skills
-/plugin install erickrosa-skills@rosaerick
-```
-
-Updating, on any of them, is the marketplace refresh followed by the plugin update — in Claude Code:
-
-```
-/plugin marketplace update rosaerick
-/plugin update erickrosa-skills
-```
-
-</details>
-
-<details>
-<summary><b>From a clone</b> — symlinks, edits go straight back to the repo</summary>
-
-For the machine where you maintain them: one copy on disk, and editing a linked skill edits this
-repo. The script links skill by skill, because hosts look for `<target>/<skill>/SKILL.md` and linking
-a whole category would hide everything inside it.
-
-`-a` names the host, and there is no default — pass it, or name a directory with `-T`.
-
-```bash
-scripts/install.sh -a codex                     # ~/.codex/skills
-scripts/install.sh -a opencode                  # ~/.config/opencode/skills
-scripts/install.sh -a claude frontend backend   # only these categories
-scripts/install.sh -a codex -t ../my-project    # that project's .codex/skills
-scripts/install.sh -a agents -t ../my-project   # that project's .agents/skills
-scripts/install.sh -T ~/.qwen/skills            # any directory you name
-scripts/install.sh -a codex -u                  # remove the links again
-```
-
-| `-a` | Personal | Project (`-t`) |
-|---|---|---|
-| `codex` | `~/.codex/skills` | `<project>/.codex/skills` |
-| `opencode` | `~/.config/opencode/skills` | `<project>/.opencode/skills` |
-| `claude` | `~/.claude/skills` | `<project>/.claude/skills` |
-| `agents` | — | `<project>/.agents/skills` — the shared folder several hosts read |
-
-Anything not in that table — Qwen Code, Antigravity, a host I haven't tried — takes `-T` with its
-skills directory. It never overwrites a real folder or someone else's link already in the target, and
-`-u` only removes links pointing back here.
-
-Skills installed this way arrive **without** the `erickrosa-skills:` prefix — indistinguishable from
-any other personal skill.
-
-</details>
-
-<details>
-<summary><b>Vendored</b> — copies you own, frozen at copy time</summary>
-
-```bash
-npx github:RosaErick/skills -c -a codex -t .            # copy into ./.codex/skills
-npx github:RosaErick/skills -c -a claude -t .           # copy into ./.claude/skills
-npx github:RosaErick/skills -c -a codex -t . frontend   # or just one category
-```
-
-Real files, copied in, yours to hack on. They never see an update from here again; re-running with
-`-f` overwrites your edits. Use it when a skill needs to become project-specific.
-
-</details>
+Invoke a skill with `/skill:name`, such as `/skill:tdd`. Use `/discuss` to clarify a plan before implementation.
 
 ## Categories
 
-| Folder | What's in it | Skills |
-|---|---|---|
-| [engineering](./engineering/README.md) | Engineering workflows, TDD, bug diagnosis, review, domain modeling | 20 |
-| [frontend](./frontend/README.md) | React, Next.js, Tailwind, interface design, mobile, web performance, i18n | 14 |
-| [backend](./backend/README.md) | APIs, Node, Python, databases, MCP | 9 |
-| [infra](./infra/README.md) | Server diagnosis and deployment runbooks | 2 |
-| [quality](./quality/README.md) | Testing, linting, validation, skill evaluation | 6 |
-| [security](./security/README.md) | Vulnerability analysis and OWASP | 1 |
-| [workflow](./workflow/README.md) | App delivery, planning, architecture, optional agent coordination | 4 |
-| [writing](./writing/README.md) | Copy, UX writing, documentation, SEO/GEO | 5 |
-| [productivity](./productivity/README.md) | Non-code work: grilling, handoff, teaching, questionnaires | 7 |
-| **Total** | | **67** |
+| Folder | Focus | Skills |
+| --- | --- | --- |
+| [backend](backend/) | API contracts and documentation | 2 |
+| [engineering](engineering/) | Domain design and test-driven development | 2 |
+| [frontend](frontend/) | Interface design, localization, performance, browser automation | 4 |
+| [productivity](productivity/) | Terminal sessions, web search, GitHub | 3 |
+| [workflow](workflow/) | Planning, architecture, agent coordination | 3 |
+| [writing](writing/) | Technical docs, interface copy, changelogs | 3 |
 
-Category READMEs identify workflows intended for explicit invocation. They retain
-`disable-model-invocation: true` for Claude Code and `policy.allow_implicit_invocation: false`
-in `agents/openai.yaml` for Codex. Invocation syntax and discovery behavior depend on the host.
+## Skills
 
-The [September 2026 migration](MIGRATION.md) maps the seven merged skills and five archived entries.
+| Skill | Purpose |
+| --- | --- |
+| [api-documentation-master](backend/api-documentation-master/SKILL.md) | API references, OpenAPI contracts, guides, and examples |
+| [api-patterns](backend/api-patterns/SKILL.md) | HTTP contracts, errors, pagination, versioning, and rate limits |
+| [domain-design](engineering/domain-design/SKILL.md) | Domain rules, boundaries, state transitions, and consistency |
+| [tdd](engineering/tdd/SKILL.md) | Failing tests, minimal implementation, and safe refactoring |
+| [frontend-design-mitsuhiko](frontend/frontend-design/SKILL.md) | Distinctive, working frontend interfaces |
+| [i18n-localization](frontend/i18n-localization/SKILL.md) | Locale messages, formatting, and language behavior |
+| [web-performance-optimization](frontend/web-performance-optimization/SKILL.md) | Measure and improve loading, responsiveness, and stability |
+| [web-browser](frontend/web-browser/SKILL.md) | Chrome/Chromium automation through CDP |
+| [github](productivity/github/SKILL.md) | Issues, pull requests, and CI through the GitHub CLI |
+| [native-web-search](productivity/native-web-search/SKILL.md) | Provider-native web search with source URLs |
+| [tmux](productivity/tmux/SKILL.md) | Interactive terminal sessions and output capture |
+| [architecture](workflow/architecture/SKILL.md) | System-level choices, constraints, and trade-offs |
+| [parallel-agents](workflow/parallel-agents/SKILL.md) | Explicitly requested delegation and result integration |
+| [plan-writing](workflow/plan-writing/SKILL.md) | Implementation plans with dependencies and verification |
+| [documentation](writing/documentation/SKILL.md) | Tutorials, how-to guides, references, and explanations |
+| [ux-writing](writing/ux-writing/SKILL.md) | Clear interface labels, instructions, and messages |
+| [update-changelog](writing/update-changelog/SKILL.md) | Concise, user-facing release notes |
 
-<details>
-<summary><b>Original skills</b> — the twelve that are mine to maintain</summary>
+## Prompt command
 
-They carry `source: original` in their frontmatter, or `source: adapted` where the base came from
-someone else's skill and I reworked it. Everything else here comes from the community — public skill
-packs, vendor guides and open-source repos — kept because I use them, and curated: picked one by one,
-filed by category, trimmed of what I don't run.
+- [`/discuss`](prompts/discuss.md): inspect the project, ask focused questions, and refine a plan without implementing it.
 
-| Skill | What it does |
-|---|---|
-| [engineering/domain-design](./engineering/domain-design/SKILL.md) | Invariants, aggregates, value objects, domain events, bounded contexts and context mapping |
-| [engineering/spec-driven](./engineering/spec-driven/SKILL.md) | Falsifiable acceptance criteria in the repo, bound to tests by id, verified against a test run |
-| [frontend/nextjs-best-practices](./frontend/nextjs-best-practices/SKILL.md) | App Router defaults: Server Components, data fetching, routing |
-| [frontend/react-patterns](./frontend/react-patterns/SKILL.md) | React 18/19: state placement, effects, composition, React Compiler, TypeScript props |
-| [frontend/react-ui-patterns](./frontend/react-ui-patterns/SKILL.md) | Loading states, error handling and async data in components |
-| [frontend/react-modernization](./frontend/react-modernization/SKILL.md) | Version upgrades, class-to-hooks migration, concurrent features, codemods |
-| [frontend/web-performance-optimization](./frontend/web-performance-optimization/SKILL.md) | Core Web Vitals, bundle size, caching, runtime performance |
-| [backend/api-patterns](./backend/api-patterns/SKILL.md) | API contracts: style, URLs, status codes, problem details, pagination, idempotency, versioning |
-| [backend/python-patterns](./backend/python-patterns/SKILL.md) | Python 3.11+: uv and pyproject, typing, async, errors, pytest |
-| [backend/api-documentation-master](./backend/api-documentation-master/SKILL.md) | Requested API docs: OpenAPI contracts, reference pages, quickstarts and examples |
-| [writing/documentation](./writing/documentation/SKILL.md) | Diátaxis documentation plus README, API reference, ADR, changelog, diagrams, llms.txt |
-| [writing/ux-writing](./writing/ux-writing/SKILL.md) | UX writing, guided interaction and interface usability |
+## Requirements
 
-</details>
+Pi handles skill discovery; individual helpers have their own requirements. Terminal automation uses `tmux`, GitHub workflows use `gh`, browser automation requires Chrome/Chromium and its script dependencies, and native web search requires Node.js and provider authentication. Follow each skill's setup instructions.
 
-<details>
-<summary><b>Known overlaps</b> — kept on purpose, different depths of the same subject</summary>
+## Sources
 
-- `engineering/domain-modeling` (the glossary) × `engineering/domain-design` (the model) × `engineering/codebase-design` (the module shape)
-- `engineering/to-spec` (writes the spec) × `engineering/spec-driven` (makes it falsifiable and keeps it honest)
-- `frontend/react-patterns` (general patterns) × `frontend/react-ui-patterns` (loading, error and empty states)
-- `backend/node` (application runtime and service decisions) × `backend/nodejs-core` (contributing to Node itself)
-- `backend/api-patterns` (the contract) × `backend/fastify` (implementing it) × `backend/api-documentation-master` (publishing it) × `backend/mcp-builder` (exposing it to agents)
-- `quality/lint-and-validate` (configured checks for a coherent change) × `quality/linting-neostandard-eslint9` (ESLint v9 setup and migration)
+Selected from [RosaErick/skills](https://github.com/RosaErick/skills) and [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff). Imports retain their supporting files and original content for incremental review.
 
-</details>
-
-<details>
-<summary><b>Maintaining</b> — validation, generated files and tests</summary>
-
-```bash
-scripts/check.sh           # validate and refresh generated files and plugin links
-scripts/check.sh --check   # read-only catalogue, links and metadata checks
-python3 -m unittest discover -s scripts/tests -v  # repository helper tests
-```
-A new skill goes into whichever category fits. If none fits, create the folder, write its README, add
-the row to the categories table, and run `scripts/check.sh`.
-
-
-</details>
+`frontend-design-mitsuhiko` was recovered from the `agent-stuff` history and given a distinct invocation name to coexist with other `frontend-design` skills. See [SOURCES.md](SOURCES.md) for provenance and licensing notes.

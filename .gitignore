@@ -1,8 +1,8 @@
 node_modules/
-.DS_Store
-
-.archive/
-
 __pycache__/
-
-*.pyc
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+.DS_Store

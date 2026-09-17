@@ -1,36 +1,43 @@
-# Skill catalogue migration — September 2026
+# Migration and rollback
 
-The catalogue now has **67 active skills**: 39 rewritten, 19 adjusted, six retained and three optional shortcuts retained. Seven overlapping entrypoints were merged and five removed from active distribution. `wait-what` also received its recommended language/context correction.
+## Pi-first collection
 
-| Previous entry | Replacement |
-|---|---|
-| `tdd-workflow` | `tdd` — one red/green/refactor workflow |
-| `systematic-debugging` | `diagnosing-bugs` — evidence, reproduction and causal verification |
-| `code-review-checklist` | `two-axis-review` — quick mode and complete diff selection |
-| `nodejs-best-practices` | `node` — service architecture reference |
-| `nextjs-app-router-patterns` | `nextjs-best-practices` — version-aware App Router reference |
-| `performance-profiling` | `web-performance-optimization` — measurement reference and Lighthouse helper |
-| `brainstorming` | `grilling` — optional exploration mode |
-| `clean-code`, `intelligent-routing`, `behavioral-modes`, `bash-linux`, `rust-pro` | Archived; no automatic replacement |
+The former collection is preserved on `old_version` at commit `5dbac4d4eb8a7f0dc086e52ced61e8dcfb4d61e2`. The new collection contains 17 selected skills and the `/discuss` prompt, exposed through the Pi package manifest.
 
-Useful distinctions remain: domain language/model/module design; API contract/framework/docs; Node applications/runtime contributions; general React/state/performance. `grill-me`, `grill-with-docs` and `wait-what` remain optional personal shortcuts.
+The legacy Claude/Codex plugin manifests and installer are no longer included. Remove installations of `erickrosa-skills@rosaerick` and links to the old collection before enabling this package. Keep unrelated skills and plugins installed.
 
-## Installed links and copies
+Use one installation route, as described in [README.md](README.md). A package installation loads both the skill categories and `/discuss`; registering the repository only in Pi's `skills` setting does not load its prompt template.
 
-Rerun the existing install command for the host/target you maintain. The installer removes retired symlinks only when they point back to this checkout and their category was selected. It preserves real copied directories and links owned by another collection. Copy-mode users should compare their modified copies with this mapping before removing retired copies manually; `-f` replaces active copies only when explicitly selected.
+The imported frontend design skill is invoked with `/skill:frontend-design-mitsuhiko` to avoid colliding with other `frontend-design` installations.
 
-The flat `skills/` plugin bundle contains 67 symlinks to the canonical category directories. `scripts/check.sh` refreshes it without deleting real files found there. No external publication or host reinstall is implied by editing this checkout.
+## Recover older content
 
-## Validation and generated files
+Inspect a previous file without changing the working tree:
 
-Run `scripts/check.sh --check` for catalogue structure, local Markdown links at all reference depths, explicit-invocation metadata, merger targets and generated-file drift. Run `python3 -m unittest discover -s scripts/tests -v` for helper regression tests; optional OpenAPI and PowerPoint tests require their declared Python dependencies.
+```bash
+git show old_version:writing/documentation/SKILL.md
+```
 
-The OpenAPI validator's canonical source is `backend/api-documentation-master/scripts/`. `scripts/check.sh` generates the copy bundled with `api-patterns`, so either skill remains usable when installed alone or distributed through npm. Do not edit the generated copy directly. Both JSON and YAML use a schema validator; missing dependencies, absent specs and unsupported remote references are explicitly unverified. Local references are confined to the input document's directory.
+Create a separate checkout of the previous collection:
 
-The OAuth example has its own pinned dependencies and local-provider tests under `backend/oauth/examples/authorization-code/`. Lint checks use configured commands and the detected package manager. Security regex matches are candidates; registry advisories are separate evidence and require `--audit-dependencies`. GEO output contains observations, without ranking/citation scores. UI/UX Pro Max now includes its previously missing 24 CSV files, pinned upstream provenance and MIT license; searches fail explicitly if data is absent. The detailed validation record is in [the application report](APLICACAO-SKILLS-2026-09-08.md).
+```bash
+git worktree add --detach ../skills-old-version old_version
+```
 
-## Reversible local archive
+This leaves the active collection unchanged. Review and copy only the content needed; do not install the old and new collections together.
 
-Before modification, a snapshot was created at `.archive/skills-before-2026-09-07.tar.gz` (539 members; SHA-256 `18733be5d47a253c2c263d6797474ed5a7837279c4888daeb89fdcd01776d1d1`). It includes retired skills and the old UX writing generators/PDFs. Extract selected paths to a separate directory when comparing or recovering content; do not overwrite current work blindly.
+## Roll back the collection
 
-The archive is ignored by git and excluded from distribution. Historical tracked content also remains in the pre-migration repository history. The original audit is a historical assessment; its citations refer to the original revision rather than the rewritten files.
+1. Save or commit current changes and back up Pi settings.
+2. Remove this collection's package entry from Pi settings, preserving other entries.
+3. Create the separate `old_version` checkout shown above.
+4. Register that checkout in Pi's `skills` setting, using its absolute path.
+5. Restart Pi and verify discovery. The remake's `/discuss` is not part of the old collection.
+
+A branch rollback restores repository content, not user settings or other agents' installations. Restore those from the local migration backup if needed. Do not rewrite the remote branch history to roll back.
+
+## Follow-up review
+
+- Review imported host-specific conventions, including Claude-named tmux socket examples.
+- Review cross-skill recommendations that point outside the selected collection.
+- Review inherited licensing and tool requirements before broader redistribution; see [SOURCES.md](SOURCES.md).
